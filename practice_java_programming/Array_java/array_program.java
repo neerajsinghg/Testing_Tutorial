@@ -533,3 +533,6 @@ sortColors(arr);
         arr[j] = temp;
     }
 }
+
+
+Q1. What’s the difference between Arrays.asList() and List.of()?
