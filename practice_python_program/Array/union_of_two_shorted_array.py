@@ -32,3 +32,6 @@ arr1 = [1, 2, 3, 4, 5]
 arr2 = [1, 2, 3, 6, 7]
 result = union_of_two_sorted_arrays(arr1, arr2)
 print("Union of arr1 and arr2:", result)
+
+arr3 = sorted(set(arr1).union(set(arr2)))
+print(arr3)

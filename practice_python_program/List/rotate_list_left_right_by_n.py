@@ -7,14 +7,14 @@ print(my_list)
 # right_rotated = [my_list[(i - n) % length] for i in range(length)]
 # print(right_rotated)
 
-def wright_rotate_list(lst, n):
+def right_rotate_list(lst, n):
     if n>len(lst):
       return "position is larger than the length of the list"
     else:
     #   print(lst[-n:])
     #   print(lst[:-n])
       return lst[-n:] + lst[:-n]
-result = wright_rotate_list(my_list, 3)
+result = right_rotate_list(my_list, 3)
 print("wright rotate :",result)
 
 def left_rotate_lst(lst, n):

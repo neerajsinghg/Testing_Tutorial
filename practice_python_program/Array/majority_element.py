@@ -57,3 +57,23 @@ def majorityElement(nums):
 nums = [1, 1, 1, 3, 3, 2, 2, 2]
 print("\nInput:", nums)
 print("Output:", majorityElement(nums))
+
+# 3rd approches
+def majorityElement(nums):
+    mejority_dict = {}
+    
+    for num in nums:
+        mejority_dict[num] = mejority_dict.get(num, 0)+1
+    
+    result =[]
+    th = len(nums)//3
+    
+    for key, value in mejority_dict.items():
+        if value > th:
+            result.append(key)
+    return result
+
+
+nums = [1, 1, 1, 3, 3, 2, 2, 2]
+print("\nInput:", nums)
+print("Output:", majorityElement(nums))  # Output: [1, 2]
