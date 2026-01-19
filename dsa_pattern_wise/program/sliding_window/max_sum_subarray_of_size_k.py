@@ -2,7 +2,6 @@ def max_sum_subarray_of_size_k(k, arr):
     n=len(arr)
     if n<k:
         return 0
-
     window_sum=sum(arr[:k])
     max_sum = window_sum
     for i in range(k,n):
