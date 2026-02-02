@@ -36,6 +36,12 @@ List comprehension in Python is a compact way of creating a list from a sequence
 # syntax
 [i for i in iterable if expression]
 ```
+[ expression for item in iterable if condition ]
+    ↑          ↑        ↑           ↑
+    │          │        │           └── Optional filter
+    │          │        └── Iteration variable & source
+    │          └── Loop variable
+    └── Output expression
 
 **Example:1**
 
