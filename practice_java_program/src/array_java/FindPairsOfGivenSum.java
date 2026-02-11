@@ -20,3 +20,19 @@ public class FindPairsOfGivenSum {
 //output:
 //pair found::15 9
 //pair found::16 8
+
+// import java.util.*;
+// public class Main{
+//     public static void main(String[] args){
+//         int[] numbers={15, 12, 4, 16, 9, 8, 24, 0};
+//         int targate=25;
+//         Set<Integer> seen = new HashSet<>();
+//         for(int num:numbers){
+//             int requred=targate-num;
+//             if(seen.contains(requred)){
+//                 System.out.println(num+" + "+requred+" = "+targate);
+//             }
+//             seen.add(num);
+//         }
+//     }
+// }

@@ -13,13 +13,14 @@ public static void main(String[] args) throws IOException
 int nl = 0, nw = 0, nc = 0;
 String line;
 FileReader fr = new FileReader("D:\\textfile.txt");
-BufferedReader br = new BufferedReader(fr);
-while((line = br.readLine()) != null)
-{
-nl++;
-nc += line.length();
-StringTokenizer st = new StringTokenizer(line);
-nw += st.countTokens();
+try (BufferedReader br = new BufferedReader(fr)) {
+    while((line = br.readLine()) != null)
+    {
+    nl++;
+    nc += line.length();
+    StringTokenizer st = new StringTokenizer(line);
+    nw += st.countTokens();
+    }
 }
 System.out.printf("Number of lines: \t %d", nl);
 System.out.printf("\nNumber of words: \t %d", nw);

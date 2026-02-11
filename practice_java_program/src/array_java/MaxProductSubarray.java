@@ -29,6 +29,14 @@ private static int findMaxProduct(int[] arr) {
       maxProduct = Math.max(arr[i], maxProduct * arr[i]);
       minProduct = Math.min(arr[i], minProduct * arr[i]);
       result = Math.max(result, maxProduct);
+      // for debugging purposes, you can print the intermediate values
+      System.out.println(
+            "i=" + i +
+            ", arr[i]=" + arr[i] +
+            ", maxProduct=" + maxProduct +
+            ", minProduct=" + minProduct +
+            ", result=" + result
+        );
   }
   return result;
 }

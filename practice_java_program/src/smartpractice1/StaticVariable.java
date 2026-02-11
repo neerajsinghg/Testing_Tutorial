@@ -4,6 +4,7 @@ public class StaticVariable {
 	   static int a = 20;
 	   static {
 	        a++;
+			System.out.println(a);
 	   }
 	   {
 	     a++;
