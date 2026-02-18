@@ -1,0 +1,114 @@
+Excellent 👍 Sorting is **extremely important** for interviews (Java + DSA + Automation logic).
+
+Here is a **well-structured list of sorting-related programs** from basic to advanced level.
+
+---
+
+# 🔹 🔢 Basic Number Sorting Programs
+
+1. Sort array in ascending order
+2. Sort array in descending order
+3. Sort array without using built-in methods
+4. Sort array using `Arrays.sort()`
+5. Sort array using Bubble Sort
+6. Sort array using Selection Sort
+7. Sort array using Insertion Sort
+8. Sort array using Merge Sort
+9. Sort array using Quick Sort
+10. Sort only even numbers (keep odd unchanged)
+
+---
+
+# 🔹 🔤 String Sorting Programs
+
+11. Sort characters in a string alphabetically
+12. Sort string array alphabetically
+13. Sort strings in reverse alphabetical order
+14. Sort words by length
+15. Sort sentence words alphabetically
+16. Sort string ignoring case
+17. Sort only vowels in string
+18. Sort characters but keep special characters at same position
+19. Sort words based on last character
+20. Sort by frequency of characters
+
+---
+
+# 🔹 📊 Array & Special Sorting Problems
+
+21. Sort 0s and 1s (Binary Array)
+22. Sort 0s, 1s and 2s (Dutch National Flag problem)
+23. Sort array by parity (even first, odd later)
+24. Sort array based on absolute value
+25. Sort array of squares
+26. Sort only positive numbers
+27. Sort array in wave form
+28. Sort elements by frequency
+29. Sort and remove duplicates
+30. Sort two arrays and merge
+
+---
+
+# 🔹 📚 Collection Sorting (Very Important in Java Interviews)
+
+31. Sort `ArrayList<Integer>`
+32. Sort `ArrayList<String>`
+33. Sort using `Collections.sort()`
+34. Sort using `Comparator`
+35. Sort using `Comparable`
+36. Sort map by keys
+37. Sort map by values
+38. Sort list of objects by single field
+39. Sort list of objects by multiple fields
+40. Sort in descending using lambda
+
+---
+
+# 🔹 ⚡ Java 8 Stream Sorting (High Priority)
+
+41. Sort list using `stream().sorted()`
+42. Sort in reverse using `Comparator.reverseOrder()`
+43. Sort custom objects using lambda
+44. Sort and limit top 3 values
+45. Sort distinct elements
+46. Sort employees by salary
+47. Sort by name length
+48. Sort using method reference
+49. Sort null-safe list
+50. Sort and collect into LinkedHashSet
+
+---
+
+# 🔥 Advanced Interview Sorting Problems
+
+51. Sort array of intervals
+52. Merge overlapping intervals
+53. Custom sorting logic (odd first then even sorted)
+54. Sort string by custom order
+55. Implement LRU cache using LinkedHashMap
+56. Sort logs based on timestamp
+57. Sort big numbers (as strings)
+58. External sorting (large file sorting concept)
+59. Top K frequent elements
+60. Kth largest element
+
+---
+
+# 🎯 Automation/QA Related Sorting (Useful for You)
+
+61. Sort test cases by execution time
+62. Sort logs by severity
+63. Sort API response JSON array
+64. Sort web table using Selenium
+65. Validate UI table sorting functionality
+
+---
+
+If you want next, I can provide:
+
+* ✅ 20 most important sorting programs with full code
+* ✅ Sorting interview questions with expected outputs
+* ✅ All sorting algorithms with time complexity comparison
+* ✅ Java 8 Stream-based sorting examples
+
+Tell me which one you want 👍

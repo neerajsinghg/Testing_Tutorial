@@ -1,0 +1,154 @@
+✅ 🔹 Basic Level Programs
+
+Check if string starts with a given prefix
+
+Check if string ends with a given suffix
+
+Check if string contains a word
+
+Count number of characters in a string
+
+Convert string to uppercase / lowercase
+
+Remove leading and trailing spaces
+
+Compare two strings (equals vs equalsIgnoreCase)
+
+Reverse a string
+
+Count vowels and consonants
+
+Check if string is empty
+
+✅ 🔹 Medium Level Programs
+
+Count occurrences of a character
+
+Count occurrences of a word
+
+Remove duplicate characters
+
+Check palindrome string
+
+Replace all spaces with underscore
+
+Remove special characters
+
+Find first non-repeated character
+
+Find duplicate characters
+
+Check if two strings are anagrams
+
+Split string by delimiter
+
+✅ 🔹 Based on startsWith() / endsWith()
+
+Count how many numbers in array start with 1
+
+Filter words starting with capital letter
+
+Find emails ending with "@gmail.com"
+
+Validate phone numbers starting with country code
+
+Check file extension using endsWith(".pdf")
+
+✅ 🔹 Based on substring()
+
+Extract domain from email
+
+Extract year from date string
+
+Mask credit card number (show last 4 digits)
+
+Extract first word from sentence
+
+Extract middle characters
+
+✅ 🔹 Based on split()
+
+Count number of words in sentence
+
+Reverse words in sentence
+
+Convert sentence to camelCase
+
+Find longest word
+
+Convert CSV string into array
+
+✅ 🔹 Based on replace() / replaceAll()
+
+Remove all digits from string
+
+Replace vowels with '*'
+
+Remove extra spaces
+
+Convert multiple spaces to single space
+
+Remove all non-alphabet characters
+
+✅ 🔹 Advanced Interview Level
+
+String compression (aabcc → a2b1c2)
+
+Check rotation of string
+
+Longest substring without repeating characters
+
+Check balanced parentheses
+
+Implement atoi (string to integer manually)
+
+Find longest palindrome substring
+
+Check if string contains only digits
+
+Count uppercase, lowercase, digits, special chars
+
+Find all substrings of string
+
+Generate permutations of string
+
+🔥 Highly Asked in Interviews
+
+If you want to prioritize, focus on:
+
+Palindrome
+
+Anagram
+
+Reverse string
+
+Count characters
+
+Remove duplicates
+
+String compression
+
+Longest substring without repeating characters
+
+🔥 Advanced / Interview Level
+
+Filter longest word in sentence
+
+Filter first non-repeating character
+
+Filter common elements between two arrays
+
+Filter missing numbers
+
+Filter duplicate words in paragraph
+Since you are also preparing Java programs regularly,
+I can give you:
+
+🔹 Top 15 most asked String interview programs with solutions
+
+🔹 20 coding interview questions with expected outputs
+
+🔹 Logical + tricky string problems
+
+Tell me which level you want:
+Basic / Medium / Advanced / Interview-focused?
