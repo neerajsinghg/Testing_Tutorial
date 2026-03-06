@@ -1,0 +1,288 @@
+Adobe_interview
+
+Here's a detailed explanation for each **Adobe SDET Interview Question (3 to 6 years)** listed in your image:
+
+---
+
+### **1. Please explain your Selenium Framework in depth.**
+✅ Cover the following:
+- Type: Hybrid, Keyword-Driven, Data-Driven, POM
+- Tools: Selenium WebDriver, TestNG, Maven, Extent/Allure Reporting, Log4j
+- Layers: `DriverFactory`, `PageObjects`, `Utilities`, `TestBase`, `Listeners`
+- Features: Screenshot on failure, RetryAnalyzer, cross-browser testing, CI/CD with Jenkins, cloud (e.g., BrowserStack)
+
+---
+
+### **2. Where have you used OOPs concepts in your framework?**
+✅ Mention usage of:
+- **Encapsulation**: Private WebElements, public getters in Page classes
+- **Abstraction**: Abstract classes like `BasePage`, `BaseTest`
+- **Inheritance**: Extending base test classes to reuse setup/teardown
+- **Polymorphism**: Method overloading (e.g., overloaded click methods) and overriding (custom Wait methods)
+
+---
+
+### **3. How to run Selenium scripts on already opened browser?** 
+✅ Not officially supported by Selenium, but:
+- For **Chrome**, use **remote debugging** with `--remote-debugging-port`
+```bash
+chrome.exe --remote-debugging-port=9222 --user-data-dir="C:\seldata"
+```
+- Connect via `ChromeOptions.setExperimentalOption("debuggerAddress", "localhost:9222")`
+
+---
+
+### **4. Selenium Questions:**
+#### a. **Handle Multiple Windows**
+```java
+String mainWindow = driver.getWindowHandle();
+for(String win : driver.getWindowHandles()){
+    if(!win.equals(mainWindow)){
+        driver.switchTo().window(win);
+    }
+}
+```
+
+#### b. **Handle Dynamic Dropdowns**
+- Use XPath with partial match, or JavaScript click if normal click fails.
+```java
+driver.findElement(By.xpath("//ul/li[contains(text(),'Option')]")).click();
+```
+
+#### c. **Handle Shadow DOM**
+- Use `JavascriptExecutor` or Selenium 4's new `getShadowRoot()`:
+```java
+WebElement shadowHost = driver.findElement(By.cssSelector("#shadow-host"));
+SearchContext shadowRoot = shadowHost.getShadowRoot();
+shadowRoot.findElement(By.cssSelector("input")).sendKeys("test");
+```
+
+---
+
+### **5. Print all values of Customer salary from given graph using Selenium**
+✅ Strategy:
+- Use XPath or CSS to loop through graph bars/labels.
+- Example:
+```java
+List<WebElement> salaries = driver.findElements(By.cssSelector(".salary-bar"));
+for(WebElement sal : salaries){
+    System.out.println(sal.getText());
+}
+```
+
+---
+
+### **6. Java Questions:**
+#### a. **Functional Interface**
+- Interface with one abstract method.
+```java
+@FunctionalInterface
+interface MyFunc {
+    void display();
+}
+```
+Used in **Lambdas** and **Streams**.
+
+#### b. **Multithreading Basics**
+- Threads run concurrently. Key classes: `Thread`, `Runnable`, `ExecutorService`.
+```java
+Thread t1 = new Thread(() -> System.out.println("Running Thread"));
+t1.start();
+```
+
+---
+
+### **7. Write Java code to print all permutations of a given string**
+✅ Recursive solution:
+```java
+public class Permutation {
+    static void permute(String str, String ans) {
+        if(str.length() == 0){
+            System.out.println(ans);
+            return;
+        }
+        for(int i=0; i<str.length(); i++){
+            char ch = str.charAt(i);
+            String ros = str.substring(0, i) + str.substring(i + 1);
+            permute(ros, ans + ch);
+        }
+    }
+    public static void main(String[] args){
+        permute("abc", "");
+    }
+}
+```
+
+public class StringPermutations {
+    public static void main(String[] args) {
+        String str = "ABC";
+        permute(str, "");
+    }
+    public static void permute(String str, String result) {
+        // Base case
+        if (str.length() == 0) {
+            System.out.println(result);
+            return;
+        }
+        for (int i = 0; i < str.length(); i++) {
+            char current = str.charAt(i);
+            // Remaining string after removing current character
+            String remaining = str.substring(0, i) + str.substring(i + 1);
+            // Recursive call
+            permute(remaining, result + current);
+        }
+    }
+}
+
+---
+
+Here is a detailed explanation of the **Round 2 & Round 3 Adobe SDET Interview Questions (3 to 6 years)**:
+
+---
+
+## 🔵 **#Round 2:**
+
+### **1. Bug Life Cycle, Bug Severity, Priority**
+- **Bug Life Cycle**: New → Open → Assigned → Fixed → Retest → Verified → Closed/Rejected/Deferred
+- **Severity**: Impact on functionality (Critical to Minor)
+- **Priority**: Business urgency (High to Low)
+  > Example: “Login button not working” is **High Severity, High Priority**
+
+---
+
+### **2. Write code for database connection**
+```java
+Connection con = DriverManager.getConnection(
+    "jdbc:mysql://localhost:3306/dbname", "username", "password");
+Statement stmt = con.createStatement();
+ResultSet rs = stmt.executeQuery("SELECT * FROM employees");
+while(rs.next()) {
+    System.out.println(rs.getString("name"));
+}
+con.close();
+```
+
+---
+
+### **3. Parallel Testing in TestNG + RetryAnalyzer**
+- **TestNG Parallel**: Define parallelism in `testng.xml` or `testng.properties`
+```xml
+<suite name="TestSuite" parallel="tests" thread-count="3">
+```
+- **RetryAnalyzer**: Retry failed tests
+```java
+public class Retry implements IRetryAnalyzer {
+    private int count = 0, maxTry = 2;
+    public boolean retry(ITestResult result) {
+        if(count < maxTry) {
+            count++;
+            return true;
+        }
+        return false;
+    }
+}
+```
+
+---
+
+### **4. Singleton Design Pattern + Code**
+Ensures only **one instance** of a class is created.
+```java
+public class Singleton {
+    private static Singleton instance;
+    private Singleton() {}
+    public static Singleton getInstance() {
+        if(instance == null) {
+            instance = new Singleton();
+        }
+        return instance;
+    }
+}
+```
+
+---
+
+### **5. Git Commands: fetch, pull, clone**
+- `git fetch`: Downloads latest commits but doesn't merge
+- `git pull`: Fetch + merge
+- `git clone`: Copy entire repo to local
+```bash
+git fetch origin
+git pull origin main
+git clone https://github.com/user/repo.git
+```
+
+---
+
+### **6. Find Kth Largest and Smallest in Array**
+Using sorting:
+```java
+Arrays.sort(arr);
+int kthSmallest = arr[k-1];
+int kthLargest = arr[arr.length-k];
+```
+Or use **PriorityQueue** (Heap) for better performance.
+
+---
+
+### **7. Linux Commands**
+- `ls`, `cd`, `pwd`, `cat`, `touch`, `rm`, `chmod`, `top`, `ps`, `grep`, `find`
+- Example:
+```bash
+grep "error" log.txt
+find . -name "*.java"
+```
+
+---
+
+## 🟢 **#Round 3:**
+
+### **1. Sort array of 0,1,2 in O(n) time (Dutch National Flag Algorithm)**
+```java
+int low = 0, mid = 0, high = arr.length - 1;
+while(mid <= high){
+    if(arr[mid] == 0) swap(arr, low++, mid++);
+    else if(arr[mid] == 1) mid++;
+    else swap(arr, mid, high--);
+}
+```
+
+---
+
+### **2. Palindromic Substrings (Leetcode Q647)**
+Count substrings that are palindromes using expand-around-center approach.
+
+---
+
+### **3. XPath for Disappearing Elements**
+Use conditions like:
+```xpath
+//*[contains(@style,'display:none')]
+```
+or with `wait`:
+```java
+WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("id")));
+```
+
+---
+
+### **4. JavaScript Basics**
+- `var`, `let`, `const`
+- `function`, `arrow function`
+- Event handling, DOM manipulation:
+```js
+document.getElementById("btn").addEventListener("click", () => alert("Clicked!"));
+```
+
+---
+
+### **5. Jenkins Setup for Framework**
+- Install Jenkins → Add Maven, JDK
+- Create Job → Source Code from Git → `mvn clean test`
+- Use `post-build actions` for reports (Allure, Extent)
+- Use `pipeline` for advanced setups (Jenkinsfile)
+
+---
+
+Would you like Java solutions for palindrome substring or XPath locators for dynamic elements in detail?

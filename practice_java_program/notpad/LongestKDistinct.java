@@ -1,13 +1,9 @@
 //Longest Substring with At Most K Distinct Characters
 import java.util.*;
-
 public class LongestKDistinct{
-
     public static void main(String[] args) {
-
         String s = "eceba";
         int k = 2;
-
         HashMap<Character, Integer> map = new HashMap<>();
 
         int left = 0, maxLen = 0;
@@ -25,13 +21,10 @@ public class LongestKDistinct{
                 if (map.get(leftChar) == 0) {
                     map.remove(leftChar);
                 }
-
                 left++;
             }
-
             maxLen = Math.max(maxLen, right - left + 1);
         }
-
         System.out.println("Longest Length: " + maxLen);
     }
 }

@@ -1,0 +1,480 @@
+Introductin
+
+1. Tell me about yourself.
+	My name is Neeraj Singh, I am originally from Rewa, Madhya Pradesh. 
+I have completed my graduation in bacholer of Engineering from ITM Group of Institutions, Gwalior (M.P.). 
+Currently, I am working at eFleet Systems Private Limited which is related to eFleet domain. 
+I have a total of 4 years and 2 months of experience in software testing, 
+including 1 year in manual testing and the remaining 3.5 years in automation testing with Web browser 
+and mobile application.
+
+ My technical expertise includes:
+Programming Language: Java
+Automation Tools: Selenium with TestNG and Cucumber, following the Page Object Model (POM) design pattern
+API Automation: Using Rest Assured with TestNG
+API Testing: Using Postman and Swagger UI
+Database Testing: Proficient in MySQL and Neo4j, a graph-based database
+Mobile automation tool is Appium.
+For verifying correct API integration, I also use proxy networks or monitor server logs
+I am also proficient with bug traking tool which is jira and another one is clickup, for version control system is Git and for CI/cd integration with Jenkins.
+I also work with frontend and backend dovepler for Optimising the code, server logs and fixes the issues.
+
+2. How many automation testing experiences are in your project?
+	I have around 4 years of automation testing experience in my current and previous projects. 
+In my current project, I’ve been handling end-to-end test automation using [java Selenium] with 
+TestNG and Page Object Model (POM) design. I’ve automated key modules like 
+driver master, account master, fleet master, admin etc and Functionality Validation in our eFleet domain app. 
+Apart from writing scripts, I’m also involved in framework enhancement, debugging flaky tests, and CI/CD integration.
+
+visitor logs, check In/out, expense management, goal management and Functionality Validation in our visitor log app. Apart from writing scripts, I’m also involved in framework enhancement, debugging flaky tests, and CI/CD integration.
+
+3. What are your role and responsibilities in your current project?
+	In my current project, I’m working as an Automation Test Engineer for a web and mobile application called eMist, eChaalak, eMist_pro, eMist_workshop and iConsignment. 
+My main responsibilities include:
+
+Designing and developing automation scripts using tools like Selenium, TestNG, and following the Page Object Model (POM) framework.
+Creating and maintaining test cases for different modules such as goal management and expense management & Functionality Validation.
+Executing regression and smoke test suites and maintaining them to ensure application stability.
+Identifying test cases for automation and ensuring high test coverage.
+Integrating automation scripts into the CI/CD pipeline (using tools like Jenkins or GitHub Actions).
+Debugging and troubleshooting failed scripts and resolving issues in the framework.
+Reporting bugs with proper logs and screenshots using JIRA, and collaborating closely with developers and product teams.
+Also involved in manual testing tasks like writing test plans, test cases, and performing exploratory testing for new features."
+
+
+
+4. What kind of framework you have used in your current project? Can you explain it?
+	"In my current project, I’m using a custom-built automation framework based on which is in hybrid framework:
+
+🧱 Selenium + TestNG + Maven + Page Object Model (POM)
+This is a modular, maintainable, reuseable and scalable hybrid framework.
+
+🔧 Framework Structure & Components:
+Maven – For managing dependencies and build lifecycle.
+
+TestNG – For test execution, grouping, parallel testing, and generating reports.
+
+Page Object Model (POM) –
+Each page has a corresponding class that contains:
+
+WebElements (using @FindBy)
+
+Actions/methods (like clickLoginButton() or enterUsername()) This makes the code clean and reusable.
+
+Utility Classes – For common actions like:
+
+Handling dropdowns
+
+Waiting mechanisms
+
+Screenshots on failure
+
+Properties Files – For storing test data, URLs, environment config.
+
+Extent Reports / Allure Reports – For detailed, visually rich reporting.
+
+Parallel Execution – Configured through testng.xml 
+
+CI/CD Integration – The framework is integrated with Jenkins for nightly or post-commit execution.
+
+another one framework
+
+BDD cucumber
+	✅ What is BDD?
+BDD (Behavior Driven Development) is an approach where:
+Test cases are written in plain English (Gherkin language)
+Focus is on the behavior of the application
+Helps developers, testers, and business people collaborate easily
+✅ What is Cucumber?
+Cucumber is a tool that supports BDD.
+It allows you to write test cases in feature files using Given, When, Then.
+✅ Key Components:
+Feature File – Contains test scenarios in plain English
+Example:
+gherkin
+Scenario: Login with valid credentials
+  Given User is on login page
+  When User enters valid username and password
+  Then User should land on homepage
+Step Definitions (Java) – Maps each step to automation code
+@Given("User is on login page")
+public void user_on_login() {
+   // Selenium code
+}
+Runner Class – Executes the test with options (using TestNG)
+
+
+5. Have you developed any framework in your project?
+	✅ Have you developed any framework in your project?
+"Yes, I have actively contributed to developing and enhancing the automation framework in my current project. 
+We built a hybrid BDD framework using Selenium, Cucumber, TestNG, and Maven, following the Page Object Model (POM) design pattern.
+
+My responsibilities in framework development included:
+
+Creating a base class for browser setup, teardown, and reusable methods
+
+Designing the Page Object Model (POM) structure for each module
+
+Integrating Cucumber for writing BDD scenarios and linking step definitions
+
+Adding support for data-driven testing using Excel/JSON files
+
+Implementing screenshot capturing on test failure
+
+Setting up Extent Reports for detailed HTML reporting
+
+Configuring Maven for build and dependency management
+
+Integrating the framework with Jenkins for scheduled test execution and continuous integration
+
+🔧 Tools & Technologies:
+Selenium WebDriver
+Cucumber + Gherkin
+TestNG
+Maven
+Extent Reports
+Jenkins
+Java
+
+
+
+6. How many test cases have you written in your current project?
+
+7. What is the difference between abstract class and interface in Java?
+
+8. Can you create an object of an abstract class in Java?
+
+9. What is the use of constructor in Selenium?
+
+10. What is the difference between final, finally, and finalize in Java?
+
+11. What is the difference between checked and unchecked exceptions in Java?
+
+12. Difference between List and Set.
+
+13. Difference between Array and Collections.
+
+14. What is the difference between String, StringBuffer, and StringBuilder in Java?
+
+15. What is the difference between following source code?
+
+String s = "Welcome";
+String s2 = new String("Welcome");
+16. What is the difference between method overloading and method overriding?
+
+
+17. What are TestNG annotations?
+18. What is object repository? How will you create an object repository in Selenium?
+
+19. Have you worked on page object model framework?
+
+20. What is the Page factory?
+
+21. What is Xpath? Write Xpath for the given scenario.
+
+22. Write the XPath to locate div element that has no tags?
+
+23. What are waits in Selenium? Explain briefly.
+	✅ Implicit Wait Example:
+driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+✅ Explicit Wait Example:
+
+WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("loginBtn")));
+
+✅ Fluent Wait
+Wait<WebDriver> wait = new FluentWait<>(driver)
+    .withTimeout(Duration.ofSeconds(20))          // Total wait time
+    .pollingEvery(Duration.ofSeconds(2))          // Poll every 2 seconds
+    .ignoring(NoSuchElementException.class);      // Ignore this exception
+
+WebElement element = wait.until(driver -> driver.findElement(By.id("myElement")));
+
+✅ Example Use Case:
+Let’s say you’re waiting for a loader to disappear and a button to become visible:
+
+Wait<WebDriver> wait = new FluentWait<>(driver)
+    .withTimeout(Duration.ofSeconds(30))
+    .pollingEvery(Duration.ofSeconds(1))
+    .ignoring(NoSuchElementException.class);
+
+WebElement loginBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("loginBtn")));
+
+24. What is the difference between Thread.sleep and Thread.wait?   
+	synchronized(obj) {
+    obj.wait(); // waits until obj.notify() is called
+}
+
+25. How to select value from dropdown in Selenium?
+// Locate dropdown element
+WebElement dropdownElement = driver.findElement(By.id("dropdownId"));
+
+// Create an instance of Select class
+Select dropdown = new Select(dropdownElement);
+
+// Select an option by visible text
+dropdown.selectByVisibleText("Option 2");
+
+✅ Methods of Select Class:
+selectByVisibleText(String visibleText): Selects an option based on the visible text.
+selectByValue(String value): Selects an option based on the value attribute of the <option> tag.
+selectByIndex(int index): Selects an option based on the index (zero-based).
+getFirstSelectedOption(): Returns the currently selected option.
+getOptions(): Returns a list of all options in the dropdown.
+
+
+26. What is the difference between quite and close in Selenium?
+✅ close() Method
+Purpose: Closes the current window or tab that the WebDriver is controlling.
+✅ quit() Method
+Purpose: Terminates the entire WebDriver session, closing all associated browser windows and tabs.
+
+27. Write code to read data from excel sheet using POI?
+dependency - Apache POI for reading Excel files
+dependency - Apache POI OOXML for handling .xlsx files 
+
+Code to Read Data from Excel Using POI
+Here's a simple example of reading an Excel file (.xlsx) using Apache POI:
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.ss.usermodel.*;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class ExcelReader {
+
+    public static void main(String[] args) throws IOException, InvalidFormatException {
+        // Path to the Excel file
+        FileInputStream file = new FileInputStream(new File("path_to_excel_file.xlsx"));
+
+        // Create Workbook instance for .xlsx file
+        Workbook workbook = WorkbookFactory.create(file);
+
+        // Get the first sheet (you can use getSheetAt(index) for other sheets)
+        Sheet sheet = workbook.getSheetAt(0);
+
+        // Iterate through all rows
+        for (Row row : sheet) {
+            // Iterate through all columns of the current row
+            for (Cell cell : row) {
+                // Check the cell type and print the corresponding value
+                switch (cell.getCellType()) {
+                    case STRING:
+                        System.out.print(cell.getStringCellValue() + "\t");
+                        break;
+                    case NUMERIC:
+                        System.out.print(cell.getNumericCellValue() + "\t");
+                        break;
+                    case BOOLEAN:
+                        System.out.print(cell.getBooleanCellValue() + "\t");
+                        break;
+                    default:
+                        System.out.print("Unsupported Cell Type\t");
+                        break;
+                }
+            }
+            System.out.println(); // Move to the next line after each row
+        }
+
+        // Close the workbook
+        workbook.close();
+        file.close();
+    }
+}
+
+
+28. How to handle Iframe in Selenium WebDriver?
+
+29. What are exceptions that you faced in your current project?
+Exception | Description
+NoSuchElementException | Thrown when an element could not be found in the DOM.
+TimeoutException | Thrown when a command does not complete in the expected time, especially with explicit waits.
+StaleElementReferenceException | Happens when an element is no longer attached to the DOM (after a page reload or DOM update).
+ElementClickInterceptedException | Thrown when the target element is not clickable (e.g., covered by another element).
+ElementNotInteractableException | Thrown when an element is found but cannot be interacted with (e.g., hidden).
+NoSuchFrameException | Thrown when switching to a frame that does not exist.
+NoSuchWindowException | Thrown when trying to switch to a window that doesn’t exist.
+InvalidSelectorException | Occurs when the selector used to find an element is syntactically invalid.
+JavascriptException | Happens when there’s an error executing JavaScript through JavascriptExecutor.
+NoAlertPresentException | Thrown when switching to an alert that is not present.
+UnhandledAlertException | Occurs when an alert appears unexpectedly and is not handled.
+WebDriverException | A generic exception thrown when the WebDriver is acting abnormally.
+SessionNotFoundException | Thrown when the WebDriver session does not exist or is already closed.
+InvalidElementStateException | Thrown when an element is in a state that prevents interaction (e.g., disabled).
+MoveTargetOutOfBoundsException | Happens when trying to move the mouse to an element outside the view.
+IllegalStateException | Happens when the WebDriver is not in a proper state (e.g., driver path not set).
+
+30. Where have you used OOPs concept in your current project?
+
+31. What is the difference between bug and defect?
+
+32. Difference between retesting and regression testing.
+
+33. What is integration, system, smoke, regression, and functional testing?
+
+34. What is the difference between STLC and SDLC?
+
+35. Few questions have been asked on the SQL basic.
+
+36. What is the use of Jenkins?
+
+37. What is Maven?
+
+38. Write code to write results in excel sheet.
+
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class ExcelWriter {
+    public static void main(String[] args) throws IOException {
+        // Create a workbook and a sheet
+        Workbook workbook = new XSSFWorkbook();
+        Sheet sheet = workbook.createSheet("Test Results");
+
+        // Create a header row
+        Row headerRow = sheet.createRow(0);
+        headerRow.createCell(0).setCellValue("Test Case ID");
+        headerRow.createCell(1).setCellValue("Description");
+        headerRow.createCell(2).setCellValue("Status");
+
+        // Sample test results
+        Object[][] testData = {
+            {"TC_01", "Login Test", "Passed"},
+            {"TC_02", "Add to Cart Test", "Failed"},
+            {"TC_03", "Checkout Test", "Passed"}
+        };
+
+        // Write data to the sheet
+        int rowNum = 1;
+        for (Object[] data : testData) {
+            Row row = sheet.createRow(rowNum++);
+            for (int i = 0; i < data.length; i++) {
+                row.createCell(i).setCellValue(data[i].toString());
+            }
+        }
+
+        // Auto-size columns
+        for (int i = 0; i < 3; i++) {
+            sheet.autoSizeColumn(i);
+        }
+
+        // Write to file
+        FileOutputStream fileOut = new FileOutputStream("TestResults.xlsx");
+        workbook.write(fileOut);
+        fileOut.close();
+        workbook.close();
+
+        System.out.println("Excel file created successfully!");
+    }
+}
+
+
+Questinos 
+Great question bhai! 😎  
+Agar tu kisi app, website, ya system ka testing kar raha hai — toh kuch **basic to advanced cheezein** chahiye hoti hain testing start karne ke liye.
+
+Let’s break it down 👇
+
+---
+
+## 🧪 🔍 **Requirements for Testing** (Manual + Automation)
+
+### ✅ **1. Business Requirements / Functional Specs**
+- *Kya app ka purpose hai?*
+- *User kya karega?*  
+- Milta hai: **BRD**, **FRS**, user stories (Jira, Confluence, etc.)
+
+🔸 **Example**:  
+> "User should be able to log in with email and password"
+
+---
+
+### ✅ **2. Test Data**
+- Valid/Invalid inputs for testing
+- User credentials, dummy cards, test API keys etc.
+
+---
+
+### ✅ **3. Environment Access**
+- Dev / QA / Staging / UAT
+- Test environment should match production setup as close as possible
+
+---
+
+### ✅ **4. Build/Application**
+- `.apk` / `.ipa` for mobile  
+- URL or WAR file for web  
+- Should be deployable for testing
+
+---
+
+### ✅ **5. Test Scenarios / Test Cases**
+- Manual: Written test cases  
+- Automation: Defined flow or scripts
+
+🧾 Example:
+- TC001: Login with valid credentials  
+- TC002: Login with wrong password
+
+---
+
+### ✅ **6. Tools & Setup**
+For automation, you’ll need:
+- ✅ Java / Python / JS setup
+- ✅ Selenium / Appium / Cypress / Playwright
+- ✅ TestNG / JUnit
+- ✅ Maven / Gradle
+- ✅ Git repo
+- ✅ Jenkins for CI/CD
+
+---
+
+### ✅ **7. Access to Logs & Debugging**
+- App logs, browser console, server logs
+- Helpful in debugging failed tests
+
+---
+
+### ✅ **8. Device/Browser Matrix**
+- Browser versions (Chrome, Firefox, Safari)  
+- Mobile devices (Android, iOS, tabs)  
+- Emulator/Simulator or real device (or cloud platforms like BrowserStack, SauceLabs)
+
+---
+
+### ✅ **9. APIs or Backend Info (if needed)**
+- API request/response
+- Postman collections, Swagger documentation
+
+---
+
+### ✅ **10. Team Collaboration Tools**
+- Jira (for bug reporting)  
+- Confluence (for docs)  
+- Slack/MS Teams (for discussion)
+
+---
+
+## 💡 Extra for Automation Testing:
+
+- Framework (POM, Keyword, Hybrid)
+- Reporting (Extent, Allure)
+- Logging (Log4j or SLF4J)
+- Retry mechanism
+- Screenshots on failure
+- Integration with DB, APIs, etc.
+
+---
+
+## 🧠 Short Answer for Interview:
+
+> “For effective testing, I require proper documentation (like BRD/FRS), test data, a stable environment, access to the application build, and the right tools like Selenium/Appium, TestNG, and reporting tools. For automation, a well-structured framework with CI/CD integration is essential.”
+
+---
+
+Bhai agar tu kisi **real project** ya **interview scenario** ke liye specific example chah raha hai, toh bol — main usi context mein tailor kar deta hoon 💪

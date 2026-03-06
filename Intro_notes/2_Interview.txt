@@ -1,0 +1,387 @@
+2_Interview
+Here’s a **detailed explanation** of each question listed in **Round - 1** from the image:
+
+---
+
+### **1. Implement a function to check if a given string is a palindrome.**
+
+🔹 **What is a palindrome?**  
+A string is a palindrome if it reads the same forward and backward (e.g., "madam", "level").
+
+🔹 **How to check:**  
+- Reverse the string and compare it with the original.
+- Or use two pointers: one from the start and one from the end, and compare characters.
+
+🔸 **Example in Java:**
+```java
+public static boolean isPalindrome(String str) {
+    int left = 0, right = str.length() - 1;
+    while (left < right) {
+        if (str.charAt(left) != str.charAt(right)) return false;
+        left++;
+        right--;
+    }
+    return true;
+}
+```
+
+---
+
+### **2. Write a program to find the factorial of a number using recursion.**
+
+🔹 **Factorial (n!)** means: `n * (n-1) * (n-2) * ... * 1`
+
+🔹 **Recursive approach:**  
+Function calls itself with a smaller number until it reaches 1.
+
+🔸 **Example:**
+```java
+public static int factorial(int n) {
+    if (n <= 1) return 1;
+    return n * factorial(n - 1);
+}
+```
+
+---
+
+### **3. Given a list of integers, write a function to return the sum of all positive numbers in the list.**
+
+🔹 **Goal:** Add only numbers > 0 in the list/array.
+
+🔸 **Example:**
+```java
+public static int sumOfPositive(int[] arr) {
+    int sum = 0;
+    for (int num : arr) {
+        if (num > 0) sum += num;
+    }
+    return sum;
+}
+```
+
+---
+
+### **4. Implement a function to reverse a linked list.**
+
+🔹 **Problem:** Given a singly linked list, reverse the links.
+
+🔸 **Approach:**
+- Use 3 pointers: `prev`, `current`, `next`
+- Iterate and reverse `current.next` to point to `prev`
+
+🔸 **Java logic:**
+```java
+ListNode reverseList(ListNode head) {
+    ListNode prev = null, curr = head;
+    while (curr != null) {
+        ListNode next = curr.next;
+        curr.next = prev;
+        prev = curr;
+        curr = next;
+    }
+    return prev;
+}
+```
+
+---
+
+### **5. Given a sorted array, write a function to search for a target value using binary search.**
+
+🔹 **Binary Search:**
+- Applicable only on sorted arrays.
+- Check middle element → if match, return.
+- If target < mid → search left half, else → right half.
+
+🔸 **Java Example:**
+```java
+public static int binarySearch(int[] arr, int target) {
+    int left = 0, right = arr.length - 1;
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+        if (arr[mid] == target) return mid;
+        else if (arr[mid] < target) left = mid + 1;
+        else right = mid - 1;
+    }
+    return -1; // not found
+}
+```
+
+---
+
+### **6. Write code to validate if a given string is a valid email address.**
+
+🔹 **Valid Email Structure:**
+- One `@` symbol
+- At least one `.` after `@`
+- Characters before and after `@` and after last `.`
+
+🔸 **Simple regex:**
+```java
+public static boolean isValidEmail(String email) {
+    return email.matches("^[\\w.-]+@[\\w.-]+\\.\\w{2,}$");
+}
+```
+
+---
+
+### **7. Given a binary tree, write a function to perform a depth-first search traversal.**
+
+🔹 **DFS Traversal Types:**
+- Preorder: Root → Left → Right
+- Inorder: Left → Root → Right
+- Postorder: Left → Right → Root
+
+🔸 **Recursive DFS (Inorder Example):**
+```java
+void inorder(TreeNode root) {
+    if (root == null) return;
+    inorder(root.left);
+    System.out.print(root.val + " ");
+    inorder(root.right);
+}
+```
+
+Here’s a detailed explanation of each question from **Round-2** in the image:
+
+---
+
+### **1. Explain the difference between unit testing, integration testing, and end-to-end testing. Provide examples.**
+
+- **Unit Testing**: Tests individual components (functions/methods).
+  - 📌 *Example*: Testing a login method's password validation logic.
+- **Integration Testing**: Tests interaction between components.
+  - 📌 *Example*: Testing interaction between login module and database.
+- **End-to-End (E2E) Testing**: Tests the complete flow from start to end.
+  - 📌 *Example*: User logs in → views dashboard → downloads report.
+
+---
+
+### **2. How would you test a RESTful API?**
+
+- Use tools like **Postman**, **REST Assured**, or **Swagger**.
+- Test:
+  - HTTP methods (GET, POST, PUT, DELETE)
+  - Status codes (200, 201, 404, 500, etc.)
+  - Request & response body
+  - Authentication (JWT, OAuth)
+  - Response time and schema validation
+
+---
+
+### **3. What is the purpose of mocking in unit testing, and how would you implement it?**
+
+- **Mocking**: Replace real objects with fake ones to isolate unit tests.
+- Used when external dependencies (DB, APIs) are unavailable or heavy.
+- Tools: Mockito (Java), unittest.mock (Python), Jest (JavaScript)
+- 📌 *Example*: Mock database calls in a service class while testing business logic.
+
+---
+
+### **4. Describe the testing pyramid and its significance.**
+
+The **Testing Pyramid** helps structure tests at three levels:
+```
+    [UI/E2E Tests]    <- Few, costly, slow
+    [Service Tests]   <- More, faster
+    [Unit Tests]      <- Many, fast, cheap
+```
+- Ensures test coverage with balanced effort.
+- Emphasizes writing more **unit tests** and fewer **UI tests**.
+
+---
+
+### **5. How would you handle testing for a system that involves multiple microservices?**
+
+- Use **contract testing** to ensure interfaces between services.
+- Use **mock servers** for unavailable services.
+- Automate tests for each service and for full integration.
+- Monitor logs, use distributed tracing (Jaeger/Zipkin).
+
+---
+
+### **6. Explain the concept of test automation and its benefits. Tools used?**
+
+- **Test Automation**: Automating repetitive test cases using tools/scripts.
+- **Benefits**:
+  - Faster execution
+  - Reusability
+  - Better coverage
+  - Early bug detection
+- Tools:
+  - Selenium (Web)
+  - Appium (Mobile)
+  - REST Assured / Postman (API)
+  - TestNG / JUnit (Frameworks)
+
+---
+
+### **7. How do you ensure test coverage in your test suites?**
+
+- Use **code coverage tools** (JaCoCo, Cobertura, SonarQube).
+- Write tests for all branches, conditions, exceptions.
+- Regularly review test coverage reports and improve gaps.
+
+---
+
+### **8. Describe your experience with continuous integration and deployment (CI/CD).**
+
+- **CI**: Automatically build/test on every code commit (Jenkins, GitHub Actions).
+- **CD**: Automatically deploy to staging/production after tests pass.
+- Benefits:
+  - Faster delivery
+  - Less human error
+  - Continuous feedback
+
+---
+
+### **9. What is your approach to debugging test failures in an automated testing framework?**
+
+- Check:
+  - Logs (console/HTML reports)
+  - Screenshots or video recordings
+  - Exception stack traces
+- Reproduce manually if needed
+- Isolate flaky tests or environment issues
+
+---
+
+### **10. How do you handle flaky tests in your test suites?**
+
+- Flaky Test = sometimes pass, sometimes fail (non-deterministic)
+- Identify root cause (timing, async, test data)
+- Use:
+  - Waits (explicit)
+  - Retry logic (RetryAnalyzer in TestNG)
+  - Stable test data
+  - Parallel execution check
+
+---
+
+### **11. Discuss your approach to handling test data management and test environment setup.**
+
+- Use:
+  - SQL scripts for data setup/cleanup
+  - Mock data tools (Mockaroo)
+  - Environment configuration files (dev, QA, prod)
+  - Containers (Docker) for isolated environments
+
+---
+
+### **12. If you were to design an automation framework from scratch, what are the key components you would include?**
+
+✅ Framework essentials:
+- **DriverManager / Base class**
+- **Page Object Model (POM)**
+- **TestNG / JUnit integration**
+- **Logging (Log4j)**
+- **Reports (Extent, Allure)**
+- **Data-Driven Testing (Excel, JSON, CSV)**
+- **Retry logic**
+- **CI/CD compatibility**
+- **Cross-browser support (Selenium Grid, Docker)**
+
+---
+
+Here’s a detailed explanation of each question from **Round-3** in the image. These are **behavioral questions** meant to assess your soft skills, problem-solving, teamwork, and adaptability as a QA engineer:
+
+---
+
+### **1. Describe a challenging testing scenario you encountered in your previous role and how you approached it.**
+
+✅ Talk about:
+- A situation where requirements were unclear or systems were unstable
+- Example: “We had to test a third-party integration with limited documentation.”
+- How you approached it:
+  - Collaborated with devs
+  - Used exploratory testing
+  - Wrote automation after stabilizing
+
+**Tips**: Focus on your problem-solving, communication, and learning mindset.
+
+---
+
+### **2. How do you prioritize testing tasks when faced with tight deadlines?**
+
+✅ Strategy:
+- Understand critical user flows
+- Identify high-risk areas
+- Use the **Risk-Based Testing** approach
+- Focus on smoke & sanity tests first
+- Automate repetitive low-priority cases (if possible)
+
+**Tips**: Show structured thinking, ability to deliver under pressure.
+
+---
+
+### **3. Tell me about a time when you had a disagreement with a team member. How did you handle it?**
+
+✅ Example:
+- Disagreed on whether a bug was a blocker
+- You:
+  - Listened to their view
+  - Brought evidence (logs, steps, data)
+  - Escalated to team lead with facts
+  - Reached a mutual agreement
+
+**Tips**: Demonstrate calmness, teamwork, and professionalism.
+
+---
+
+### **4. Give an example of a time when you had to adapt to a change in project requirements.**
+
+✅ Example:
+- Requirement changed late in the sprint (e.g., UI flow changed)
+- You:
+  - Revised test cases
+  - Updated automation scripts
+  - Revalidated impact
+  - Communicated changes to team
+
+**Tips**: Show flexibility, speed, and ownership.
+
+---
+
+### **5. Describe a situation where you had to work under pressure to meet a deadline. How did you manage your time and tasks?**
+
+✅ Example:
+- Release planned, but bugs delayed testing
+- You:
+  - Divided tests among team
+  - Prioritized regression
+  - Automated smoke tests overnight
+  - Provided regular updates
+
+**Tips**: Emphasize time management, teamwork, and decision-making.
+
+---
+
+### **6. Give an example of a situation where your automated tests found a critical bug before it reached production. How did you handle it?**
+
+✅ Example:
+- Found a payment gateway failure in automation run
+- You:
+  - Analyzed logs
+  - Reported immediately with screenshot and steps
+  - Helped reproduce for the developer
+  - Retested the fix
+
+**Tips**: Show the value of automation and how it prevents costly issues.
+
+---
+
+### **7. Describe a project where you had to collaborate closely with developers to ensure comprehensive test coverage.**
+
+✅ Example:
+- New feature development (e.g., Offer Creation)
+- You:
+  - Attended refinement meetings
+  - Understood logic, added edge cases
+  - Suggested test hooks for automation
+  - Paired with devs during code reviews
+
+**Tips**: Show collaboration, initiative, and technical engagement.
+
+---
+
+
+

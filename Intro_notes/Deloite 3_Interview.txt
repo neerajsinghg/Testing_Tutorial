@@ -1,0 +1,347 @@
+Deloite 3_Interview
+
+This image contains a list of **Round-1 QA + Selenium + Java + SQL** interview questions, likely for a QA Automation or SDET role. Below is a **detailed explanation** of each:
+
+---
+
+### **1. Explain about yourself and your roles and responsibilities.**
+✅ Prepare a 1–2 min summary:
+- Your experience (years, companies)
+- Tools used (Selenium, TestNG, Appium, Jenkins, etc.)
+- Type of testing (manual, automation, API)
+- Responsibilities like writing test cases, developing automation scripts, defect reporting, etc.
+
+---
+
+### **2. Write Java code to reverse a string while preserving the whitespace.**
+```java
+public class ReversePreserveWhitespace {
+    public static void main(String[] args) {
+        String str = "ab c d";
+        char[] input = str.toCharArray();
+        char[] result = new char[input.length];
+        int j = input.length - 1;
+
+        for (int i = 0; i < input.length; i++) {
+            if (input[i] == ' ') {
+                result[i] = ' ';
+            }
+        }
+
+        for (int i = 0; i < input.length; i++) {
+            if (input[i] != ' ') {
+                while (result[j] == ' ') {
+                    j--;
+                }
+                result[j--] = input[i];
+            }
+        }
+
+        System.out.println(new String(result));
+    }
+}
+```
+
+---
+
+### **3. Given an SQL table, find the second-highest salary.**
+```sql
+SELECT MAX(salary) 
+FROM employee 
+WHERE salary < (SELECT MAX(salary) FROM employee);
+```
+
+---
+
+### **4. Explain the concept of joins and list types.**
+- **Joins** combine rows from two or more tables based on a related column.
+  - INNER JOIN
+  - LEFT JOIN
+  - RIGHT JOIN
+  - FULL JOIN
+  - SELF JOIN
+  - CROSS JOIN
+
+---
+
+### **5. What is LinkedHashMap?**
+- A `LinkedHashMap` is a hashmap that maintains insertion order.
+- Use when you need fast lookups **and** predictable iteration order.
+
+---
+
+### **6. Explain black-box and white-box testing.**
+- **Black-box**: Test without looking at internal code (functional testing).
+- **White-box**: Test with knowledge of the internal logic (unit testing, path testing).
+
+---
+
+### **7. Difference between an exception and an error.**
+- **Exception**: Recoverable (e.g., FileNotFoundException).
+- **Error**: Unrecoverable (e.g., OutOfMemoryError).
+
+---
+
+### **8. Difference between `findElement()` and `findElements()`.**
+- `findElement()` returns a single WebElement, throws exception if not found.
+- `findElements()` returns a list of WebElements, returns empty list if none found.
+
+---
+
+### **9. Difference between implicit and explicit wait.**
+- **Implicit**: Set once globally, applies to all elements.
+- **Explicit**: Applied conditionally on specific elements (e.g., `WebDriverWait`).
+
+---
+
+### **10. Selenium code to automate calendar WebElement.**
+This depends on the calendar, but basic idea:
+```java
+driver.findElement(By.id("calendar")).click();
+driver.findElement(By.xpath("//td[text()='15']")).click();
+```
+
+---
+
+### **11. Fetch text from a textbox:**
+```java
+String text = driver.findElement(By.id("textbox")).getAttribute("value");
+```
+
+---
+
+### **12. Enter text in an alert using Selenium:**
+```java
+Alert alert = driver.switchTo().alert();
+alert.sendKeys("text here");
+alert.accept();
+```
+
+---
+
+### **13. Checked vs Unchecked Exceptions:**
+- **Checked**: Compile-time (e.g., IOException)
+- **Unchecked**: Runtime (e.g., NullPointerException)
+
+---
+
+### **14. XPath selects two elements – does `findElement` throw exception?**
+Yes, `findElement` returns the **first match**. It only throws `NoSuchElementException` if **none** found.
+
+---
+
+### **15. Smoke vs Sanity testing:**
+- **Smoke**: Basic test to check app is stable.
+- **Sanity**: After bug fix or small change, verify specific functionality.
+
+---
+
+### **16. Relative locators in Selenium (from Selenium 4):**
+```java
+WebElement ele = driver.findElement(RelativeLocator.with(By.tagName("input")).above(By.id("password")));
+```
+
+---
+
+### **17. Explain challenges you faced in your project.**
+✅ Examples:
+- Dynamic elements in UI
+- Flaky test cases
+- Environment issues
+- Tight deadlines
+- Sync issues (handled via waits)
+
+---
+
+### **18. How would you pick test cases for regression testing?**
+- Based on high-risk and frequently used functionalities
+- Areas with past defects
+- Integration points
+- Business-critical features
+
+---
+
+### **19. Do you know what CI/CD pipeline is?**
+- **CI/CD** = Continuous Integration/Continuous Deployment
+- Used to automate build, test, and deployment processes
+- Tools: Jenkins, GitHub Actions, CircleCI
+- Integrates automation tests in the pipeline
+
+---
+
+Here’s a **detailed explanation** for each question in **Round-2** from your uploaded image, typically aimed at QA Automation/Test Engineers:
+
+---
+
+### **1. Tell me something about yourself?**
+✅ Brief introduction covering:
+- Experience (years, domain)
+- Tools (Selenium, Appium, TestNG, Jenkins, etc.)
+- Manual + Automation exposure
+- Strengths & recent project
+
+---
+
+### **2. Explain your framework in detail.**
+✅ Mention:
+- Type: Hybrid (Data-driven + POM + Keyword)
+- Tools: Java, Selenium, TestNG, Maven, Allure/ExtentReports
+- Structure: `BaseClass`, `DriverFactory`, `Page Classes`, `Utils`, `TestData`, `Logs`, `Reports`, etc.
+- CI/CD Integration: Jenkins, Git
+
+---
+
+### **3. If 100 pages in your framework, do you create 100 Page Objects?**
+- Ideally **yes** – 1 Page Object per page for better maintainability.
+- But common components (like headers, footers) can be abstracted/shared.
+
+---
+
+### **4. What is “Element click intercepted” exception, and how do you fix it?**
+Occurs when:
+- Element is **not clickable** due to overlay/loader.
+**Fixes:**
+- Use **JavaScript click**
+- Use **Explicit waits** (until element is clickable)
+- Scroll to the element
+
+---
+
+### **5. How do you take screenshots for failed test cases only in TestNG?**
+✅ Use `ITestListener` interface in TestNG:
+```java
+public void onTestFailure(ITestResult result) {
+    // Take screenshot code
+}
+```
+
+---
+
+### **6. Connect your test cases with Azure?**
+✅ Using Azure DevOps:
+- Use Azure Test Plans
+- Integrate results with **REST API** or **ADO plugins** (like `vsts` for Jenkins)
+- Link automation tests with work items
+
+---
+
+### **7. What is the GET fetch command?**
+Likely refers to:
+- In **Postman/REST**, `GET` is used to retrieve data.
+- In **JavaScript**, `fetch()` is used to make HTTP requests:
+```js
+fetch('https://api.example.com/data')
+```
+
+---
+
+### **8. How to delete a variable after test execution in Postman?**
+✅ In **Tests tab**, use:
+```javascript
+pm.environment.unset("variable_name");
+```
+
+---
+
+### **9. Why do you prefer using Cucumber BDD?**
+✅ Reasons:
+- Improves collaboration with non-technical stakeholders
+- Gherkin syntax is easy to understand
+- Maintains traceability from requirement → test
+
+---
+
+### **10. Dynamic vs Static Binding**
+- **Static Binding**: At compile-time (method overloading).
+- **Dynamic Binding**: At runtime (method overriding via inheritance/polymorphism).
+
+---
+
+### **11. Method Overloading vs Overriding**
+- **Overloading**: Same method name, different parameters (compile-time).
+- **Overriding**: Subclass modifies a method of superclass (runtime).
+
+---
+
+### **12. Comparable vs Comparator**
+- **Comparable**: Natural ordering (implements `compareTo()`)
+- **Comparator**: Custom ordering (`compare()`, used externally)
+
+---
+
+### **13. How would you conclude login page is user-friendly?**
+✅ Criteria:
+- Simple layout
+- Proper validation messages
+- Fast response
+- Accessibility features
+- Responsive design
+
+---
+
+### **14. 5 points for a good test case:**
+1. Clear and concise
+2. Covers edge cases
+3. Has preconditions and expected results
+4. Reusable
+5. Traceable to requirements
+
+---
+
+### **15. Developer not fixing a bug – how would you approach?**
+✅ Steps:
+- Reproduce and document the bug
+- Assign correct severity/priority
+- Politely communicate and escalate via test lead if needed
+- Use defect tracking tools to justify impact
+
+---
+
+### **16. What are threads in JMeter?**
+- Threads = Virtual Users (VUs)
+- Each thread simulates one user performing requests
+- Defined in **Thread Group**
+
+---
+
+### **17. Can you automate CAPTCHAs?**
+- Generally **not recommended**
+- Use mock CAPTCHA or disable in test environment
+- Some solutions (OCR, 3rd party APIs) but violate terms of service
+
+---
+
+### **18. When would you require fluent waits?**
+✅ When:
+- Web elements load dynamically
+- Polling required at regular intervals
+```java
+Wait<WebDriver> wait = new FluentWait<>(driver)
+  .withTimeout(Duration.ofSeconds(30))
+  .pollingEvery(Duration.ofSeconds(5))
+  .ignoring(NoSuchElementException.class);
+```
+
+---
+
+### **19. In Selenium, how would you open a new tab?**
+```java
+driver.switchTo().newWindow(WindowType.TAB);
+```
+Or use JavaScript:
+```java
+((JavascriptExecutor)driver).executeScript("window.open()");
+```
+
+---
+
+### **20. In Jenkins, what is the purpose of a CRON expression?**
+✅ Used in Jenkins to schedule builds.
+Example:
+```bash
+H 12 * * 1-5
+```
+Runs job every weekday at noon.
+
+---
+

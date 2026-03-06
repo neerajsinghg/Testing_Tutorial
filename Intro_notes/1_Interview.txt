@@ -1,0 +1,40 @@
+1_Interview
+
+introduce your self (domain, Associate lead)
+how to call the constructor;
+overriding concept 
+method overloading and constructor overloading;
+in the overriding concept super keyword is used or not
+difference b\t final and finally;
+finalise method
+use of static keyword(we can not override but we can inharite)
+Inheritences (hybrid inheritece/ multiple inheritance)
+set and list (and its method)(index is unsupported in set)
+
+search context is a root interface in selenium.
+if u have a 100 test cases, which can automate first; 
+(1st priority - main repetitive task - to reduce time and effort)
+2nd priority  - testcase have need data driven testing or data driven testcases
+3. regression testcases - testcases to retest in every cycle of release
+4. automate all
+
+dropdown without select tab;
+how to capture failed sceen shot
+why typecast need in takescreenshot(because webdriver and takescreenshot both are different interface;)
+Actions class; (difference between build and perform())
+Actions act = new Actions(Driver);
+act.movetoelement(element).build.perform();
+difference between findelement and findelements();
+way to xpath accsess
+to view total links and brocken links
+syntax of properties file
+pom;
+main advantages of testNG
+TestNG listner
+desire capability in  selenium
+headless mod testing
+challenges faced in automation testing (stel element exception, popup, in insurance domain, )
+reports use in framework(result in html and png)
+bugtracker
+
+

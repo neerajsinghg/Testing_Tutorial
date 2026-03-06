@@ -16,10 +16,8 @@ public class HappyNumber{
 		}
 		else{
 			System.out.println("this is not a happy num");
-		}
-		
+		}	
 	}
-
 	public static int getSum(int num){
 		int sum=0;
 		while(num>0){

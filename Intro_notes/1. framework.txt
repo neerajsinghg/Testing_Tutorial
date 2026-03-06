@@ -1,0 +1,52 @@
+1. framework
+2. == and .equals()
+3. abstract and interfaces
+4. constructor
+5. default constructor
+6. polymorphism overloading and overriding
+
+
+1. how to handle dynamic web element
+2. how to handle dropdown 
+3. xpath parant to child and child to parant
+4. how to Scroll webpage
+
+
+
+
+1. what are the main feature of java?
+simple, Object-Oriented, Platform independent, seucure, Robust, high performance, Distributed, Multithreded
+2. what is te diffence b/w jdk,jre,jvm
+JVM runs java bytecode
+jre provides jvm+libraries to run applications
+jdk provides JRE + tools to develop java programs.
+3. what is the meaning of platform Independent in java?
+4. what is oops
+11. what is the difference between ==, .equal() in java
+5. what is constructor in java
+6. can you overload constructors in java
+7. difference between overloading and method overriding
+8. what is the final keyword in java?
+9. what is a static keyword in java?
+10. what is the difference between an abstract class and an interface?
+12. what is encapsulation in java
+13. what is inheritance in java
+14. what is polymorphism in java
+15 what is the difference between ArrayList and LinkedList
+16. what is the difference between throw and throws in java
+17 what is exception handling in java
+18. what is multithreading in java
+19. what are access modifiers in java
+20. what is the difference between String, StringBuilder, and String Buffer
+21. what is final finally and finalise
+22. this and super keyword
+
+ 
+
+
+ 
+
+
+
+
+

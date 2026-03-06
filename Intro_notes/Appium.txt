@@ -1,0 +1,472 @@
+Appium
+
+Appium exceptions
+
+Exception Name | Description
+NoSuchElementException | Thrown when an element is not found in the DOM.
+ElementNotVisibleException | Element exists but is not visible (can’t be interacted with).
+ElementNotSelectableException | Attempting to select an unselectable element.
+NoSuchContextException | Context like WEBVIEW or NATIVE_APP not found.
+NoSuchWindowException | Tried to switch to a window that doesn’t exist.
+StaleElementReferenceException | Element is no longer present in the DOM.
+TimeoutException | Operation took longer than the defined timeout.
+InvalidElementStateException | Element is in a state that doesn't allow interaction.
+InvalidSelectorException | Invalid XPath or CSS selector.
+SessionNotCreatedException | Thrown when a new session could not be created (bad capabilities or issues with Appium server/device).
+WebDriverException | Generic exception if something goes wrong in WebDriver/Appium.
+InvalidArgumentException | Invalid argument sent to command (like invalid capability).
+NotImplementedException | Command is not supported by the current Appium driver.
+UnhandledAlertException | There is an alert on screen that was not handled.
+MoveTargetOutOfBoundsException | Element is outside the visible bounds of the screen.
+InvalidCoordinatesException | Provided coordinates for gesture actions are invalid.
+
+Appselenium
+
+1.what type of challenges you faced in your previous project 
+Great question — this one comes up **a lot** in interviews! Here's a solid 
+way to structure your answer using **realistic Appium + automation testing challenges**, 
+especially relevant for someone with 5+ years of experience:
+
+---
+
+### ✅ **Common Challenges Faced in Previous Projects (Appium + Automation Testing)**
+
+#### 🔹 1. **Unstable Elements & Dynamic Locators**
+**Challenge:** Elements would change frequently due to dynamic IDs or custom UI frameworks.
+
+**Solution:**  
+- Worked closely with developers to implement stable accessibility IDs.
+- Used robust XPath strategies like `contains()`, `starts-with()`.
+- Implemented retry logic with explicit waits.
+
+---
+
+#### 🔹 2. **Biometric Authentication Automation**
+**Challenge:** Automating fingerprint/Face ID for login scenarios on real devices was tricky.
+
+**Solution:**  
+- Simulated biometric authentication on emulators using ADB and Xcode tools.
+- For real devices, kept those tests manual or used mocked flows where possible.
+
+---
+
+#### 🔹 3. **Handling Network-Dependent Tests**
+**Challenge:** Tests were failing intermittently due to slow/unstable network.
+
+**Solution:**  
+- Used ADB to simulate offline/online conditions and tested retry logic.
+- Mocked network responses using tools like Charles Proxy or WireMock for stability.
+
+---
+
+#### 🔹 4. **Push Notification Testing**
+**Challenge:** Verifying behavior when app receives push notifications 
+while in background or foreground.
+
+**Solution:**  
+- Used FCM test API to send push notifications in staging environment.
+- Automated notification interactions via Android Notification Shade using ADB.
+
+---
+
+#### 🔹 5. **Slow Test Execution**
+**Challenge:** End-to-end Appium tests were taking too long to execute.
+
+**Solution:**  
+- Optimized locators and waits.
+- Disabled animations on emulator/device.
+- Parallelized test execution using TestNG and Appium Grid (or BrowserStack).
+
+---
+
+#### 🔹 6. **App Crashes / Unexpected Popups**
+**Challenge:** Occasionally, app would crash or show update popups, breaking the flow.
+
+**Solution:**  
+- Added exception handling and recovery logic.
+- Automated popup handling with `isDisplayed()` checks and conditional clicks.
+- Added hooks to restart app or session in case of failure.
+
+---
+
+#### 🔹 7. **Framework Adoption by Manual Testers**
+**Challenge:** Team was transitioning from manual to automation, and some members found it hard to use the framework.
+
+**Solution:**  
+- Built the framework using Page Object Model (POM) for readability.
+- Added clear test data/config separation.
+- Created internal documentation and gave training sessions.
+
+---
+
+#### 🔹 8. **Device Compatibility Issues**
+**Challenge:** Same test would work on a phone but fail on a tablet due to layout differences.
+
+**Solution:**  
+- Used conditional locators based on screen size.
+- Maintained separate Page classes where required.
+- Introduced device tags in TestNG groups for easier test selection.
+
+---
+
+Let me know if you want to tailor this answer for a **specific project (e.g., Pumper App)** or for **interview storytelling**!
+
+sdk manager related command
+
+what are the some mobile application testing:- 
+usability testing
+performance testing 
+security testing
+Interruption Testing ( Incoming phone calls or SMS, alarms, push notifications from mobile applications, battery low or full, network connection loss and recovery, and plugged in or out while charging are all examples of interruptions. In the event of an interruption, an application should normally run in the background and return to its prior state.)
+Manual Testing
+Compatibility Testing
+Localization Testing
+functional Testing
+Installation Testing
+Automated Tesing
+
+type of mobile application
+1. Native Application(not need internet/work Offline, made for specific plateform, full access to device(camera, GPS, sensors, etc ex: candycrush, temple run, whatsapp)
+2. web based application (ye browser me chalega install nahi karna padega, google.com, snapdeal.com. yahoo)
+3. Hybrid Apps (Ye apps native + web app ka combination hote hain
+example- Indtagram, Facebook, Twitter)
+
+
+
+Appium framework structure
+
+Sure! Below is a typical Appium framework structure. It follows a modular and organized approach, allowing for maintainability, scalability, and ease of extension.
+
+### **Appium Framework Structure**
+
+```
+AppiumFramework/
+│
+├── src/
+│   ├── main/
+│   │   └── java/
+│   │       ├── base/
+│   │       │   ├── BaseTest.java                 # Base Test Class for common setup and teardown
+│   │       │   ├── DriverFactory.java            # Driver Initialization (Android/iOS)
+│   │       │   ├── AppiumServer.java             # Starts and stops Appium Server
+│   │       │   └── TestListener.java             # TestNG Listener for reporting and logs
+│   │       │
+│   │       ├── pages/
+│   │       │   ├── LoginPage.java                # Login Page Object
+│   │       │   ├── HomePage.java                 # Home Page Object
+│   │       │   └── DashboardPage.java            # Dashboard Page Object
+│   │       │
+│   │       ├── utils/
+│   │       │   ├── ConfigReader.java             # Reads config files (e.g., Appium settings)
+│   │       │   ├── WaitUtils.java                # Custom Waits (Explicit, Implicit)
+│   │       │   ├── ExcelUtil.java                # Utility for reading data from Excel
+│   │       │   ├── Log.java                      # Custom Logging
+│   │       │   ├── ScreenshotUtil.java           # Captures screenshots
+│   │       │   ├── AppiumUtils.java              # Additional utilities for Appium
+│   │       │   └── EmailUtil.java                # Email utility for failure notifications
+│   │       │
+│   │       └── constants/
+│   │           ├── AppConstants.java             # Constants like app paths, configurations
+│   │           └── DriverConfig.java             # Driver configuration constants
+│   │
+│   └── test/
+│       └── java/
+│           └── tests/
+│               ├── LoginTest.java                # Test for login functionality
+│               ├── HomePageTest.java             # Test for HomePage functionality
+│               └── BaseTestHooks.java            # TestNG hooks (before/after each test)
+│
+├── config/
+│   ├── config.properties                         # Appium Config (App path, platform version, etc.)
+│   └── environments/
+│       ├── qa.properties                        # QA specific configuration
+│       └── dev.properties                       # Development specific configuration
+│
+├── testdata/
+│   ├── loginTestData.xlsx                       # Excel file containing test data for login
+│   └── userTestData.json                        # JSON file containing user data for testing
+│
+├── reports/
+│   ├── ExtentReport.html                        # Extent Reports HTML report
+│   └── screenshots/
+│       └── failed_testcase.png                  # Screenshots of failed test cases
+│
+├── logs/
+│   └── test.log                                 # Log file for each test run
+│
+├── drivers/
+│   ├── chromedriver.exe                         # WebDriver binaries (ChromeDriver, GeckoDriver, etc.)
+│   ├── geckodriver.exe
+│   └── appium-server.jar                        # Appium Server JAR
+│
+├── resources/
+│   ├── log4j2.xml                               # Logging configuration
+│   └── appium.json                               # Appium Desired Capabilities configuration
+│
+├── ci/
+│   ├── Jenkinsfile                              # CI/CD pipeline configuration for Jenkins
+│   └── run-tests.sh                             # Shell script to run tests in CI/CD
+│
+├── docker/
+│   └── Dockerfile                               # Dockerfile to containerize Appium tests
+│
+├── testng.xml                                   # TestNG XML configuration for test execution
+├── pom.xml                                      # Maven dependencies and build configuration
+└── README.md                                    # Project Documentation and Setup Instructions
+```
+
+### **Detailed Explanation:**
+
+#### 1. **`src/main/java/`**
+   - **`base/`**:
+     - **`BaseTest.java`**: Contains common setup and teardown logic for all tests, such as driver initialization and quitting the driver after each test.
+     - **`DriverFactory.java`**: Responsible for creating the WebDriver instance (for Android/iOS) based on the desired capabilities (e.g., platform name, version).
+     - **`AppiumServer.java`**: Starts and stops the Appium server.
+     - **`TestListener.java`**: Implements listeners to customize reporting and take actions based on test execution (e.g., capturing screenshots on failure).
+
+   - **`pages/`**:
+     - Page Object Model (POM) for different screens or pages in the mobile app.
+     - **`LoginPage.java`**, **`HomePage.java`**, and **`DashboardPage.java`** represent different pages of the app. These classes contain locators and methods to interact with elements on the screen.
+
+   - **`utils/`**:
+     - **`ConfigReader.java`**: Reads configuration properties from files (e.g., appium, environment configurations).
+     - **`WaitUtils.java`**: Custom utility for waiting (implicitly or explicitly) for elements.
+     - **`ExcelUtil.java`**: For reading and writing data to Excel files (useful for data-driven testing).
+     - **`Log.java`**: Custom logging utility for test execution.
+     - **`ScreenshotUtil.java`**: Captures screenshots in case of failures for further inspection.
+     - **`AppiumUtils.java`**: Contains miscellaneous utilities specific to Appium.
+     - **`EmailUtil.java`**: Sends emails in case of critical test failures (optional).
+
+   - **`constants/`**:
+     - **`AppConstants.java`**: Stores constants like app paths, file locations, etc.
+     - **`DriverConfig.java`**: Stores constants for driver configurations like appium server URL, platform name, etc.
+
+#### 2. **`src/test/java/tests/`**
+   - **Test Classes**:
+     - **`LoginTest.java`**: Test class to test login functionality.
+     - **`HomePageTest.java`**: Test class to test home page functionality.
+     - **`BaseTestHooks.java`**: Contains TestNG hooks for setup and teardown (e.g., `@BeforeTest`, `@AfterTest`).
+
+#### 3. **`config/`**
+   - **`config.properties`**: Configuration file that stores app-specific details like platform version, app location, etc.
+   - **`environments/`**: Contains environment-specific configuration files (e.g., `qa.properties`, `dev.properties`).
+
+#### 4. **`testdata/`**
+   - **Test data files** like **`loginTestData.xlsx`** and **`userTestData.json`** containing the data used for data-driven testing.
+
+#### 5. **`reports/`**
+   - **`ExtentReport.html`**: The test execution report generated using ExtentReports.
+   - **`screenshots/`**: Contains screenshots taken during test execution (especially on failure).
+
+#### 6. **`logs/`**
+   - **`test.log`**: A log file capturing the details of the test run, including the success/failure of tests.
+
+#### 7. **`drivers/`**
+   - Contains necessary WebDriver binaries like **`chromedriver.exe`**, **`geckodriver.exe`**, etc.
+   - **`appium-server.jar`**: The Appium server JAR file used to start the Appium server.
+
+#### 8. **`resources/`**
+   - **`log4j2.xml`**: Log configuration for logging.
+   - **`appium.json`**: Configuration file for setting up desired capabilities for Appium.
+
+#### 9. **`ci/`**
+   - **`Jenkinsfile`**: Configuration for CI/CD in Jenkins.
+   - **`run-tests.sh`**: Shell script to execute tests in a CI/CD pipeline.
+
+#### 10. **`docker/`**
+   - **`Dockerfile`**: Docker container setup to run the Appium tests.
+
+#### 11. **`testng.xml`**:
+   - TestNG configuration file that specifies the tests to be executed and their execution sequence.
+
+#### 12. **`pom.xml`**:
+   - The Maven configuration file that manages dependencies (e.g., Appium, TestNG, ExtentReports, etc.) and builds the project.
+
+#### 13. **`README.md`**:
+   - Documentation providing an overview of the project, setup instructions, and usage.
+
+### **Key Features of This Framework:**
+1. **Modular Structure**: Separating the concerns (drivers, tests, page objects, utilities, etc.) makes the framework maintainable and scalable.
+2. **Data-Driven Testing**: Ability to handle different data sets with Excel or JSON.
+3. **Reporting**: Generates reports with screenshots and logs for better traceability of test results.
+4. **Parallel Execution**: The framework is designed for easy parallel test execution with configurations for cloud providers like BrowserStack or SauceLabs.
+5. **CI/CD Ready**: Includes integration with Jenkins for continuous integration and delivery.
+
+This framework is scalable and can be extended for complex mobile automation testing. Let me know if you need
+
+ further details or adjustments!
+
+
+
+
+scenarios based questions
+Great! Below are detailed answers to each of the advanced Appium interview questions:
+
+---
+
+### ✅ **1. Testing Biometric Authentication in Appium**
+Appium supports simulating biometric authentication on emulators/simulators.
+
+**Android (Emulator):**
+Use ADB command to simulate fingerprint:
+```bash
+adb -s <deviceName> emu finger touch <fingerprintId>
+```
+First, register a fingerprint using:
+```bash
+adb -s <deviceName> emu finger add <fingerprintId>
+```
+
+**iOS (Simulator):**
+```bash
+xcrun simctl biometric enroll <deviceUDID> yes
+xcrun simctl biometric touch <deviceUDID> [match|nonmatch]
+```
+
+> In tests, trigger biometric prompt and use these commands to simulate success/failure.
+
+---
+
+### ✅ **2. Handling Intermittent Test Failures (e.g., Network Issues)**
+- **Use retries:** Implement a RetryAnalyzer in TestNG or custom retry logic.
+- **Add network checks:** Use ADB commands to verify network state.
+- **Use proper waits:** Explicit waits instead of Thread.sleep.
+- **Mock network responses** using tools like WireMock for controlled testing.
+- **Stabilize the environment**: Ensure consistent test network or run in airplane mode when not testing connectivity.
+
+---
+
+### ✅ **3. Testing Push Notifications in Appium**
+- **Simulate push notifications** using:
+  - **ADB for Android:**
+    ```bash
+    adb shell am broadcast -a com.package.push.SIMULATE
+    ```
+  - **Firebase Cloud Messaging (FCM)**: Use test endpoints or mock server.
+- On **iOS**, you can use `xcrun simctl push` (Xcode 11+):
+  ```bash
+  xcrun simctl push <deviceUDID> com.example.app payload.apns
+  ```
+- Verify app behavior post-notification (e.g., banner click, navigation).
+
+---
+
+### ✅ **4. Structuring an Appium Framework for Easy Adoption**
+- Follow **Page Object Model (POM)** for test maintainability.
+- Use **TestNG or JUnit** for test management.
+- Centralize **DriverFactory**, **ConfigReader**, and **BaseTest**.
+- Integrate **Allure or ExtentReports** for reporting.
+- Use **data-driven testing** (Excel, JSON, or CSV).
+- Provide documentation and training to the team.
+- Implement **utility classes** (WaitUtils, MobileGestures, etc.)
+
+---
+
+### ✅ **5. Locating Custom UI Elements**
+- Use **Appium Inspector** or **uiautomatorviewer** to inspect custom elements.
+- If accessibility IDs aren’t exposed:
+  - Use `xpath` or `className`.
+  - Ask developers to add **accessibility labels** or **resource IDs**.
+  - Leverage `driver.getPageSource()` to understand structure.
+- For non-interactable views, use **TouchActions** or `mobile: tap` commands.
+
+---
+
+### ✅ **6. Improving Slow Appium Test Execution**
+- Reduce `implicitWait` where possible.
+- Use **explicit waits** and avoid unnecessary waits.
+- Reuse driver sessions if applicable.
+- Disable animations on devices:
+  ```bash
+  adb shell settings put global window_animation_scale 0
+  adb shell settings put global transition_animation_scale 0
+  adb shell settings put global animator_duration_scale 0
+  ```
+- Run tests on **emulators with snapshot** enabled.
+- Use **parallel execution** with TestNG or tools like **Appium Grid** or **Docker**.
+
+---
+
+### ✅ **7. Testing Offline Functionality**
+- **Toggle network state** using ADB:
+  ```bash
+  adb shell svc wifi disable
+  adb shell svc data disable
+  ```
+- For iOS, use:
+  ```bash
+  xcrun simctl status_bar <device> override --wifiMode "searching"
+  ```
+- Verify app behavior (caching, sync retry, etc.) when offline and then reconnect.
+- Automate **airplane mode toggle** or use **network condition simulators** (like BrowserStack).
+
+---
+
+### ✅ **8. Handling Location Services in Appium**
+- Use ADB to set mock location:
+  ```bash
+  adb shell appops set <package-name> android:mock_location allow
+  adb shell am startservice -a com.google.android.gms.location.FusedLocationProviderApi
+  ```
+- Set location:
+  ```bash
+  adb emu geo fix <longitude> <latitude>
+  ```
+- On iOS Simulator:
+  ```bash
+  xcrun simctl location <device> set <lat> <long>
+  ```
+- Automate scenarios like location permission handling and geofencing.
+
+---
+
+### ✅ **9. Managing Device-Specific Tests (Phone vs Tablet)**
+- Use **deviceName**, **screenSize**, or **platformVersion** in capabilities.
+- Write responsive locators using `contains`, `starts-with`, etc.
+- Use `driver.manage().window().getSize()` to fetch screen size and take conditional actions.
+- Use TestNG `@Parameters` or `@DataProvider` for device-specific configurations.
+- Maintain device-specific Page classes if UI varies significantly.
+
+---
+
+### ✅ **10. Testing Third-Party Payment Gateway Integration**
+- **Do not use real payments.** Use **sandbox/test environments** provided by payment gateways (e.g., Stripe, Razorpay, PayPal).
+- Mock responses if possible.
+- Use test cards with predefined behaviors (e.g., success, failure).
+- Validate post-payment flow (UI changes, API confirmation, database update).
+- If WebView is used, handle it using:
+  ```java
+  driver.context("WEBVIEW_com.example.app");
+  ```
+
+---
+
+### ✅ **11. Simulating Incoming Calls/SMS**
+- Use **emulator-only** commands:
+  ```bash
+  adb emu gsm call <number>
+  adb emu sms send <number> "Test Message"
+  ```
+- Validate how app responds:
+  - While app is open
+  - In background
+- Ensure app state recovery after interruption.
+
+---
+
+### ✅ **12. Testing Deep Linking with Appium**
+- Launch app with specific **URI schemes or intent filters**:
+  ```bash
+  adb shell am start -W -a android.intent.action.VIEW -d "<deeplink-url>" com.example.app
+  ```
+- iOS (Simulator):
+  ```bash
+  xcrun simctl openurl <device> "<deeplink-url>"
+  ```
+- Validate app navigation and correct screen loading.
+- Ensure links work from browser or SMS scenarios too.
+
+---
+
+Let me know if you’d like these answers in a **PDF format** or need a **mock interview-style Q&A**!
+
