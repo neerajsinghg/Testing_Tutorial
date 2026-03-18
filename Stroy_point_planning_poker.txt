@@ -1,0 +1,267 @@
+### 1️⃣ Story Points kya hote hain?
+
+**Story Points** Agile / Scrum me use hote hain **user story ka effort estimate karne ke liye**.
+Ye **time (hours/days)** nahi batate, balki **relative effort** batate hain.
+
+Story points generally 3 cheeze measure karte hain:
+
+1. **Effort** – kitna kaam hai
+2. **Complexity** – kaam kitna difficult hai
+3. **Uncertainty/Risk** – kitni unknown cheeze ho sakti hain
+
+Example:
+
+| Task                      | Story Points |
+| ------------------------- | ------------ |
+| Small UI fix              | 1            |
+| API validation add karna  | 3            |
+| Naya module develop karna | 8            |
+| Third-party integration   | 13           |
+
+👉 Jitna **bada story point**, utna **zyada effort/complexity**.
+
+---
+
+### 2️⃣ Fibonacci Number hi kyu use karte hain?
+
+Most Agile teams **Fibonacci sequence** use karti hain:
+
+```
+1, 2, 3, 5, 8, 13, 21
+```
+
+#### Reason 1: Jaise task bada hota hai, uncertainty badh jati hai
+
+Chhote tasks me estimation easy hota hai.
+
+Example:
+
+* **1 vs 2** → difference clear hai
+* **13 vs 14** → exact guess karna mushkil
+
+Isliye Fibonacci numbers **gap badha dete hain**, jo uncertainty ko represent karta hai.
+
+---
+
+#### Reason 2: Over-precision avoid karna
+
+Agile me exact estimation avoid karte hain jaise:
+
+```
+7 hours
+11 hours
+14 hours
+```
+
+Instead team sochti hai:
+
+👉 Ye task **5 jaisa hai ya 8 jaisa?**
+
+Isse estimation **simple aur fast** ho jata hai.
+
+---
+
+#### Reason 3: Team discussion improve hota hai
+
+Planning Poker me team vote karti hai.
+
+Example:
+
+* Developer bola → **3**
+* Tester bola → **8**
+
+Tab discussion hota hai:
+
+> Tester ko shayad lag raha hai automation me extra complexity hai.
+
+Isse better estimation milta hai.
+
+---
+
+#### Reason 4: Bade stories identify ho jati hain
+
+Agar story **13 ya 21** aa jaye to usually iska matlab hota hai:
+
+👉 **Story bahut badi hai, ise chhote tasks me break karna chahiye.**
+
+---
+
+### 3️⃣ Automation Testing Example
+
+| Automation Task                  | Story Points |
+| -------------------------------- | ------------ |
+| Login test case add karna        | 2            |
+| Login page automation            | 3            |
+| Complete checkout automation     | 8            |
+| CI pipeline setup for automation | 13           |
+
+---
+
+### 4️⃣ Important Point
+
+**Story points time nahi hote.**
+
+Example:
+
+* Team velocity = **30 story points per sprint**
+
+Matlab team ek sprint me **approx 30 points ka kaam complete kar sakti hai**, chahe hours kuch bhi ho.
+
+---
+
+### 5️⃣ Interview me short answer kaise bolna hai
+
+Agar interview me pucha jaye to aap bol sakte ho:
+
+> Story points Agile me use hote hain user stories ka relative effort estimate karne ke liye. Ye effort, complexity aur uncertainty ko represent karte hain. Fibonacci numbers isliye use kiye jate hain kyunki jaise task bada hota hai, uncertainty bhi badh jati hai, aur Fibonacci sequence me numbers ka gap badhta hai jo estimation ko easier aur realistic banata hai.
+
+---
+
+✅ Agar aap chaho to main **Planning Poker (story points decide kaise hote hain)** bhi **simple hinglish me** explain kar sakta hoon — ye **QA / Automation interviews me bahut common question hota hai**.
+
+
+
+
+### Planning Poker kya hota hai? (Hinglish)
+
+**Planning Poker** ek **Agile estimation technique** hai jisme team milkar **story points decide karti hai**.
+Iska use mainly **Scrum sprint planning** me hota hai.
+
+Is process me **Developers, Testers, QA, Product Owner** sab participate karte hain.
+
+---
+
+## 1️⃣ Planning Poker ka Process
+
+### Step 1: Product Owner Story Explain karta hai
+
+Product Owner **user story explain karta hai**.
+
+Example:
+
+> "User should be able to login using email and password."
+
+Team questions puch sakti hai:
+
+* Validation kya hoga?
+* API integration hai?
+* Automation scope kya hai?
+
+---
+
+### Step 2: Sab Members Secret Estimate Karte hain
+
+Har team member ke paas **cards hote hain** jisme Fibonacci numbers likhe hote hain:
+
+```
+1, 2, 3, 5, 8, 13, 21
+```
+
+Sab log **apna estimate secretly choose karte hain**.
+
+Example:
+
+| Role        | Story Point |
+| ----------- | ----------- |
+| Developer   | 3           |
+| Tester      | 5           |
+| Another Dev | 3           |
+
+---
+
+### Step 3: Sab Ek Saath Card Reveal Karte hain
+
+Sab members **ek saath apna card show karte hain**.
+
+Example result:
+
+```
+3   5   3   5
+```
+
+---
+
+### Step 4: Agar Difference Ho To Discussion Hoti Hai
+
+Agar kisi ne **high estimate diya** aur kisi ne **low**, to discussion hota hai.
+
+Example:
+
+Developer → **3**
+Tester → **5**
+
+Tester bol sakta hai:
+
+> "Automation me API validation aur negative scenarios bhi add karne padenge."
+
+Phir team discuss karke **dobara vote karti hai**.
+
+---
+
+### Step 5: Final Story Point Decide Hota Hai
+
+Discussion ke baad team ek **final story point decide karti hai**.
+
+Example:
+
+```
+Final Estimate = 5
+```
+
+---
+
+## 2️⃣ Example (Automation Testing Story)
+
+Story:
+
+> Automate login page (UI + API validation)
+
+Estimation:
+
+| Member              | Points |
+| ------------------- | ------ |
+| Developer           | 3      |
+| Tester              | 5      |
+| Automation Engineer | 5      |
+
+Discussion ke baad final estimate:
+
+```
+5 story points
+```
+
+---
+
+## 3️⃣ Planning Poker ke Benefits
+
+### ✔ Better estimation
+
+Sabka input aata hai (Dev + QA + Automation).
+
+### ✔ Knowledge sharing
+
+Team ko feature ki **complexity aur risks** samajh aate hain.
+
+### ✔ Avoid bias
+
+Sab log **secret vote** karte hain, isliye kisi ek person ka influence nahi hota.
+
+### ✔ Team collaboration
+
+Sab log discussion me participate karte hain.
+
+---
+
+## 4️⃣ Short Interview Answer
+
+Agar interview me pucha jaye:
+
+> **What is Planning Poker?**
+
+Aap bol sakte ho:
+
+> Planning Poker is an Agile estimation technique used in Scrum where team members estimate story points using Fibonacci cards. Each member selects a card secretly, and all cards are revealed simultaneously. If there is a difference in estimates, the team discusses the reasons and votes again until a consensus is reached.
+
+---
+
+✅ Agar aap chaho to main **Story Points + Velocity + Sprint Planning ko ek simple real project example (Automation Testing project)** se explain kar sakta hoon. Ye **QA / Automation interviews me bahut powerful answer ban jata hai.**

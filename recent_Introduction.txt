@@ -1,0 +1,73 @@
+I am a Quality Assurance Engineer with around 6+ years of experience in both Manual and 
+Automation Testing, specializing in building reliable and scalable test automation solutions.
+ 
+My primary expertise lies in Java with Selenium, where I have designed and 
+implemented automation frameworks for web applications to improve test coverage, 
+reduce execution time, and ensure high product quality.
+
+Along with Selenium, I also have hands-on experience with Python-based automation 
+using pytest Framework for developing hybrid, data-driven and reusable test cases.
+ 
+I am familiar with modern automation tools and technologies such as Playwright with JavaScript 
+and TypeScript, which I have used for faster and more reliable UI testing.
+
+In addition to automation development, I have strong experience working with version control 
+systems like Git and implementing automation in CI/CD pipelines using Jenkins and Git-based workflows.
+ 
+I understand the importance of integrating automated tests into the deployment lifecycle 
+to enable continuous testing and faster delivery.
+
+I also have working knowledge of AWS cloud services, and I have been involved in activities related to 
+deployment, release validation, and delivery pipelines, ensuring smooth integration between 
+development, testing, and production environments.
+
+My experience includes API testing, test case design, debugging failures, root cause analysis, and 
+collaborating closely with developers and DevOps teams to maintain quality across the software lifecycle.
+Overall, I focus on building maintainable automation frameworks, improving testing efficiency, and 
+supporting fast and reliable software delivery in agile environments.
+
+
+
+Answer: What is your Automation Framework?
+In my current project, I have developed a Hybrid Test Automation Framework mainly using 
+Java with Selenium for web automation.
+The framework is designed to be scalable, maintainable, and reusable so that 
+test cases can be easily expanded as the application grows.
+
+Framework Design
+The framework follows the Page Object Model (POM) design pattern, where all the web element locators and page actions are maintained in separate page classes, while the test logic is written in test classes. This separation improves maintainability and readability.
+
+Framework Components
+The framework includes several key components:
+1. Page Layer
+Contains page classes representing each web page.
+Stores element locators and reusable methods.
+
+2. Test Layer
+Contains test scripts written using TestNG.
+Test cases call methods from page classes.
+
+3. Utilities Layer
+Common reusable utilities such as:
+WebDriver initialization
+Wait utilities
+Screenshot capture on failure
+Excel or JSON data readers
+Config file readers
+
+4. Test Data Layer
+Test data is maintained separately using Excel, JSON, or properties files, which supports data-driven testing.
+
+5. Reporting
+Test execution reports are generated using Extent Reports / TestNG Reports, which provide 
+detailed logs, screenshots, and test results.
+
+6. CI/CD Integration
+The framework is integrated with Jenkins pipelines, so tests automatically run during build or deployment stages.
+
+Automation Coverage
+Using this framework we automated:
+Functional UI testing
+Regression testing
+Smoke test suites
+Cross-browser testing

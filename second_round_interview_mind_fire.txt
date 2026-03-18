@@ -1,0 +1,73 @@
+What are access specifiers? Types? Difference - explained
+* Static vs Non-Static. Why do we need them? - explained
+* Abstract Class vs Interface - explained
+* Can a Class/Interface have 2 parents? - Partially correct. He said class cannot have 2 interfaces as parent.
+* Which is the parent class of all java classes? - Doesn't know
+* Run time polymorphism vs compile time polymorphism - explained
+* String vs StringBuffer? Mutable vs Immutable object? - explained
+* Collections? ArrayList vs LinkedList? List vs Set? - explained
+* Set vs Map? Why use Set when we can use Map? - Couldn't say why we need Sets when we have maps
+
+Selenium: 4/5
+* How do we create a driver object? Why do we use WebDriver as the object type?: Doesn't know why obejct type is WebDriver
+* Write an XPath on Amazon website to fetch language code displayed - answered
+* XPath vs CSS Selector - He doesn't know much about CSS selector but he is good with Xpath
+* Types of Waits? Difference - explained
+* Types of Assert? SoftAssert vs Assert - explained
+* What are the common exceptions you have faced? How do you handle them? - explained
+* How to scroll to a particular element? - explained
+* How to switch to a new tab/window? - was able to answer with hints
+* I am able to locate an element on the Website but the automation code is not able to locate the same. How do you debug this? - couldn't answer
+* How do pass a value to a locator in our code? - He has not used dynamic locators
+* How to perform double click? - explained
+* What is Headless execution? - explained
+
+Framework: 4/5
+* What is your framework type? Explain your framework - explained
+* How is OOPs used in your framework - explained
+* Explain Page Object Design pattern - explained
+* Do you know any other design patterns? Explain - He doesn't know
+* Disadvantages of @FindBy - He has not used Page factory so he has no idea
+
+TestNG: 5/5
+* Explain various TestNG annotations you have come across. Mention their priority. -explained
+* How to execute all test cases in a class except 1? - explained
+* How do you group test cases? - explained
+* What is a Listener? Why do we need it?- explained
+* How to execute 2 classes in parallel? - explained
+
+Manual Testing 4.5/5
+* Bug life cycle- explained
+* Bug priority vs severity - explained
+* Provide me all the test cases you can think of for a scissor - mentioend about functional and non functional test cases
+* What is the SDLC model used in your project? - answered
+* Smoke vs regression vs sanity - answered
+
+API Testing: 3/5
+* Status codes you know - answered few important
+* PUT VS POST VS PATCH - explained
+* What is Idempotent? Which HTTP methods are Idempotent? - doesn't know
+* What is OAuth2? Explain - couldn't answer properly
+
+Agile: 4/5
+* Sprint duration - answered
+* What are the various agile ceremonies you were a part of? - answered
+* Do you know what story points are? Why can it only be a Fibonacci Number? - doesn't know
+
+CI/CD: 3/5
+* What is Maven? Why do we need it? - explianed
+* Maven command to execute the tests - doesn't know
+
+GIT 4.5/5
+* Explain GIT workflow in your project - explained
+* Git stash - explained
+
+SQL 3.5/5
+* DDL commands vs DML commands - doesn't know
+* What is the Primary key? Can a table have multiple Primary Keys? - answered
+* Delete vs Truncate? - doesn't know about truncate
+* WHERE vs HAVING - answered
+* What is self join? - answered
+* What is a subquery? - answered
+
+Communication: Good
