@@ -10,7 +10,7 @@ public class LongestKDistinct{
 
         for (int right = 0; right < s.length(); right++) {
 
-            char ch = s.charAt(right);
+            char ch = s.charAt(right);			//1  ece
             map.put(ch, map.getOrDefault(ch, 0) + 1);
 
             while (map.size() > k) {
