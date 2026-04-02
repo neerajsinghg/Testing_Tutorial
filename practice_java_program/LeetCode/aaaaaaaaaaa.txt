@@ -1,0 +1,286 @@
+aaaaaaaaa 
+https://leetcode.com/problemset/
+
+Recently asked Interview questions for hashtag#QA hashtag#Automation role
+1.  Java program to remove duplicates characters from given String.
+2.  Program Remove the second highest element from the HashMap.
+3.  Java program to Generate prime numbers between 1 & given 4 number
+4.  How to find the missing values from a sorted array.
+5.  Java program to input name, middle name and surname of a person and print only the initials.
+6.  Program to Print all Treemap elements?
+7.  What is a singleton Design Pattern? How do you implement that in your framework?
+8.  Write the Top 5 test cases for Booking Coupons.
+9.  What is serialization and deserialization?
+10. What is the Difference between status codes 401 and 402? 1
+11. Difference between selenium 3 and selenium 4?
+12. What is delegate in Java and where do you use Delegate in your Framework?
+13. How many maximum thread-pool can you open in the TestNG?
+14. What are the Major challenges that come into the picture when you do parallel testing using TestNG and Grid?
+15. How do you integrate your automation framework with the Jenkins pipeline?
+16. What will happen if we remove the main method from the java program?
+17. What are diff components there your current Project?
+18. How do you pass parameters in TestNG?
+19. Write the logic of retrying the failed test case with a minimum 3 numbers of time in Automation Testing. Which Interface do you use for it?
+20. What is the OOPs concept in java?
+21. What is encapsulation?
+22. What is Polymorphism?
+23. Difference Between Classes and Objects?
+24. What is collection in Java?
+25. What is out in System.out.println?
+26. In How many ways can we create an object?
+27. Why is Java not 100% Object-oriented?
+28. Can we make a constructor as Static?
+29. How to convert a JSON object to a java object using Jackson?
+30. What is the difference between Abstraction Class and Interfaces?
+31. Difference between String, StringBuilder, and Stringbuffer?
+32. What are other immutable classes in Java apart from String?
+33. Difference between TreeMap and HashMap?
+34. How do you set priorities for test automation, which test needs to be automated first?
+35. How do you set test case priorities for your team?
+36. What are the functional things you need to test on e-commerce sites?
+
+In QA Automation interviews (especially for SDET / Automation Tester roles), companies don’t usually ask very advanced DSA like pure developers—but they **do expect strong basics in strings, arrays, and logic building**.
+
+Here’s a **realistic, frequently asked LeetCode question list** 👇
+
+---
+
+# 🔹 Most Asked LeetCode Questions for QA Automation
+
+## 🧵 String-Based (VERY IMPORTANT)
+
+These are asked the most in QA roles:
+
+1. **Two Sum**
+   → Basic hashing + logic
+
+2. **Valid Anagram**
+   → Sorting / HashMap
+
+3. **First Unique Character in a String**
+   → Already you practiced 👍
+
+4. **Valid Palindrome**
+   → Ignore special characters
+
+5. **Reverse Words in a String**
+
+6. **Longest Substring Without Repeating Characters**
+   → VERY important (frequently asked)
+
+---
+
+## 🔢 Array-Based Questions
+
+7. **Remove Duplicates from Sorted Array**
+
+8. **Move Zeroes**
+
+9. **Best Time to Buy and Sell Stock**
+
+10. **Contains Duplicate**
+
+---
+
+## 🧠 Hashing / Map Based
+
+11. **Group Anagrams**
+
+12. **Intersection of Two Arrays**
+
+---
+
+## 🔁 Sliding Window (IMPORTANT for interviews)
+
+13. **Longest Repeating Character Replacement**
+
+14. **Minimum Window Substring**
+
+---
+
+## 🔄 Stack / Basic Logic
+
+15. **Valid Parentheses**
+    → VERY common in QA interviews
+
+---
+
+## 🔍 Searching / Sorting Basics
+
+16. **Binary Search**
+
+17. **Merge Sorted Array**
+
+---
+
+# 🔹 Why These Are Asked in QA Automation?
+
+Because interviewers want to check:
+
+* Logical thinking 🧠
+* Data handling (like test data, API responses)
+* String parsing (very common in UI/API testing)
+* Optimization thinking (important for frameworks)
+
+---
+
+# 🔹 Special QA-Oriented Coding Questions (VERY IMPORTANT)
+
+These are sometimes asked instead of LeetCode:
+
+* Reverse string without using built-in
+* Count characters from API response
+* Validate JSON structure
+* Find duplicates in test data
+* Sort logs by timestamp
+* Parse UI table data
+
+---
+
+# 🔹 Pro Tip (Based on Your Experience 🔥)
+
+Since you already work with:
+
+* Selenium + Pytest
+* Framework design
+
+👉 Focus on:
+
+* Strings + HashMap
+* Sliding Window
+* Basic Arrays
+
+You don’t need heavy DP or graphs ❌
+
+---
+
+If you want, I can:
+✅ Give **Top 10 must-do questions (with code + explanation)**
+✅ Or take a **mock interview (QA automation style)**
+✅ Or explain each question in **Hinglish + multiple approaches**
+
+Just tell me 👍
+
+
+
+🔷 🔥 Most Asked (MUST PREPARE)
+🟢 Strings (VERY IMPORTANT)
+
+Longest Substring Without Repeating Characters
+
+Valid Anagram
+
+First Unique Character in a String
+
+Reverse Words in a String
+
+Reverse Words in a String III
+
+String to Integer (atoi)
+
+👉 Why?
+QA work = parsing logs, validating UI text, API responses
+
+🟢 Arrays
+
+Two Sum
+
+Remove Duplicates from Sorted Array
+
+Move Zeroes
+
+Best Time to Buy and Sell Stock
+
+👉 Why?
+Used in test data validation & optimization
+
+🟢 Hashing / Maps (VERY COMMON)
+
+Contains Duplicate
+
+Group Anagrams
+
+Intersection of Two Arrays
+
+👉 Why?
+Used in comparing expected vs actual data
+
+🔷 🟡 Medium Level (Frequently Asked)
+🟡 Sliding Window
+
+Longest Substring with At Most K Distinct Characters
+
+Permutation in String
+
+🟡 Stack / Parenthesis
+
+Valid Parentheses
+
+Min Stack
+
+👉 Asked in UI validation / syntax checks
+
+🟡 Searching / Sorting
+
+Binary Search
+
+Search Insert Position
+
+🔷 🟠 QA-Specific Logic Questions (VERY IMPORTANT)
+
+These are not always exact LeetCode numbers but VERY COMMON in interviews:
+
+👉 String / Data Validation
+
+Check if two JSON responses are equal
+
+Find duplicate records
+
+Compare two files
+
+👉 Custom Problems
+
+Reverse words (you already did ✅)
+
+Find unique/duplicate elements (you did ✅)
+
+Two sum (you did ✅)
+
+Palindrome check
+
+Count frequency of characters
+
+🔷 🔥 Real QA Automation Interview Focus
+They expect:
+
+✔ Clean code (not just working)
+✔ Edge case handling
+✔ Logic explanation
+✔ Practical thinking
+
+🔷 💡 Must Practice Topics (High ROI)
+
+Strings ⭐⭐⭐⭐⭐
+
+HashMap / HashSet ⭐⭐⭐⭐⭐
+
+Arrays ⭐⭐⭐⭐
+
+Sliding Window ⭐⭐⭐
+
+Basic Sorting/Search ⭐⭐⭐
+
+🔷 🚀 Bonus (SDET Level)
+
+If targeting top companies:
+
+LRU Cache
+
+Merge Intervals
+
+Kth Largest Element in an Array
+
+🔷 🎯 Final Strategy
+
+👉 Don’t solve 500 questions ❌
+👉 Focus on 50 high-quality problems ✅

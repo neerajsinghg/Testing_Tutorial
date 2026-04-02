@@ -4,7 +4,8 @@ public class CapitaliseFirstLetterOfEachWord{
 		String[] str = s.split(" ");
 		StringBuilder sb=new StringBuilder();
 		for(String word:str){
-			sb.append(Character.toUpperCase(word.charAt(0))+word.substring(1)+" ");
+			sb.append(Character.toUpperCase(word.charAt(0))
+			+word.substring(1)+" ");
 		}
 		System.out.println(sb.toString().trim());
 		
