@@ -29,7 +29,8 @@ Apart from writing scripts, I’m also involved in framework enhancement, debugg
 visitor logs, check In/out, expense management, goal management and Functionality Validation in our visitor log app. Apart from writing scripts, I’m also involved in framework enhancement, debugging flaky tests, and CI/CD integration.
 
 3. What are your role and responsibilities in your current project?
-	In my current project, I’m working as an Automation Test Engineer for a web and mobile application called eMist, eChaalak, eMist_pro, eMist_workshop and iConsignment. 
+	In my current project, I’m working as an Automation Test Engineer for a web and mobile application 
+called eMist, eChaalak, eMist_pro, eMist_workshop and iConsignment. 
 My main responsibilities include:
 
 Designing and developing automation scripts using tools like Selenium, TestNG, and following the Page Object Model (POM) framework.

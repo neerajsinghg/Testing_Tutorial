@@ -1,0 +1,23 @@
+pipeline{
+	agent any
+	parameters{
+		string(name:'env',defaultValue:'qa')
+	}
+	stages {
+		stage('Build'){
+			steps{
+				echo 'Build stage'
+			}
+		}
+		stage('Test'){
+			steps{
+				echo 'run tests'
+			}
+		}
+		stage('Deploy'){
+			steps{
+				echo 'deploy tests'
+			}
+		}
+	}
+}

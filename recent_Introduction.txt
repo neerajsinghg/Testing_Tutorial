@@ -23,7 +23,8 @@ development, testing, and production environments.
 
 My experience includes API testing, test case design, debugging failures, root cause analysis, and 
 collaborating closely with developers and DevOps teams to maintain quality across the software lifecycle.
-Overall, I focus on building maintainable automation frameworks, improving testing efficiency, and 
+
+Overall, I focus on building maintainable and growable automation frameworks, improving testing efficiency, and 
 supporting fast and reliable software delivery in agile environments.
 
 
@@ -35,7 +36,9 @@ The framework is designed to be scalable, maintainable, and reusable so that
 test cases can be easily expanded as the application grows.
 
 Framework Design
-The framework follows the Page Object Model (POM) design pattern, where all the web element locators and page actions are maintained in separate page classes, while the test logic is written in test classes. This separation improves maintainability and readability.
+The framework follows the Page Object Model (POM) design pattern, where all the web element locators and 
+page actions are maintained in separate page classes, 
+while the test logic is written in test classes. This separation improves maintainability and readability.
 
 Framework Components
 The framework includes several key components:
