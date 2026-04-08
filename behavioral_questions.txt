@@ -1,0 +1,25 @@
+What are challenges you faced while working with framework ?
+1. Flaky Tests (Unstable Tests)
+Problem: Tests sometimes pass and sometimes fail without code changes.
+Cause: Timing issues, Dynamic elements, Network delays
+Solution: Used explicit waits instead of Thread.sleep() , Implemented retry mechanism, Improved locator strategies
+
+2. Element Locators Breaking
+Problem: Frequent failures due to UI changes.
+Cause: Dynamic IDs, Changing DOM structure
+Solution: Used robust XPath/CSS selectors
+Preferred: contains(), starts-with(), relative XPath, Worked with developers to add stable attributes (like data-testid)
+
+3. Handling Dynamic Web Elements
+Problem: Elements load dynamically (AJAX calls).
+Solution: Used Explicit Waits (WebDriverWait)
+Waited for: visibility, clickability, presence of element
+
+4. Synchronization Issues
+Problem: Script executes faster than application.
+Solution: Replaced implicit waits with explicit waits, Used fluent wait for better control
+
+5. Cross-Browser Compatibility
+Problem: Tests behave differently in Chrome, Firefox, etc.
+Solution: Used WebDriverManager, Run tests via TestNG parallel execution, Integrated with Selenium Grid
+
