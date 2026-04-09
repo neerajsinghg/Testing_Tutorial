@@ -1,0 +1,36 @@
+exception and error in java
+
+error in java - trick MOVERS ALL
+M	OutOfMemory Error			Occurs when the JVM cannot allocate enough memory for objects or garbage collection is insufficient.
+O	StackOverFlowError			Happens when the call stack memory is exhausted due to deep or infinite recursion.
+V	VirtualMachineError			Indicates serious JVM-level problems that prevent proper operation of the Java Virtual Machine.
+E	Verify Error				(Bytecode Verification Error): Occurs when the JVM detects invalid or corrupted bytecode during class loading.
+R	Assertion Error				Thrown when an assert statement fails, indicating a logical assumption in code is incorrect.
+S	LinkageError (System linking issue)	Occurs when there are class loading/linking issues such as incompatible class versions or missing dependencies.
+
+
+Unchecked exception - 
+Unchecked Exceptions (NAAC BIN CM) – one-line meaning each:
+
+N – NullPointerException: Occurs when calling a method or accessing a field on a null object reference.
+A – ArithmeticException: Occurs due to illegal arithmetic operations like divide by zero.
+A – ArrayIndexOutOfBoundsException: Occurs when accessing an array with an invalid index.
+C – ClassCastException: Occurs when trying to cast an object to an incompatible type.
+B – BufferOverflowException: Occurs when data exceeds buffer capacity in NIO buffers.
+I – IllegalArgumentException: Occurs when a method receives an invalid argument.
+N – NumberFormatException: Occurs when converting an invalid string into a number.
+C – ConcurrentModificationException: Occurs when a collection is modified during iteration without proper handling.
+M – MissingResourceException: Occurs when a resource bundle is not found at runtime.
+
+checked exception - 
+Ultra-Short Revision Sheet (Checked Exceptions – I S C I I N F E)
+I – InterruptedIOException → I/O operation interrupted
+S – SQLException → Database error in SQL operation
+C – ClassNotFoundException → Class not found at runtime
+I – InstantiationException → Cannot create object of abstract/interface
+I – IllegalAccessException → No access permission to class/member
+N – NoSuchMethodException → Method not found
+F – FileNotFoundException → File not found
+E – EOFException → Unexpected end of file
+
+✔️ Memory trick: “IO SQL Class Create Illegal No File End”

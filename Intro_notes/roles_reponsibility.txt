@@ -1,0 +1,20 @@
+1. Tell me about your roles and responsibilities in Project. (Disclaimer: You must tailor
+this to your actual experience. The following is a standard template for a 3-year
+SDET/Automation engineer).
+"In my current project, I work as an Automation Test Engineer working within an Agile
+Scrum team. My primary responsibilities include:
+1. Test Planning & Strategy: Participating in sprint planning and grooming sessions to
+understand user stories and identify candidates for automation versus manual
+testing.
+2. Framework Maintenance: I am actively involved in maintaining and enhancing our
+hybrid automation framework (Selenium + Java + TestNG + Maven). This involves
+updating page objects when the UI changes and creating common utility functions.
+3. Script Development: I develop robust, data-driven test scripts for regression suites
+based on accepted criteria.
+4. Execution & Reporting: I manage the execution of nightly regression suites via
+Jenkins CI/CD pipelines. Every morning, I analyze the TestNG/Extent reports, triage
+failures as application bugs or script issues, and report them in Jira.
+5. API Testing: I also perform API validation using RestAssured for backend services
+before the UI is integrated.
+6. Code Review: Reviewing the automation code merged by junior team members to
+ensure coding standards are followed."

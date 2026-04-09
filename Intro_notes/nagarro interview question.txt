@@ -1,0 +1,74 @@
+#nagarro interview question 😊 👏😇
+
+📌 Round 1 :  ( Aptitude and Technical Round Online Test)
+
+👉 Online aptitude round consists of verbal ability questions , and we need to find the output of Java programs. Note : Here make sure your webcam and internet connection is proper if it disconnects even 1 time , high chances you will be disqualified.
+---------------------------------------------------------------------------------
+📌 Round 2 : ( Technical )
+👉 Shift all even numbers to left side of array and odd number to right side.
+👉 Can you create an object of interface / abstract class ? Explain.
+👉 Why String is immutable in Java ?
+	String is immutable in Java to ensure security, thread safety, memory optimization through string pool, and performance via hashcode caching. Once 		created, its value cannot be changed.
+👉 Purpose of LinkedHashMap in Java? Have you used in framework ?
+	LinkedHashMap is used to store key-value pairs while maintaining insertion order. In automation frameworks, I have used it for handling test data, API 	payloads, and reporting where order of data is important.
+👉 What is invocationCount use in testNg ?
+	invocationCount in TestNG is used to execute a test method multiple times. It helps in repeated execution, stability testing, and can be combined with 		threadPoolSize for parallel execution.
+👉 How would you wait for visibility of an element in Selenium ?
+	To wait for visibility of an element in Selenium, we use explicit wait with WebDriverWait and ExpectedConditions.visibilityOfElementLocated. It ensures 	the element is present in the DOM and visible before performing any action, making tests more stable.
+👉 How would you use AutoIT to upload a file.
+	AutoIT is used in Selenium to handle Windows file upload popups which Selenium cannot automate. We write an AutoIT script to send the file path and 		execute it from Selenium using Runtime.getRuntime().exec().
+👉 What is element Click Intercepted Exception ? How to resolve it.
+	ElementClickInterceptedException occurs when another element overlaps the target element(like popup or etc), preventing it from being clicked. It can 		be resolved using explicit waits, scrolling, handling overlays, or JavaScript click.
+👉 What are challenges you faced while working with framework ?
+👉 What is normalize-space function in xpath ? What is use of it. 
+----------------------------------------------------------------------------------
+📌 Round 3 : ( Technical round )
+👉 What is singleton design pattern in Java ? Advantages of it ?
+	The Singleton Design Pattern ensures that a class has only one instance and provides a global access point to that instance.
+	in simple:- Only one object of the class is created and shared everywhere.
+	🔹 How to Implement Singleton
+	🔹 Advantages of Singleton Pattern
+	1. Single Instance Control - Ensures only one object exists (useful for shared resources like configuration, logging).
+	2. Global Access:- Provides a single access point: Singleton.getInstance();
+	3. Memory Efficient: Only one instance is created → saves memory.
+	4. Thread Control (if implemented properly): Thread-safe versions prevent multiple instances in multithreaded environments.
+	5. Consistency: All parts of application use the same instance → consistent data.
+	🔹Real-Time Examples: Logger class, Database connection, Configuration manager, WebDriver instance (in Selenium frameworks)
+👉 How do you disable images in selenium ? 
+	Disabling images in Selenium is usually done to speed up test execution and reduce bandwidth. The approach depends on the browser you’re using.
+	Images can be disabled in Selenium by setting browser preferences (like ChromeOptions or FirefoxProfile) to block image loading. This improves 			execution speed and reduces resource usage.
+👉 What is difference between Action vs Actions in selenium ?
+	Action is interface and its method is .perform() and Actions is class where have multiple method mainly .build() method.
+	Actions is a class used to build complex user interactions, while Action is an interface that represents a single built action. Actions creates the 		action sequence, and Action executes it using perform().
+👉 Tell me how you deal with elements that change their attributes dynamically while running selenium scripts ?
+	To handle dynamic elements, I use dynamic XPath with contains or starts-with, prefer stable attributes, and avoid absolute locators. I also use 		explicit waits for synchronization, parent-child relationships for better identification, and sometimes coordinate with developers to add 		unique attributes. This ensures reliable and stable automation scripts. 
+👉 Purpose of using Thread Local class in Selenium ?
+	ThreadLocal is used in Selenium to achieve thread safety, especially when running tests in parallel execution.
+	🔹 Why do we need it? - In parallel testing (e.g., using TestNG), multiple threads run at the same time.
+		Problem: If you use a single WebDriver instance, all threads will share it ❌
+		This causes: Session conflicts, Tests interfering with each other, Unpredictable failures
+	🔹 Solution: ThreadLocal<WebDriver> class. - Each thread gets its own separate WebDriver instance ✅
+	🔹 How it Works - Each thread stores its own copy of WebDriver, No sharing between threads, Ensures independent browser sessions
+	🔹 Advantages - 1. 🧵 Thread Safety - No conflicts between parallel tests
+			2. 🚀 Parallel Execution - Supports TestNG parallel runs smoothly
+			3. 🔒 Isolated Sessions - Each test runs in its own browser instance
+			4. ❌ Avoids Static Driver Issues - Static drivers are shared → ThreadLocal fixes this
+👉 API 200, 400, 410, 403 status codes difference .
+	200 means success, 400 indicates a bad request due to invalid input, 403 means access is forbidden due to lack of permissions, and 410 means the 	resource is permanently deleted and no longer available.
+👉 How you write test case in postman to validate the status code ?
+	In Postman, we write test scripts in the Tests tab using pm.test() and validate status codes using pm.response.to.have.status(code). This helps verify 		whether the API response is correct.
+		pm.test("Status code is 200", function () {
+    			pm.response.to.have.status(200);
+		});
+👉 How would you perform data driven testing in postman ?
+	Data-driven testing in Postman is done using Collection Runner with CSV or JSON files. We define variables in the request, provide test data 	externally, and Postman runs the request multiple times with different inputs, validating responses using test scripts.
+👉 Difference between HEAD and OPTIONS API methods ? (Write your answer in comments )
+	HEAD is used to retrieve only the headers of a resource without the response body, mainly for validation. OPTIONS is used to check which HTTP methods 	are supported by the server for a particular resource, often used in CORS.
+👉  Have you worked with Jmeter ? Some Jmeter basics asked related to ThreadGroup , Listeners .
+	Yes, I have worked with Apache JMeter for performance and load testing. I have created test plans, configured Thread Groups, added samplers like HTTP 	requests, and used listeners to analyze results such as response time, throughput, and error rates.
+----------------------------------------------------------------------------------
+📌 Round 4 : ( HR )
+👉 How soon you can join ?
+👉 How was your interview experience with us ?
+
+Contributed by : Sanjana , 7 to 8 years of experience. If you want to share your interview exp DM me 🙂  

@@ -1,0 +1,107 @@
+Here’s a **simple Singleton class with add & multiply methods (clean + interview-ready)** 👇
+
+---
+
+## 📌 ✅ Singleton Utility Class
+
+```java
+public class MathUtil {
+
+    // Step 1: Create private static instance
+    private static MathUtil instance;
+
+    // Step 2: Private constructor
+    private MathUtil() {}
+
+    // Step 3: Public method to get instance
+    public static MathUtil getInstance() {
+        if (instance == null) {
+            instance = new MathUtil(); // lazy initialization
+        }
+        return instance;
+    }
+
+    // Add method
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    // Multiply method
+    public int multiply(int a, int b) {
+        return a * b;
+    }
+}
+```
+
+---
+
+## 📌 ✅ Usage
+
+```java
+public class TestClass {
+
+    public static void main(String[] args) {
+
+        MathUtil math = MathUtil.getInstance();
+
+        System.out.println("Addition: " + math.add(10, 20));
+        System.out.println("Multiplication: " + math.multiply(10, 20));
+    }
+}
+```
+
+---
+
+## 📌 💡 Output
+
+```
+Addition: 30
+Multiplication: 200
+```
+
+---
+
+## 📌 🔥 Interview Points
+
+* Private constructor → prevents object creation
+* Static instance → single object across JVM
+* Lazy initialization → created only when needed
+
+---
+
+## 📌 ⭐ Bonus (Thread-Safe Singleton – Recommended)
+
+```java
+public class MathUtil {
+
+    private static volatile MathUtil instance;
+
+    private MathUtil() {}
+
+    public static MathUtil getInstance() {
+        if (instance == null) {
+            synchronized (MathUtil.class) {
+                if (instance == null) {
+                    instance = new MathUtil();
+                }
+            }
+        }
+        return instance;
+    }
+
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    public int multiply(int a, int b) {
+        return a * b;
+    }
+}
+```
+
+---
+
+If you want, I can also give:
+✅ Singleton real use in Selenium framework
+✅ Logger + ConfigReader singleton combo
+✅ Interview tricky questions on Singleton 😄

@@ -1,0 +1,49 @@
+Here’s a simple and interview-ready Java program to read a CSV file 👇
+
+📌 ✅ Using Core Java (BufferedReader)
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class ReadCSV {
+    public static void main(String[] args) {
+
+        String filePath = "data.csv"; // path to your CSV file
+        String line;
+
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(","); // split by comma
+                
+                // Print each value
+                for (String value : values) {
+                    System.out.print(value + " ");
+                }
+                System.out.println();
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+📌 ✅ Example CSV (data.csv)
+id,name,age
+1,John,25
+2,Alice,30
+3,Bob,28
+📌 🔥 Output
+id name age
+1 John 25
+2 Alice 30
+3 Bob 28
+📌 💡 Interview Tips
+Use BufferedReader for simple cases
+Use OpenCSV library for complex CSV (quotes, commas inside values)
+Always handle:
+File path
+Exception handling
+Header row (skip if needed)
+📌 ⭐ Bonus (Skip Header Example)
+br.readLine(); // skip header
