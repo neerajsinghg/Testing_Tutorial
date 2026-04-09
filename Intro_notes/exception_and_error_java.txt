@@ -1,12 +1,12 @@
 exception and error in java
 
 error in java - trick MOVERS ALL
-M	OutOfMemory Error			Occurs when the JVM cannot allocate enough memory for objects or garbage collection is insufficient.
-O	StackOverFlowError			Happens when the call stack memory is exhausted due to deep or infinite recursion.
-V	VirtualMachineError			Indicates serious JVM-level problems that prevent proper operation of the Java Virtual Machine.
-E	Verify Error				(Bytecode Verification Error): Occurs when the JVM detects invalid or corrupted bytecode during class loading.
-R	Assertion Error				Thrown when an assert statement fails, indicating a logical assumption in code is incorrect.
-S	LinkageError (System linking issue)	Occurs when there are class loading/linking issues such as incompatible class versions or missing dependencies.
+M	OutOfMemory Error -	Occurs when the JVM cannot allocate enough memory for objects or garbage collection is insufficient.
+O	StackOverFlowError -	Happens when the call stack memory is exhausted due to deep or infinite recursion.
+V	VirtualMachineError -	Indicates serious JVM-level problems that prevent proper operation of the Java Virtual Machine.
+E	Verify Error -	(Bytecode Verification Error): Occurs when the JVM detects invalid or corrupted bytecode during class loading.
+R	Assertion Error	- 	Thrown when an assert statement fails, indicating a logical assumption in code is incorrect.
+S	LinkageError (System linking issue) - Occurs when there are class loading/linking issues such as incompatible class versions or missing dependencies.
 
 
 Unchecked exception - 
@@ -33,4 +33,4 @@ N – NoSuchMethodException → Method not found
 F – FileNotFoundException → File not found
 E – EOFException → Unexpected end of file
 
-✔️ Memory trick: “IO SQL Class Create Illegal No File End”
+✔️ Memory trick: “IO se SQL Class Create Illegal No File End”
