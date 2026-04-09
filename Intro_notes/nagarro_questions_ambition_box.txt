@@ -1,0 +1,60 @@
+Q. Write a program to find the first and second smallest elements in an array.
+Q. Explain the API structure.
+Ans. An API structure typically starts with resources/endpoints organized around business entities (e.g., /users, /orders), each exposing HTTP methods (GET, POST, PUT, DELETE) that map to CRUD semantics. Each endpoint has a contract defined by request parameters, headers, and a well-structured JSON response schema; use OpenAPI/Swagger to formalize routes, models, and examples. Layered concerns include versioning (e.g., v1 in URL or headers), authentication/authorization (OAuth2, API keys, JWT), and rate limiting or throttling for traffic control.
+Operational structure covers error handling (consistent status codes, error payloads), pagination/sorting/filtering, and idempotency for safe retries. Add cross-cutting aspects: logging/monitoring, metrics, and API gateway policies (caching, CORS, request validation). Together these elements form a maintainable, discoverable, and secure API surface.
+
+Q. What is Jenkins and a CI/CD pipeline?
+Ans. Jenkins is an open-source automation server used to build, test and deploy software. It orchestrates tasks via jobs/pipelines, supports distributed builds using agents, and has a large plugin ecosystem to integrate SCM (Git), build tools (Maven/Gradle), testing frameworks, and deployment targets. Jenkinsfiles (Declarative or Scripted) let you define the pipeline as code for reproducible, versioned automation.
+A CI/CD pipeline is a set of automated stages that take code from commit to production: Continuous Integration (CI) automates building and testing on each change to catch issues early; Continuous Delivery/Deployment (CD) automates packaging and releasing to environments (staging, production). Typical stages: checkout → build → unit/integration tests → artifact → deploy → post-deploy tests. Benefits: faster feedback, fewer manual errors, consistent releases, and improved developer productivity.
+
+Q. What are the key components of a Selenium Java framework, and how do they interact with each other?
+Ans. 
+Test Runner & Build Tool: Use TestNG/JUnit with Maven/Gradle to define test suites, manage dependencies and trigger runs. The runner controls test lifecycle (setup, teardown, reports).
+
+WebDriver Wrapper / Factory: A WebDriver manager creates browser instances, handles capabilities, parallel threads, and session lifecycle so tests get a stable driver object.
+
+Page Object Model (POM): Page classes encapsulate locators and actions; tests call these methods to keep tests readable and maintainable.
+
+Utilities & Helpers: Reusable utilities for waits, logging, config, test data, screenshots, and common actions. These are consumed by page objects and tests.
+
+Reporting & CI Integration: Extent/Allure reports and logging provide evidence; CI (Jenkins/GitHub Actions) triggers Maven/Gradle jobs and publishes results.
+
+How they interact:
+
+Tests (TestNG) call Page Objects which use the WebDriver from the factory.
+Utilities (waits, data) support both pages and tests.
+Build tool runs suites, CI schedules runs, and reporting collects logs/screenshots for each test.
+
+
+Q. How would you find the frequency of each character in a string? Please describe your approach and any optimizations you would apply.
+Ans. 
+Approach: Do a single pass over the string and maintain a frequency map: for ASCII use a fixed-size int[256] (or int[128] for pure ASCII); for general Unicode use a HashMap<Character, Integer> (or Map<Integer,Integer> using codepoints). Increment count for each character seen. This is O(n) time and O(k) space (k = distinct characters).
+Implementation detail: In Python use collections.Counter(s) or a loop with dict; in Java use int[] for limited charset or Int2IntOpenHashMap (primitive) for performance; in C++ use array<int,256> or unordered_map<char32_t,int>.
+Optimizations — memory: Prefer fixed arrays for known small alphabets to avoid hashmap overhead; use primitive-key maps to avoid boxing (Java Trove/fastutil).
+Optimizations — speed: Single-pass linear scan, minimize per-char allocations, process bytes instead of chars when encoding known; batch/SIMD or parallel streams for very large strings with reduction of per-thread maps.
+Large data / streaming: For inputs larger than memory, stream and aggregate counts in chunks, then merge partial counts; for distributed data use map-reduce where mappers count locally and reducers sum.
+Edge cases: Decide handling of Unicode grapheme clusters vs code points, case-sensitivity, and whitespace; document and test the chosen behavior.
+
+Q. What is a linked list, and how is it used as a data structure?
+Ans. 
+Definition: A linked list is a linear data structure where each element (node) contains data and a pointer/reference to the next node; nodes are not stored contiguously in memory, enabling dynamic memory allocation and flexible sizing.
+
+Types: Common variants are singly linked list (next pointer), doubly linked list (next and prev pointers) and circular linked list (last node points back to head).
+
+Basic operations:
+
+Traversal: O(n) by following pointers.
+Insertion/Deletion at head: O(1) by updating pointers.
+Insertion/Deletion at arbitrary position: O(n) to locate position, then O(1) to adjust pointers.
+Access by index: O(n) (no random access).
+When to use: Prefer linked lists when you need frequent insertions/deletions in the middle of a sequence, unpredictable size, or when memory fragmentation makes contiguous arrays costly.
+
+Advantages / Disadvantages:
+
+Advantages: Dynamic size, cheap insert/delete once position known, easy to implement stacks/queues.
+Disadvantages: Higher memory overhead for pointers, poor cache locality, and slow random access.
+Practical uses: Implementing stacks, queues, adjacency lists for graphs, undo/redo buffers, and any scenario requiring efficient splicing or concatenation without copying large contiguous memory blocks.
+
+Q1. Oops concept, solid principles, design pattern, real time based qus
+
+Q2. Singleton design pattern
