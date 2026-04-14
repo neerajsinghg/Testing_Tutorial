@@ -36,3 +36,41 @@ Discuss how you would test APIs that require multipart/form-data submissions.
 How can you mock external API dependencies in Rest Assured tests?
 What approach would you take to handle flaky tests in Rest Assured?
 How do you optimize Rest Assured tests for large-scale applications?
+
+
+
+
+
+
+
+
+✅ Beginner to Intermediate:
+1. What is RestAssured and why do we use it in API automation?
+2. How do you validate a status code and response body using RestAssured?
+3. How do you pass query parameters, path parameters, and headers in RestAssured?
+4. How do you send a POST request with a JSON payload using RestAssured?
+5. How do you validate JSON response data using JSONPath in RestAssured?
+6. How do you handle authentication (Basic, OAuth2) in RestAssured?
+7. What is the difference between then(), extract(), and assertThat() in RestAssured?
+8. How can you log the request and response in RestAssured?
+9. How do you set up reusable request/response specifications in RestAssured?
+10. How do you validate response time using RestAssured?
+
+✅ Advanced:
+1. How do you handle dynamic JSON values in response validation?
+2. What are Filters in RestAssured and how do you use them?
+3. How can you integrate RestAssured with TestNG/JUnit?
+4. How do you create a custom deserializer for a complex JSON response?
+5. How do you validate XML responses in RestAssured?
+6. How do you extract a response as a POJO using Jackson/Gson?
+7. How do you handle file uploads and downloads using RestAssured?
+8. How do you perform chained API calls using RestAssured?
+9. How do you implement data-driven API tests in RestAssured?
+10. How do you test APIs with token refresh logic using RestAssured?
+
+✅ Project/Application Based:
+1. How do you maintain request payloads and expected responses in your framework?
+2. Have you integrated your RestAssured tests in CI/CD? How?
+3. What kind of reporting have you used with RestAssured?
+4. Have you handled API mocking/stubbing during testing? How?
+5. What challenges have you faced with RestAssured and how did you overcome them?
