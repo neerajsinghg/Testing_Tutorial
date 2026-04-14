@@ -1,0 +1,38 @@
+Basic Questions
+
+What is Rest Assured and why is it used?
+How do you set up Rest Assured in a Java project?
+Explain the basic syntax for a GET request in Rest Assured.
+How do you validate the response status code using Rest Assured?
+What is the purpose of the given(), when(), and then() methods in Rest Assured?
+How can you send query parameters in a Rest Assured request?
+Describe how to add headers to a Rest Assured request.
+How do you perform a POST request with a JSON payload using Rest Assured?
+Explain how to extract response data using Rest Assured.
+How do you handle basic authentication in Rest Assured?
+
+Intermediate Questions
+
+How can you validate JSON response data using JSONPath in Rest Assured?
+Describe how to handle cookies in Rest Assured requests.
+How do you perform data-driven testing with Rest Assured?
+Explain how to use Rest Assured with BDD frameworks like Cucumber.
+How can you test APIs with XML responses using Rest Assured?
+What strategies can you use to manage environment-specific configurations in Rest Assured tests?
+How do you implement custom error handling for API responses in Rest Assured?
+Discuss how to test APIs that require OAuth authentication with Rest Assured.
+How can you parameterize API tests in Rest Assured?
+Explain how to integrate Rest Assured tests into a CI/CD pipeline.
+
+Advanced Questions
+
+How do you handle API rate limiting in Rest Assured tests?
+Describe a strategy for testing APIs with dynamic endpoints using Rest Assured.
+How can you ensure data consistency across multiple API calls in a test suite?
+What techniques would you use to test APIs with complex nested JSON responses?
+Explain how you would implement retry logic for failed API requests.
+How do you validate response times and performance benchmarks using Rest Assured?
+Discuss how you would test APIs that require multipart/form-data submissions.
+How can you mock external API dependencies in Rest Assured tests?
+What approach would you take to handle flaky tests in Rest Assured?
+How do you optimize Rest Assured tests for large-scale applications?

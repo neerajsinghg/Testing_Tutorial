@@ -6,7 +6,7 @@ public class WordStartWithCapitalLetter{
 
 		for(String words:word){
 			if(Character.isUpperCase(words.charAt(0))){
-				System.out.println(words);
+				System.out.print(words+" ");
 			}
 		}
 	}

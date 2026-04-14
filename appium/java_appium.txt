@@ -1,0 +1,27 @@
+𝗤𝗔 𝗔𝘂𝘁𝗼𝗺𝗮𝘁𝗶𝗼𝗻 𝗜𝗻𝘁𝗲𝗿𝘃𝗶𝗲𝘄 𝗤𝘂𝗲𝘀𝘁𝗶𝗼𝗻𝘀 – 𝗖𝗮𝗽𝗴𝗲𝗺𝗶𝗻𝗶 
+
+𝗤𝘂𝗲𝘀𝘁𝗶𝗼𝗻𝘀: 
+1. Explain Java exception handling and its importance.
+2. What is the difference between `final`, `finally`, and `finalize` keywords in Java?
+3. Compare and contrast `ArrayList` and `LinkedList` in Java.
+4. What are the key differences between `HashSet` and `Map` in Java?
+5. Provide an example of using a `Map` in Java.
+6. Write a Java program to reverse a string.
+7. Explain the architecture of Appium and how it functions.
+8. What are Desired Capabilities in Appium, and how are they used?
+9. What is an Appium package and activity, and how are they configured?
+10. Why is Appium preferred for mobile automation testing?
+11. How do you handle timeouts in Appium tests?
+12. What challenges have you encountered while using Appium, and how did you overcome them?
+13. What are the different types of locators used in Appium?
+14. What are the best practices to follow when using Appium for automation?
+15. What is the difference between `findElement` and `findElements` in Appium/Selenium?
+16. Explain the concept of Appium Grid and its use cases.
+17. What is the purpose of `BeforeSuite` and `AfterSuite` annotations in TestNG?
+18. Explain the structure and purpose of a TestNG XML file.
+19. How does `dependsOnMethods` work in TestNG, and when would you use it?
+20. What are the different types of waits available in Selenium, and when should each be used?
+21. Explain the role of Jenkins in CI/CD pipelines.
+22. How are reports generated in TestNG, and what types of reports can be produced?
+23. What is the difference between method overloading and method overriding in Java?
+24. Explain the concept of polymorphism in Java and provide examples.

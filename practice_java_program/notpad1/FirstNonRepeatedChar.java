@@ -8,7 +8,9 @@ public class FirstNonRepeatedChar{
 			hs.put(chh, hs.getOrDefault(chh,0)+1);
 		}
 		for(Map.Entry<Character, Integer> entry:hs.entrySet()){
-			
+			if(entry.getValue()==1)
+			System.out.println(entry.getKey()+" = "+entry.getValue());
+			break;
 		}
 	}
 }

@@ -1,11 +1,11 @@
 public class ShiftZeroRight{
 	public static void main(String[] args){
 		int numbers = 804030;
-		//StringBuilder sb = new StringBuilder();
-		//int countzero=0;
-		//while(numbers!=0){
-		//	int digit=numbers%10;
-		//	if(digit==0){
+		StringBuilder sb = new StringBuilder();
+		int countzero=0;
+		while(numbers!=0){
+			int digit=numbers%10;
+			if(digit==0){
 				countzero++;
 			}
 			else{
