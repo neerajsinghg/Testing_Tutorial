@@ -1,0 +1,407 @@
+1) You are asked to automate a functionality that is not yet fully developed. How do you handle this?
+	If a functionality is not fully developed, I first analyze the available requirements and identify what can be tested at the current stage. 
+	I collaborate with developers and product owners to understand expected behavior and clarify any gaps.
+	For automation, I design my scripts in a modular way and automate only the stable parts. For incomplete or unstable features, 
+	I either mock the data (using API or stubs) or mark the test cases as pending/skipped.
+	I also keep placeholders in the framework so that once the feature is completed, I can quickly update and enable the tests without major rework.
+	I also prefer validating backend APIs when UI is not ready, so testing can continue without blocking.
+	
+2) If a Test fails, what will be your next step?
+	If a test fails, my first step is to analyze the failure by checking logs, screenshots, and error messages to understand the root cause. 
+	I then verify whether the issue is due to a script problem, test data issue, environment instability, or an actual application defect.
+	If it is a defect, I log a bug with proper details. If it is a script issue, I fix and re-run the test. 
+	I also ensure the failure is reproducible before taking further action.
+
+3) If the application has minor changes, what would be your approach to modifying the Automation scripts?
+	If the application has minor changes, I first perform impact analysis to identify affected test cases and components. 
+	Since I use a modular framework based on Page Object Model, I update only the affected locators or 
+	methods in the page layer rather than modifying all test scripts.
+	After making changes, I execute impacted test cases to verify the fix and then run regression tests to ensure there 
+	are no side effects. I also follow proper version control practices and code review before merging changes.
+
+4) How would you automate login functionality for a website?
+	To automate login functionality using a data-driven approach, I first design the test to accept multiple sets of credentials 
+	from an external data source such as Excel, CSV, or JSON.
+	I create a reusable login method in the Page Object Model that takes username and password as parameters. 
+	Then, using a data-driven framework (like pytest parametrization or TestNG DataProvider), I execute the same test with different data sets.
+	This approach ensures reusability, scalability, and better coverage of positive and negative login scenarios.
+
+5) How would you automate a Test scenario where you need to check if an email is sent after a user registration?
+	To automate email verification after user registration, I first complete the registration process using Selenium. 
+	Then, instead of relying only on UI, I validate the email through backend or external systems such as email APIs, 
+	database checks, or mailbox access (like IMAP/Gmail API).
+	I prefer using API or IMAP to fetch the latest email and verify its content, subject, and recipient. 
+	This approach is more reliable and faster than UI-based validation.
+	1. Register user (Selenium) --> 2. Fetch email via IMAP/API  --> 3. Validate subject & content  --> 4. Assert test result
+
+6) If there is a scenario that takes a long time to execute, would you prefer Manual TestNG or Automation Testing?
+	If a scenario takes a long time to execute and is repetitive, I would prefer automation testing. 
+	Automation helps reduce execution time, improves efficiency, and allows the test to be reused in regression cycles.
+	However, if the scenario is one-time, unstable, or frequently changing, I may initially execute it manually and automate it later once it becomes stable.
+	Choose Automation When:✔ Scenario is repetitive ✔ Part of regression testing ✔ Requires multiple data inputs ✔ Time-consuming manually
+	👉 Example:Login with 50 users, Form submission with multiple data
+	Choose Manual When: ✔ Scenario is one-time ✔ Feature is not stable ✔ UI is frequently changing ✔ Exploratory testing required
+
+7) How would you automate a scenario where you need to validate the contents of a downloaded file after clicking a button on a webpage?
+	To automate file download validation, I first trigger the download using Selenium. Then, 
+	I verify that the file is successfully downloaded in the expected location. After that, I read the 
+	file using appropriate libraries (like File class → check existence, Apache POI → Excel, PDFBox → PDF) and validate 
+	its contents against expected data. Finally, I clean up the downloaded file to maintain test environment consistency.
+
+8) How would you automate a scenario where you need to verify a specific color, font, and position of an element on a webpage?
+	To validate UI properties like color, font, and position, I use Selenium to fetch CSS values of the element 
+	using getCssValue() and validate them against expected values. For position, I use element location and size methods. 
+	If needed, I also use visual testing tools for pixel-perfect validation.
+	For critical UI validations, I prefer visual testing tools like Applitools instead of relying only on CSS values
+
+9) How would you handle pop-up windows or alert boxes in your Automation script?
+	To handle pop-ups in automation, I first identify the type of pop-up. For browser alerts, I use Selenium’s switchTo().alert() methods. 
+	For window pop-ups, I handle multiple window handles. For HTML-based pop-ups, I treat them as normal web elements. 
+	Based on the type, I apply appropriate handling methods to ensure stable automation.
+	I also use explicit waits like ExpectedConditions.alertIsPresent() to avoid synchronization issues
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+	alert.accept();
+
+10) How would you automate a scenario where you need to verify if a user is able to scroll down a webpage until the footer section is visible?
+	To automate this scenario, I would scroll the webpage using JavaScriptExecutor or Actions class until the footer element is visible. 
+	Then, I would validate its visibility using Selenium methods like isDisplayed() or explicit waits.
+	WebElement footer = driver.findElement(By.id("footer"));
+	JavascriptExecutor js = (JavascriptExecutor) driver;
+	js.executeScript("arguments[0].scrollIntoView(true);", footer);
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	wait.until(ExpectedConditions.visibilityOf(footer));
+	Assert.assertTrue(footer.isDisplayed());
+
+11) You've been asked to automate a legacy application. What is your approach?
+	When automating a legacy application, I first understand the application architecture, technology stack, 
+	and existing challenges such as unstable locators or lack of IDs. I then identify high-priority and stable areas suitable for automation.
+	I design a robust framework using Page Object Model with reusable components and implement strategies 
+	like dynamic locators, waits, and fallback mechanisms. For areas that are difficult to automate, I consider API or database validation where possible.
+	I start with small, stable test cases (smoke tests), gradually expand coverage, and ensure maintainability and stability of the automation suite.
+
+12) A script you wrote was working fine yesterday but is failing today. How do you troubleshoot?
+	If a script that was working earlier starts failing, I first analyze the failure by checking logs, screenshots, and error messages. 
+	I then verify whether there are any recent changes in the application, test data, environment, or dependencies.
+	I try to reproduce the issue and isolate whether it’s a script issue, environment issue, or an application defect. 
+	Based on the root cause, I take appropriate action such as fixing the script, updating locators, or reporting a bug.
+
+13) Your Automation scripts are running slowly. How can you improve the speed ?
+	If automation scripts are running slowly, I first analyze the bottlenecks such as unnecessary waits, repeated setup steps, or inefficient locators. 
+	I optimize by using explicit waits instead of static waits, running tests in parallel, reducing redundant steps like repeated logins, 
+	and improving locator strategies. I also ensure the framework is lightweight and scalable.
+
+14) Your Automation script is failing due to a change in the application. How do you handle this?
+	If an automation script fails due to application changes, I first perform impact analysis to identify what 
+	exactly has changed and which test cases are affected. Since I use a modular framework like Page Object Model, 
+	I update only the affected locators or methods in the page layer.
+	After making the changes, I validate by running impacted test cases and then execute regression tests to ensure 
+	no other functionality is affected. If needed, I also improve the locator strategy to make it more stable and less prone to future changes.
+
+
+
+
+
+
+
+
+
+
+🚀Deloitte - Interview Questions for QA Automation Profile
+
+✅Technical 1
+
+1. Common question( Intro+ project + framework architecture)
+2. Data selection in Calendar, Excel iteration then send values to text box.
+	I read date values from Excel using openpyxl, iterate through each row, and pass the values to the application. 
+	If it’s a textbox, I directly send the value. If it’s a calendar widget, I handle month/year navigation 
+	and dynamically select the date using XPath.
+	Excel → Read Data → Loop → Send value → Calendar/Textbox
+
+3. What are Idempotent methods? How is it relevant in RESTful web services domain?
+	Performing the same operation multiple times produces the same result as performing it once.
+Idempotent methods are HTTP methods that produce the same result regardless of how many times they are executed. 
+In RESTful services, methods like GET, PUT, and DELETE are idempotent, while POST is not. This is important for ensuring 
+reliability and safe retries in distributed systems.
+In RESTful web services, some HTTP methods are idempotent.
+✔ Idempotent Methods
+Method	Idempotent?	Why
+GET	✅ Yes	Only retrieves data
+PUT	✅ Yes	Updates same resource repeatedly
+DELETE	✅ Yes	Deleting again has no extra effect
+HEAD	✅ Yes	Same as GET (no body)
+OPTIONS	✅ Yes	Metadata only
+
+4. Based on what factors, you can decide which type of web services you need to use — SOAP or REST?
+	The choice between SOAP and REST depends on factors like security, performance, scalability, and application requirements. 
+	SOAP is used for secure, enterprise-level applications, while REST is preferred for lightweight, fast, and scalable systems.
+	SOAP = Secure + Strict + Heavy
+	REST = Fast + Flexible + Lightweight
+| Feature            | SOAP                          | REST                            |
+| ------------------ | ----------------------------- | ------------------------------- |
+| **Full Form**      | Simple Object Access Protocol | Representational State Transfer |
+| **Type**           | Protocol                      | Architectural style             |
+| **Data Format**    | Only XML                      | JSON, XML, Text, HTML           |
+| **Performance**    | Slower (heavy XML)            | Faster (lightweight JSON)       |
+| **Scalability**    | Less scalable                 | Highly scalable                 |
+| **Security**       | High (WS-Security)            | Moderate (HTTPS, OAuth, JWT)    |
+| **State**          | Can be stateful or stateless  | Always stateless                |
+| **Standards**      | Strict (WSDL, XML schema)     | Flexible                        |
+| **Error Handling** | SOAP Fault (detailed)         | HTTP status codes               |
+| **Caching**        | Not supported                 | Supported                       |
+| **Ease of Use**    | Complex                       | Simple & easy                   |
+| **Use Cases**      | Banking, enterprise apps      | Web, mobile, public APIs        |
+
+
+5. What is Payload in terms of RESTful web services?
+	Payload is the data sent in the body of an HTTP request or response in RESTful web services, typically in formats like JSON or XML.
+	In automation, I validate both request and response payloads to ensure correct data is being sent and received.
+
+6. What is validation.
+	Validation is the process of checking whether the actual output matches the expected output in order to ensure the correctness of the application.
+
+7. importance of API documentation in API automation testing?
+	API documentation is crucial in API automation testing because it provides details about endpoints, request/response formats, authentication, headers, 
+	and expected behavior. It helps testers design accurate test cases, validate responses correctly, and avoid guesswork during automation.
+8. Have you integrated automation testing into CI/CD pipelines before?
+	Yes, I have integrated automation testing into CI/CD pipelines. I have worked with tools like GitLab CI to trigger automated test execution 
+	on code commits or scheduled runs. The pipeline is configured to build the project, execute test cases, 
+	and generate reports. Based on the results, it helps ensure code quality and provides quick feedback to the team.
+
+9. Explain PSVM, SYSOUT?
+	public static void main(String[] args)
+🔹 public --> Accessible from anywhere, JVM can call it
+🔹 static --> No need to create object, JVM calls it directly
+🔹 void --> Does not return anything
+🔹 main --> Entry point of Java program, Execution starts here
+🔹 String[] args --> Command line arguments
+	System.out.println()
+🔹 System --> Predefined class in Java
+🔹 out --> Static object (PrintStream)
+🔹 println() --> Method to print output with newline
+
+10. Jenkins and GIT.
+	Git is a version control system used to manage source code, while Jenkins is a CI/CD tool used to 
+	automate build, test, and deployment processes. Jenkins integrates with Git to trigger automation when code changes occur.
+	Git is a version control system used to track code changes and collaborate with teams.
+	Key Features of Git --> Tracks changes in code, Supports branching & merging, Enables team collaboration
+	Jenkins is a CI/CD tool used to automate build, test, and deployment processes.
+	Key Features of Jenkins --> Automates testing, Runs jobs on code changes, Integrates with Git
+| Feature | Git             | Jenkins          |
+| ------- | --------------- | ---------------- |
+| Type    | Version control | CI/CD tool       |
+| Purpose | Manage code     | Automate process |
+| Usage   | Store code      | Run pipelines    |
+| Trigger | Manual push     | Auto trigger     |
+| Example | GitHub, GitLab  | Jenkins server   |
+
+11. Basic selenium question and sql?
+
+✅ Technical 2
+
+1. Common question(Intro)
+2. Java(Collection Questions only)
+3. Java Programming (Sort array in reverse order)
+4. How do you handle maintenance and updates of automated test scripts?
+	I handle maintenance and updates of automated test scripts by following a modular framework like Page Object Model, 
+	performing impact analysis when changes occur, updating only the affected components, and ensuring stability 
+	through regression testing. I also focus on writing reusable and robust scripts to minimize future maintenance effort.
+
+5. Does finally {} block always run?
+	The finally block executes in almost all cases, regardless of exceptions, except in situations like System.exit() or JVM termination.
+6. Automate one page (Login-Add to cart Assert-logout-Reporting).
+
+✅ Managerial Round
+
+1. In manual testing, it takes 10 minutes, whereas in automation, it takes 10 minutes to check a functionality, so what would be your preference? and Why?
+	Even if execution time is the same (10 minutes), I would still prefer automation if the scenario is repetitive or part of regression testing. 
+	Automation provides benefits like reusability, consistency, unattended execution, and easy integration with CI/CD pipelines.
+	However, if the scenario is one-time or frequently changing, I may choose manual testing initially and automate it later once it becomes stable.
+
+2. how comfortable are you with programming languages other than Java Selenium?
+	I am primarily experienced with Java and Selenium, but I am also comfortable working with other technologies. 
+	I have hands-on experience with Python using pytest for automation, and I have basic knowledge of API testing using Rest Assured and requests library.
+	I am adaptable and can quickly learn new languages or tools based on project requirements, as my focus is on automation logic, 
+	framework design, and problem-solving rather than being limited to a single language.
+
+3. How do we identify what can be automated?
+	To identify what can be automated, I analyze the application and test scenarios based on factors like repeatability, stability, business impact, 
+	and return on investment. I prioritize automating test cases that are repetitive, stable, and part of regression, while avoiding scenarios that 
+	are frequently changing or require human judgment.
+
+4. Can you discuss a challenging automation project you’ve worked on and how you overcame obstacles?
+	One of the challenging automation projects I worked on involved automating a complex enterprise web application with 
+	dynamic UI elements, role-based access control, and frequent changes in locators. The application had multiple forms like 
+	Vendor Master and Driver Master, with dynamic fields controlled by backend configurations.
+ Challenge Faced
+👉 Key issues:
+❌ Dynamic locators (IDs changing frequently)
+❌ Field-level authorization (visibility/enabled/mandatory changing dynamically)
+❌ Heavy AJAX loading (elements not available immediately)
+❌ Repeated login/session issues
+❌ Flaky tests due to synchronization
+
+5. How do you stay updated with the latest trends and best practices in automation testing?
+	I stay updated with the latest trends in automation testing by continuously learning through online resources, 
+	hands-on practice, and real project implementation. I regularly follow documentation, explore new tools, and 
+	keep improving my framework based on best practices.
+
+6. Normal discussion about previous work? What you like the most?
+	In my previous work, I was mainly involved in designing and maintaining automation frameworks using Selenium with pytest/TestNG. 
+	I worked on automating complex modules like Vendor Master and Driver Master, which included handling dynamic forms, dropdowns, and data-driven validations.
+	I also worked on improving framework stability by implementing reusable components, better synchronization, and reporting mechanisms. 
+	I was involved in debugging failures, maintaining scripts, and integrating tests with CI/CD pipelines.
+
+	What I enjoy the most is solving challenging problems in automation, especially handling dynamic elements and improving test stability. 
+	I also like designing reusable frameworks because it reduces maintenance effort and makes the automation scalable.
+	I find it satisfying when a stable automation suite runs successfully and provides reliable feedback to the team.
+
+	I also enjoy learning new tools and improving my existing framework, like exploring Playwright and enhancing reporting or execution speed.
+
+
+Want to master your Automation Testing skills with top Automation Playgrounds? 
+
+
+
+
+
+
+
+
+
+Deloitte-USI Round-2 for QA Consultant:
+
+1. Day to Day activities?
+	In my day-to-day activities, I am primarily involved in designing, developing, and maintaining automation test scripts, along with 
+	ensuring application quality through both manual and automated testing.
+2. What do you do on production day?
+	On production day, my primary responsibility is to ensure that the deployment is smooth and that critical functionalities are working as expected. 
+	I focus on quick validation of critical business flows through smoke testing, along with monitoring logs and application behavior.
+	I prioritize critical path validation and provide quick feedback to the team. If any issues are identified, I report them immediately 
+	with proper details to minimize impact on end users and support quick resolution.
+	Overall, my goal is to ensure a stable release and smooth user experience.
+
+3. If you found a bug that is on lower environment also. What will you do?
+	If I find a bug in production that also exists in a lower environment, I first analyze the impact and severity of the issue. 
+	I immediately report it to the team with proper details. Since the issue is reproducible in a lower environment, I use that 
+	environment for detailed analysis and debugging.
+	I coordinate with the developers to fix the issue in the lower environment first, validate the fix thoroughly, and 
+	then support deploying the fix to production after proper testing.
+
+4. What is different types of wait? Explain it?
+5. Form an xpath for a link in Selenium?
+	<a href="/home">Home</a>   --> 👉 XPath: //a[text()='Home']
+
+6. What is your framework? Explain?
+
+7. Write a code for printing same characters in a string.
+
+8. What is difference between 
+WebDriver driver = new ChromeDriver();
+ChromeDriver driver = new ChromeDriver();
+🔹 1.WebDriver driver = new ChromeDriver();
+	👉 Reference type = Interface (WebDriver)
+	👉 Object = ChromeDriver	
+	✔ This is called Upcasting / Runtime Polymorphism
+	✅ Advantages: - ✔ More flexible ✔ Can switch browser easily, ✔WebDriver driver = new FirefoxDriver(); // no change needed elsewhere ✔ Follows best practice
+🔹 2. ChromeDriver driver = new ChromeDriver();
+👉 Reference type = Concrete class
+❌ Limitations: ❌ Limited to Chrome only ❌ Cannot switch browser easily
+
+9. Have you worked on API?
+10. What are different types of error code.
+	2xx → Success  
+	3xx → Redirect  
+	4xx → Client Error  
+	5xx → Server Error
+11. Difference between 200 and 201
+201 Created --> 201 means the request was successful and a new resource has been created on the server.
+✅ Key Points:--> Used mainly for POST requests, Confirms new resource creation, Often includes Location header
+200 OK --> 200 means the request was successful and the server returned the expected response.
+✅ Key Points: --> Used for successful GET, PUT, PATCH, DELETE---> Response body is usually returned, No new resource is necessarily created
+
+12. Explain OOPs with respect to your project?
+13. What is an interface?
+14. What will you do if you need to perform only backed testing without running queries?
+	If I need to perform backend testing without running database queries, I would rely on API responses, logs, 
+	and UI behavior to validate the backend functionality. I would use tools like Postman or Rest Assured to 
+	verify the data flow and ensure that the correct data is being processed and returned by the system.
+
+15. Of you don’t have enough acceptance criteria with third party . What will you do?
+	If I don’t have enough acceptance criteria for a third-party integration, I would first clarify the requirements by communicating 
+	with the business analyst, product owner, or vendor. I would also refer to API documentation, existing similar integrations, and 
+	logs to understand expected behavior. If details are still missing, I would proceed with exploratory and risk-based testing while 
+	documenting assumptions and getting them approved.
+
+16. How will you perform parallel execution in TestNG?
+17. What are different TestNG annotations?
+
+
+
+
+
+
+
+Deloitte – QA Interview Questions - 2025
+
+Sharing a list of interview questions for QA Engineers with 3–5 years of experience. These are some common questions asked in recent Deloitte interviews. Hope this helps anyone preparing.
+
+Manual Testing :
+ • Explain your current project and responsibilities
+ • Severity vs Priority with examples
+ • What is STLC
+ • Test case vs Test scenario
+ • Bug life cycle
+ • Negative test cases for Login
+ • Scenarios for Login, Payment, Search & Filter
+ • How to handle non-reproducible bugs
+ • How to handle bugs found in production
+ • How to decide test coverage when time is limited
+
+Automation (Selenium + Java + Rest Assured) :
+ • Implicit vs Explicit wait
+ • WebDriverWait and its usage
+ • Handling multiple browser windows
+ • Dynamic XPath for Amazon product ratings
+ • Types of locators & preferred ones
+ • What is POM and why it is used
+ • Handling stale element issues
+
+Java :
+ • Interface vs Abstract class
+ • OOPs concepts with framework examples
+ • String immutability
+ • Coding tasks:
+     • Second most repeating character
+     • Move vowels to the left, consonants in the middle, special chars to the    right
+     • Reverse string without built-in methods
+ • Checked vs Unchecked exceptions
+
+API Testing (Rest Assured) :
+ • Common HTTP status codes
+ • GET vs POST vs PUT vs PATCH
+ • Basic Rest Assured script for request + status validation
+
+Git :
+ • Merge vs Rebase
+ • Pull vs Fetch
+ • Handling merge conflicts
+ • Steps to commit and push
+
+These were asked across two technical rounds.
+All the best to everyone preparing !
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

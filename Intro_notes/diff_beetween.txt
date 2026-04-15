@@ -1,0 +1,118 @@
+1. difference between stack and heap memory
+👉 Stack stores method execution and local variables (fast, thread-specific), while Heap stores objects and is shared across threads with garbage collection.
+In Selenium framework:
+WebDriver object → Heap
+Method variables → Stack
+
+| Feature      | Stack Memory                 | Heap Memory                    |
+| ------------ | ---------------------------- | ------------------------------ |
+| Usage        | Method execution             | Object storage                 |
+| Stores       | Local variables, references  | Objects, instance variables    |
+| Access       | LIFO (Last In First Out)     | Global access (via references) |
+| Speed        | Fast                         | Slower than stack              |
+| Memory Size  | Smaller (StackOverflowError) | Larger  (outofMemoryError)     |
+| Thread       | Thread-specific              | Shared across threads          |
+| Allocation   | Automatic                    | Manual (via `new`)             |
+| Deallocation | Automatic (when method ends) | Garbage Collector              |
+
+2. difference bwtweene interface and abstract class
+| Feature                     | **Interface**                                               | **Abstract Class**                                   |
+| --------------------------- | ----------------------------------------------------------- | ---------------------------------------------------- |
+| **Purpose**                 | Defines a **contract (what to do)**                         | Defines **base behavior (what + how)**               |
+| **Methods (Pre-Java 8)**    | Only `public abstract` methods                              | Can have **abstract + concrete methods**             |
+| **Java 8 Enhancements**     | `default` and `static` methods allowed                      | No major change (already supported concrete methods) |
+| **Java 9 Enhancements**     | `private` methods allowed (for code reuse inside interface) | Already supports private methods                     |
+| **Method Access Modifiers** | By default `public`                                         | `public`, `protected`, `private`, `default`          |
+| **Variables**               | Always `public static final` (constants only)               | Instance variables + static + final allowed          |
+| **Constructors**            | ❌ Not allowed                                               | ✅ Allowed (for initialization)                     |
+| **State (Fields)**          | ❌ Cannot maintain state                                     | ✅ Can maintain state                               |
+| **Multiple Inheritance**    | ✅ Supports multiple inheritance                             | ❌ Only single inheritance                          |
+| **Implementation**          | 100% abstraction (traditionally)                            | Partial abstraction                                  |
+| **Keyword Used**            | `implements`                                                | `extends`                                            |
+| **Performance**             | Slightly lighter (no state)                                 | Slightly heavier (state + constructors)              |
+| **Real-World Use**          | Contract/API design                                         | Base class/framework design                          |
+
+🔥 Overloading vs Overriding (Core Difference)
+👉 Overloading = Same method name, different parameters (compile-time polymorphism)
+👉 Overriding = Same method signature, different implementation in subclass (runtime polymorphism)
+Overloading improves readability and flexibility at compile time, while overriding enables runtime polymorphism and supports extensibility in frameworks.
+👉 Method overloading is compile-time polymorphism where methods differ by parameters, while method overriding is runtime polymorphism where a subclass provides a specific implementation of a parent method.
+| Feature            | **Method Overloading** | **Method Overriding**                  |
+| ------------------ | ---------------------- | -------------------------------------- |
+| Polymorphism Type  | Compile-time           | Runtime                                |
+| Method Name        | Same                   | Same                                   |
+| Parameters         | Must be different      | Must be same                           |
+| Return Type        | Can be same/different  | Must be same (or covariant)            |
+| Class              | Same class (usually)   | Parent-child relationship              |
+| Binding            | Static binding         | Dynamic binding                        |
+| Performance        | Faster                 | Slightly slower (runtime decision)     |
+| Access Modifier    | No restriction         | Cannot reduce visibility               |
+| Exception Handling | No restriction         | Cannot throw broader checked exception |
+| Static Methods     | Can be overloaded      | Cannot be overridden (only hidden)     |
+| Final Methods      | Can be overloaded      | Cannot be overridden                   |
+
+
+4 difference between Dynamic binding and static binding
+👉 Static binding resolves method calls at compile time based on reference type, while dynamic binding resolves them at runtime based on the actual object type, enabling runtime polymorphism.
+Static Binding (Early Binding) → Method call resolved at compile time
+Dynamic Binding (Late Binding) → Method call resolved at runtime
+| Feature           | **Static Binding**                                   | **Dynamic Binding**      |
+| ----------------- | ---------------------------------------------------- | ------------------------ |
+| Also Known As     | Early Binding                                        | Late Binding             |
+| Resolution Time   | Compile time                                         | Runtime                  |
+| Method Type       | `static`, `final`, `private`, **overloaded methods** | **Overridden methods**   |
+| Polymorphism      | Compile-time polymorphism                            | Runtime polymorphism     |
+| Decision Based On | Reference type                                       | Object type              |
+| Performance       | Faster                                               | Slightly slower          |
+| Flexibility       | Less flexible                                        | More flexible            |
+| Method Call       | Direct                                               | Through dynamic dispatch |
+
+5. What is the difference between == and equals()?
+●== compares references (memory addresses).
+●equals() compares object content (must be overridden in customclasses).
+
+6.what is synchronization in java
+👉 Synchronization in Java is a mechanism to control concurrent access to shared resources by allowing only one thread at a time, ensuring data consistency and thread safety.
+
+7. How can you create an immutable class in Java?
+To create an immutable class:
+●Declare the class as fi nal.
+●Make all fi elds private and fi nal.
+●Do not provide setters.
+●Ensure deep copies of mutable fi elds in constructors and getters.
+●Avoid exposing mutable references.
+
+8. Q104. Describe the Contract of hashCode() and equals() methods.
+●If two objects are equal according to equals(), they must have thesame hashCode().
+●However, two objects with the same hashCode() may not necessarilybe equal.
+●Properly overriding both methods ensures correct behavior inhash-based collections like HashMap and HashSet.
+
+9. Diffrence between This and Super keyword
+👉 this refers to the current object and is used within the same class, while super refers to the immediate parent class and is used to access parent class members and constructors.
+| Feature              | **this**                        | **super**                      |
+| -------------------- | ------------------------------- | ------------------------------ |
+| Reference            | Current object                  | Parent class object            |
+| Usage Scope          | Same class                      | Parent class                   |
+| Access               | Current class variables/methods | Parent class variables/methods |
+| Constructor Call     | `this()`                        | `super()`                      |
+| Method Call          | Calls current class method      | Calls parent class method      |
+| Variable Access      | Current class variable          | Parent class variable          |
+| Inheritance Required | ❌ No                            | ✅ Yes                          |
+| Default Call         | Not automatic                   | `super()` is called by default |
+| Static Context       | ❌ Not allowed                   | ❌ Not allowed                  |
+
+
+10. Difference between ‘IS-A’ and ‘HAS-A’ relationship in java?
+👉 IS-A → Inheritance (“is a type of”)
+👉 HAS-A → Composition/Aggregation (“has a” relationship)
+| Feature          | **IS-A Relationship**    | **HAS-A Relationship**    |
+| ---------------- | ------------------------ | ------------------------- |
+| Concept          | Inheritance              | Composition / Aggregation |
+| Keyword          | `extends`, `implements`  | Object reference          |
+| Relationship     | Strong coupling          | Loose coupling            |
+| Reusability      | Through inheritance      | Through composition       |
+| Flexibility      | Less flexible            | More flexible             |
+| Change Impact    | High (affects hierarchy) | Low (independent classes) |
+| Runtime Behavior | Supports polymorphism    | Supports delegation       |
+| Example          | Dog **is an** Animal     | Car **has an** Engine     |
+
