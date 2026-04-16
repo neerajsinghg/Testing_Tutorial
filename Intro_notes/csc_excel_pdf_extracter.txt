@@ -47,3 +47,65 @@ Exception handling
 Header row (skip if needed)
 📌 ⭐ Bonus (Skip Header Example)
 br.readLine(); // skip header
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+for excel data reader
+In Selenium automation, the standard way is to use Apache POI to read data from .xlsx files.
+add this dependency
+Maven dependency:
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml</artifactId>
+    <version>5.2.5</version>
+</dependency>
+
+Step-by-Step Process -->1.Open Excel file -->2. Access workbook -->3. Access sheet -->4. Access row -->5. Access cell --> 6. Convert to required datatype
+👉 In Java Selenium frameworks, Excel data is typically captured using Apache POI by opening the workbook, 
+accessing the sheet, row, and cell, and then converting the cell value into the required datatype.
+
+import java.io.FileInputStream;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ExcelReader {
+
+    public static void main(String[] args) throws Exception {
+
+        // Step 1: Create FileInputStream to read the Excel file
+        FileInputStream fis = new FileInputStream("testdata.xlsx");
+
+        // Step 2: Create Workbook object for .xlsx file
+        Workbook workbook = new XSSFWorkbook(fis);
+
+        // Step 3: Access the sheet by sheet name
+        Sheet sheet = workbook.getSheet("Sheet1");
+
+        // Step 4: Get the first row (index starts from 0)
+        Row row = sheet.getRow(0);
+
+        // Step 5: Get the first cell from the row
+        Cell cell = row.getCell(0);
+
+        // Step 6: Read and print cell value as String
+        System.out.println(cell.getStringCellValue());
+
+        // Step 7: Close workbook to release memory
+        workbook.close();
+
+        // Step 8: Close file stream
+        fis.close();
+    }
+}

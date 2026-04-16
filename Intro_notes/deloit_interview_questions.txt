@@ -120,10 +120,10 @@
 
 3. What are Idempotent methods? How is it relevant in RESTful web services domain?
 	Performing the same operation multiple times produces the same result as performing it once.
-Idempotent methods are HTTP methods that produce the same result regardless of how many times they are executed. 
-In RESTful services, methods like GET, PUT, and DELETE are idempotent, while POST is not. This is important for ensuring 
-reliability and safe retries in distributed systems.
-In RESTful web services, some HTTP methods are idempotent.
+	Idempotent methods are HTTP methods that produce the same result regardless of how many times they are executed. 
+	In RESTful services, methods like GET, PUT, and DELETE are idempotent, while POST is not. This is important for ensuring 
+	reliability and safe retries in distributed systems.
+	In RESTful web services, some HTTP methods are idempotent.
 ✔ Idempotent Methods
 Method	Idempotent?	Why
 GET	✅ Yes	Only retrieves data
@@ -163,6 +163,7 @@ OPTIONS	✅ Yes	Metadata only
 7. importance of API documentation in API automation testing?
 	API documentation is crucial in API automation testing because it provides details about endpoints, request/response formats, authentication, headers, 
 	and expected behavior. It helps testers design accurate test cases, validate responses correctly, and avoid guesswork during automation.
+
 8. Have you integrated automation testing into CI/CD pipelines before?
 	Yes, I have integrated automation testing into CI/CD pipelines. I have worked with tools like GitLab CI to trigger automated test execution 
 	on code commits or scheduled runs. The pipeline is configured to build the project, execute test cases, 
@@ -187,13 +188,13 @@ OPTIONS	✅ Yes	Metadata only
 	Key Features of Git --> Tracks changes in code, Supports branching & merging, Enables team collaboration
 	Jenkins is a CI/CD tool used to automate build, test, and deployment processes.
 	Key Features of Jenkins --> Automates testing, Runs jobs on code changes, Integrates with Git
-| Feature | Git             | Jenkins          |
-| ------- | --------------- | ---------------- |
-| Type    | Version control | CI/CD tool       |
-| Purpose | Manage code     | Automate process |
-| Usage   | Store code      | Run pipelines    |
-| Trigger | Manual push     | Auto trigger     |
-| Example | GitHub, GitLab  | Jenkins server   |
+	| Feature | Git             | Jenkins          |
+	| ------- | --------------- | ---------------- |
+	| Type    | Version control | CI/CD tool       |
+	| Purpose | Manage code     | Automate process |
+	| Usage   | Store code      | Run pipelines    |
+	| Trigger | Manual push     | Auto trigger     |
+	| Example | GitHub, GitLab  | Jenkins server   |
 
 11. Basic selenium question and sql?
 

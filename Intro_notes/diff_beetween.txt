@@ -83,8 +83,8 @@ To create an immutable class:
 ●Avoid exposing mutable references.
 
 8. Q104. Describe the Contract of hashCode() and equals() methods.
-●If two objects are equal according to equals(), they must have thesame hashCode().
-●However, two objects with the same hashCode() may not necessarilybe equal.
+●If two objects are equal according to equals(), they must have the same hashCode().
+●However, two objects with the same hashCode() may not necessarily be equal.
 ●Properly overriding both methods ensures correct behavior inhash-based collections like HashMap and HashSet.
 
 9. Diffrence between This and Super keyword

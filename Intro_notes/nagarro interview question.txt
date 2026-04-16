@@ -1,5 +1,11 @@
 #nagarro interview question 😊 👏😇
-
+interview at nagaro office
+1. remove null value from an array -- {1,2,3,null,null,5,null,6,null}
+2. throw exception syntax
+3. final, finally, finalize, 
+4. what is inteface
+5. actions class syntax
+6.
 📌 Round 1 :  ( Aptitude and Technical Round Online Test)
 
 👉 Online aptitude round consists of verbal ability questions , and we need to find the output of Java programs. Note : Here make sure your webcam and internet connection is proper if it disconnects even 1 time , high chances you will be disqualified.
