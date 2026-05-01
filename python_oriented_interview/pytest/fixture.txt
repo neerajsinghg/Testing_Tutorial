@@ -1,0 +1,28 @@
+Fixture
+Pytest provides built-in fixtures such as request, tmp_path, pytestconfig, monkeypatch, and cache. In Selenium frameworks, I commonly use them for dynamic test handling, temporary file management, configuration access, and custom reporting.
+✅ Example with browser option
+def test_browser(pytestconfig):
+    browser = pytestconfig.getoption("--browser")
+✅ How to see all fixtures
+Run CLI:
+pytest --fixtures
+✅ Most useful for Selenium automation
+The most commonly used fixtures in real automation frameworks are:
+| Fixture        | Why Useful                           |
+| -------------- | ------------------------------------ |
+| `request`      | Get test method name for screenshots |def test_example(request): print(request.node.name) ex:- Useful for screenshot naming.
+| `tmp_path`     | Store screenshots/logs               |def test_file(tmp_path): path = tmp_path / "image.png" ex:- Useful for: screenshots, downloads, reports path
+| `pytestconfig` | Read browser/environment             |def test_browser(pytestconfig): print(pytestconfig.getoption("--browser"))   Useful for browser selection.
+| `cache`        | Save login token/session             |
+| `monkeypatch`  | Override environment                 |
+Pytest provides several built-in fixtures like request, tmp_path, pytestconfig, and cache, which I commonly use in Selenium frameworks for runtime configuration, reporting, and managing temporary execution data.
+
+| Fixture           | Purpose                     | How I use it in real framework                            |
+| ----------------- | --------------------------- | --------------------------------------------------------- |
+| `request`         | Gives current test context  | For dynamic screenshot naming and accessing test metadata |
+| `pytestconfig`    | Reads runtime configuration | To get browser, environment, URLs from CLI                |
+| `tmp_path`        | Temporary file path         | Save screenshots, logs, downloaded files                  |
+| `cache`           | Store data between runs     | Save tokens/session values                                |
+| `monkeypatch`     | Modify values temporarily   | Override env variables during testing                     |
+| `capsys`          | Capture console output      | Validate logs/debugging                                   |
+| `record_property` | Add report data             | Add custom details to reports                             |

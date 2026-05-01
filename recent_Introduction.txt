@@ -7,6 +7,7 @@ reduce execution time, and ensure high product quality.
 
 Along with Selenium, I also have hands-on experience with Python-based automation 
 using pytest Framework for developing hybrid, data-driven and reusable test cases.
+i also have hands on experience with appium with python for develop mobile automation.
  
 I am familiar with modern automation tools and technologies such as Playwright with JavaScript 
 and TypeScript, which I have used for faster and more reliable UI testing.
@@ -21,7 +22,7 @@ I also have working knowledge of AWS cloud services, and I have been involved in
 deployment, release validation, and delivery pipelines, ensuring smooth integration between 
 development, testing, and production environments.
 
-My experience includes API testing, test case design, debugging failures, root cause analysis, and 
+My experience includes API testing, appium automation, test case design, debugging failures, root cause analysis, and 
 collaborating closely with developers and DevOps teams to maintain quality across the software lifecycle.
 
 Overall, I focus on building maintainable and growable automation frameworks, improving testing efficiency, and 

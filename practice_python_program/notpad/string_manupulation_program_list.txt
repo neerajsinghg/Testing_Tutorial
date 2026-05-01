@@ -1,0 +1,832 @@
+Below is a strong set of **Python string manipulation interview questions**, especially useful for mid-to-senior experience, because string handling is one of the most frequently tested topics.
+
+These questions check:
+
+* indexing
+* slicing
+* parsing
+* transformation
+* pattern handling
+* optimization
+
+---
+
+# Common string manipulation interview questions
+
+---
+
+## 1. Reverse a string
+
+**Question:** Reverse a string without using built-in reverse.
+
+Example:
+
+```python id="w1d8mp"
+Input: "python"
+Output: "nohtyp"
+```
+
+---
+
+## 2. Check palindrome
+
+**Question:** Determine whether a string is palindrome.
+
+Example:
+
+```python id="r40x6z"
+Input: "madam"
+Output: True
+```
+
+---
+
+## 3. Count vowels and consonants
+
+**Question:** Count vowels and consonants in a string.
+
+Example:
+
+```python id="ic1e5s"
+Input: "automation"
+```
+
+---
+
+## 4. Remove duplicate characters
+
+**Question:** Remove repeated characters while preserving order.
+
+Example:
+
+```python id="6tr58j"
+Input: "programming"
+Output: "progamin"
+```
+
+---
+
+## 5. Count character frequency
+
+**Question:** Count each character occurrence.
+
+Example:
+
+```python id="6pkm2m"
+Input: "banana"
+Output: {'b':1,'a':3,'n':2}
+```
+
+---
+
+## 6. Find first non-repeated character
+
+**Question:** Find first unique character.
+
+Example:
+
+```python id="r0jfhw"
+Input: "swiss"
+Output: "w"
+```
+
+---
+
+## 7. Find first repeated character
+
+**Question:** Return first repeating character.
+
+Example:
+
+```python id="ayvbnh"
+Input: "automation"
+Output: "a"
+```
+
+---
+
+## 8. Remove spaces
+
+**Question:** Remove all spaces from string.
+
+Example:
+
+```python id="d3w6vv"
+Input: "hello world"
+Output: "helloworld"
+```
+
+---
+
+## 9. Replace spaces with special character
+
+Example:
+
+```python id="s4cq5u"
+"hello world" → "hello@world"
+```
+
+---
+
+## 10. Capitalize first letter of each word
+
+Example:
+
+```python id="1ldojj"
+"hello world" → "Hello World"
+```
+
+---
+
+## 11. Count words in sentence
+
+Example:
+
+```python id="xf2f31"
+Input: "I love python"
+Output: 3
+```
+
+---
+
+## 12. Find duplicate words
+
+Example:
+
+```python id="aqhtrg"
+"python java python"
+Output: python
+```
+
+---
+
+## 13. Anagram check
+
+**Question:** Check whether two strings are anagrams.
+
+Example:
+
+```python id="izn3xn"
+"listen" and "silent"
+```
+
+---
+
+## 14. Remove special characters
+
+Example:
+
+```python id="zc8y3l"
+"a@b#c$" → "abc"
+```
+
+---
+
+## 15. Find longest word in sentence
+
+Example:
+
+```python id="y3tm9z"
+"I love automation testing"
+Output: "automation"
+```
+
+---
+
+## 16. Count uppercase/lowercase
+
+Example:
+
+```python id="xk1we0"
+Input: "PyThOn"
+Output: upper=3 lower=3
+```
+
+---
+
+## 17. String compression
+
+Example:
+
+```python id="rsv6vi"
+"aabcccccaaa" → "a2b1c5a3"
+```
+
+---
+
+## 18. Remove a specific character
+
+Example:
+
+```python id="ksp7ec"
+Input: "banana", remove "a"
+Output: "bnn"
+```
+
+---
+
+## 19. Find substring occurrence
+
+Example:
+
+```python id="9pjzwn"
+Input: "abababa", substring "aba"
+Output: count
+```
+
+---
+
+## 20. Check rotation of string
+
+Example:
+
+```python id="fl7e6f"
+"waterbottle"
+"erbottlewat"
+```
+
+---
+
+# Intermediate-level string manipulation questions
+
+---
+
+## 21. Reverse words in sentence
+
+```python id="u61w8o"
+"I love Python"
+→ "Python love I"
+```
+
+---
+
+## 22. Reverse each word
+
+```python id="xq0zyq"
+"I love Python"
+→ "I evol nohtyP"
+```
+
+---
+
+## 23. Remove consecutive duplicates
+
+```python id="0x2xv5"
+"aabbccdd" → "abcd"
+```
+
+---
+
+## 24. Check substring exists
+
+```python id="v9h4g8"
+"automation" contains "mate"
+```
+
+---
+
+## 25. Sort characters alphabetically
+
+```python id="vj8t9m"
+"python" → "hnopty"
+```
+
+---
+
+# Senior-level interview questions
+
+---
+
+## 26. Longest substring without repeating characters
+
+Example:
+
+```python id="jj0h6e"
+"abcabcbb"
+Output: 3
+```
+
+---
+
+## 27. Most frequent character
+
+Example:
+
+```python id="jmn7xk"
+"success"
+Output: s
+```
+
+---
+
+## 28. Minimum window substring
+
+Advanced sliding-window problem.
+
+---
+
+## 29. Validate balanced parentheses
+
+Example:
+
+```python id="q2ig4g"
+"{[()]}"
+```
+
+---
+
+## 30. Convert string to integer manually
+
+Example:
+
+```python id="a9mgf2"
+"1234" → 1234
+```
+
+---
+
+# Pythonic string questions
+
+Interviewers may ask:
+
+### Make this Pythonic:
+
+```python id="a10if6"
+for ch in s:
+```
+
+Using:
+
+* `join()`
+* `split()`
+* `strip()`
+* `replace()`
+* `count()`
+* `startswith()`
+* `endswith()`
+
+---
+
+# Most asked in interviews
+
+Most common:
+
+1. reverse string
+2. palindrome
+3. anagram
+4. frequency
+5. duplicates
+6. first non-repeated char
+7. word reverse
+8. compression
+
+---
+
+# What interviewers evaluate
+
+They usually check:
+
+* string immutability understanding
+* slicing knowledge
+* built-in methods
+* time complexity
+* clean coding
+
+---
+
+If you'd like, I can provide the **top 15 string manipulation Python programs with optimized interview answers**.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Here are some **advanced Python coding questions** that are very useful for **experienced automation / SDET interviews**, because they test:
+
+* logic building
+* Python internals
+* OOP
+* generators
+* decorators
+* data handling
+* performance thinking
+
+---
+
+# ✅ Advanced Python Coding Questions
+
+---
+
+## 1. Find first non-repeating character
+
+Input:
+
+```python id="q2m8ke"
+"automation"
+```
+
+Output:
+
+```python id="x7v3pn"
+u
+```
+
+---
+
+## 2. Longest substring without repeating characters
+
+Input:
+
+```python id="j4w9mr"
+"abcabcbb"
+```
+
+Output:
+
+```python id="p6m2qc"
+3
+```
+
+---
+
+## 3. Group anagrams
+
+Input:
+
+```python id="r8q1kc"
+["eat","tea","tan","ate","nat","bat"]
+```
+
+Output:
+
+```python id="g5v7pn"
+[['eat','tea','ate'], ['tan','nat'], ['bat']]
+```
+
+---
+
+## 4. Flatten nested list recursively
+
+Input:
+
+```python id="t9m4zx"
+[1,[2,[3,4],5],6]
+```
+
+Output:
+
+```python id="h3w8mr"
+[1,2,3,4,5,6]
+```
+
+---
+
+## 5. Implement custom iterator
+
+Create your own iterator like:
+
+```python id="k7v2qe"
+for x in MyRange(5):
+```
+
+Output:
+
+```python id="u1m9pn"
+0 1 2 3 4
+```
+
+---
+
+## 6. Implement generator for Fibonacci
+
+Generate:
+
+```python id="n5q3kc"
+0,1,1,2,3,5,8...
+```
+
+using `yield`
+
+---
+
+## 7. Build custom decorator for execution time
+
+Example:
+
+```python id="f8w4mr"
+@timer
+def test():
+```
+
+Print execution time automatically.
+
+---
+
+## 8. LRU cache implementation
+
+Design Least Recently Used cache:
+
+```python id="z2m7pn"
+put()
+get()
+```
+
+---
+
+## 9. Singleton class in Python
+
+Implement Singleton pattern using:
+
+```python id="c4v8qc"
+__new__()
+```
+
+---
+
+## 10. Merge overlapping intervals
+
+Input:
+
+```python id="m9q1tw"
+[[1,3],[2,6],[8,10],[9,12]]
+```
+
+Output:
+
+```python id="w6m4zb"
+[[1,6],[8,12]]
+```
+
+---
+
+## 11. Find duplicate files by content
+
+Given multiple files, identify duplicates using hashing.
+
+---
+
+## 12. Deep copy without `copy.deepcopy()`
+
+Implement your own deep copy.
+
+---
+
+## 13. Thread-safe queue
+
+Implement producer-consumer using:
+
+* threading
+* queue
+
+---
+
+## 14. Reverse words without built-in methods
+
+Input:
+
+```python id="p3v7mr"
+"I love Python"
+```
+
+Output:
+
+```python id="d8m2qc"
+Python love I
+```
+
+without `split()` or slicing.
+
+---
+
+## 15. Detect cycle in linked list
+
+Use Floyd’s algorithm.
+
+---
+
+## 16. Implement context manager
+
+Create custom:
+
+```python id="y7q4ke"
+with FileHandler():
+```
+
+using:
+
+* `__enter__()`
+* `__exit__()`
+
+---
+
+## 17. Find top K frequent elements
+
+Input:
+
+```python id="u4m9pn"
+[1,1,1,2,2,3], k=2
+```
+
+Output:
+
+```python id="g1w8qc"
+[1,2]
+```
+
+---
+
+## 18. Implement `map()` manually
+
+Write your own version of:
+
+```python id="k8m3mr"
+map()
+```
+
+---
+
+## 19. Async API calls with asyncio
+
+Fetch multiple APIs simultaneously using:
+
+```python id="s2v7pn"
+asyncio
+aiohttp
+```
+
+---
+
+## 20. Dynamic class creation
+
+Create class at runtime using:
+
+```python id="r5m1zx"
+type()
+```
+
+---
+
+# ✅ Advanced Automation-Oriented Questions
+
+Useful for your background.
+
+---
+
+## 21. Retry decorator for Selenium failures
+
+Create decorator:
+
+```python id="n9q4kc"
+@retry(3)
+```
+
+Retries failed function automatically.
+
+---
+
+## 22. Screenshot on exception decorator
+
+Auto-capture screenshot when failure happens.
+
+---
+
+## 23. Read large CSV lazily
+
+Use generator to process file line by line.
+
+---
+
+## 24. Parallel execution using multiprocessing
+
+Run tests in parallel.
+
+---
+
+## 25. Parse JSON recursively
+
+Extract all nested keys.
+
+---
+
+# ✅ OOP Advanced Questions
+
+---
+
+## 26. Multiple inheritance MRO
+
+Explain:
+
+```python id="x6v2mr"
+super()
+```
+
+and method resolution order.
+
+---
+
+## 27. Abstract class with polymorphism
+
+Build payment methods:
+
+* card
+* UPI
+* wallet
+
+---
+
+## 28. Descriptor class
+
+Implement custom property validation.
+
+---
+
+## 29. Metaclass example
+
+Create logging metaclass.
+
+---
+
+## 30. Immutable custom object
+
+Implement frozen class.
+
+---
+
+# ✅ Popular Interview Favorite
+
+These are commonly asked.
+
+✔ decorators
+✔ generators
+✔ iterators
+✔ context manager
+✔ threading
+✔ singleton
+✔ list/dict comprehension
+✔ recursion
+✔ regex
+✔ file handling
+
+---
+
+# ✅ Example challenging one
+
+### Find first non-repeating char
+
+Input:
+
+```python id="t1w9pn"
+"swiss"
+```
+
+Output:
+
+```python id="f7m3qc"
+w
+```
+
+---
+
+# ✅ Example challenging one
+
+### Flatten recursively
+
+Input:
+
+```python id="v8q2ke"
+[1,[2,[3,[4]]]]
+```
+
+Output:
+
+```python id="m4v7pn"
+[1,2,3,4]
+```
+
+---
+
+# ✅ Interview preparation tip
+
+For senior Python roles focus on:
+
+✅ clean code
+✅ time complexity
+✅ OOP
+✅ Pythonic solutions
+✅ edge cases
+
+---
+
+If you'd like, I can create a **set of advanced Python interview coding questions specifically for Automation Test Engineers (SDET)** based on your experience.
+

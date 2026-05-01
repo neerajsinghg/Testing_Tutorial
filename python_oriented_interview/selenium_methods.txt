@@ -1,0 +1,143 @@
+Below is a **table of commonly used Selenium Python methods** for both **WebDriver** and **WebElement**, with a short description for each.
+
+# ✅ WebDriver Methods
+
+| Method                              | Description                                 |
+| ----------------------------------- | ------------------------------------------- |
+| `driver.get(url)`                   | Opens a webpage                             |
+| `driver.back()`                     | Navigates to previous page                  |
+| `driver.forward()`                  | Navigates to next page                      |
+| `driver.refresh()`                  | Refreshes current page                      |
+| `driver.close()`                    | Closes current browser tab                  |
+| `driver.quit()`                     | Closes all browser windows and ends session |
+| `driver.maximize_window()`          | Maximizes browser window                    |
+| `driver.minimize_window()`          | Minimizes browser window                    |
+| `driver.fullscreen_window()`        | Opens browser in fullscreen mode            |
+| `driver.find_element()`             | Finds single element                        |
+| `driver.find_elements()`            | Finds multiple elements                     |
+| `driver.execute_script()`           | Executes JavaScript                         |
+| `driver.execute_async_script()`     | Executes async JavaScript                   |
+| `driver.save_screenshot()`          | Takes screenshot                            |
+| `driver.get_screenshot_as_file()`   | Saves screenshot to file                    |
+| `driver.get_screenshot_as_png()`    | Returns screenshot as PNG bytes             |
+| `driver.get_screenshot_as_base64()` | Returns screenshot as base64                |
+| `driver.implicitly_wait()`          | Sets implicit wait                          |
+| `driver.get_cookie()`               | Gets a cookie                               |
+| `driver.get_cookies()`              | Gets all cookies                            |
+| `driver.add_cookie()`               | Adds a cookie                               |
+| `driver.delete_cookie()`            | Deletes one cookie                          |
+| `driver.delete_all_cookies()`       | Deletes all cookies                         |
+| `driver.get_window_size()`          | Returns window size                         |
+| `driver.set_window_size()`          | Sets window size                            |
+| `driver.get_window_position()`      | Returns window position                     |
+| `driver.set_window_position()`      | Sets window position                        |
+| `driver.get_log()`                  | Gets browser logs                           |
+| `driver.print_page()`               | Prints current page as PDF (Selenium 4)     |
+
+---
+
+# ✅ switch_to Methods
+
+| Method                               | Description                |
+| ------------------------------------ | -------------------------- |
+| `driver.switch_to.window()`          | Switches to another window |
+| `driver.switch_to.frame()`           | Switches to frame          |
+| `driver.switch_to.parent_frame()`    | Switches to parent frame   |
+| `driver.switch_to.default_content()` | Switches to main page      |
+| `driver.switch_to.new_window()`      | Opens new tab/window       |
+
+---
+
+# ✅ Alert Methods
+
+| Method              | Description                    |
+| ------------------- | ------------------------------ |
+| `alert.accept()`    | Clicks OK                      |
+| `alert.dismiss()`   | Clicks Cancel                  |
+| `alert.send_keys()` | Types text in alert            |
+| `alert.text`        | Reads alert message (property) |
+
+---
+
+# ✅ WebElement Methods
+
+| Method                            | Description              |
+| --------------------------------- | ------------------------ |
+| `element.click()`                 | Clicks element           |
+| `element.clear()`                 | Clears input field       |
+| `element.send_keys()`             | Enters text              |
+| `element.submit()`                | Submits form             |
+| `element.get_attribute()`         | Gets attribute value     |
+| `element.get_dom_attribute()`     | Gets DOM attribute       |
+| `element.get_property()`          | Gets property value      |
+| `element.is_displayed()`          | Checks visibility        |
+| `element.is_enabled()`            | Checks enabled state     |
+| `element.is_selected()`           | Checks selected state    |
+| `element.find_element()`          | Finds child element      |
+| `element.find_elements()`         | Finds child elements     |
+| `element.screenshot()`            | Takes element screenshot |
+| `element.value_of_css_property()` | Gets CSS value           |
+
+---
+
+# ✅ ActionChains Common Methods
+
+| Method              | Description     |
+| ------------------- | --------------- |
+| `click()`           | Clicks element  |
+| `double_click()`    | Double click    |
+| `context_click()`   | Right click     |
+| `move_to_element()` | Mouse hover     |
+| `drag_and_drop()`   | Drag and drop   |
+| `click_and_hold()`  | Hold mouse      |
+| `release()`         | Release mouse   |
+| `send_keys()`       | Keyboard action |
+| `perform()`         | Executes action |
+
+---
+
+# ✅ Select Class Methods
+
+Used for dropdowns.
+
+| Method                       | Description            |
+| ---------------------------- | ---------------------- |
+| `select_by_visible_text()`   | Select by visible text |
+| `select_by_index()`          | Select by index        |
+| `select_by_value()`          | Select by value        |
+| `deselect_by_visible_text()` | Deselect option        |
+| `deselect_by_index()`        | Deselect by index      |
+| `deselect_by_value()`        | Deselect by value      |
+| `deselect_all()`             | Deselect all options   |
+
+---
+
+# ✅ Most Frequently Used in Projects
+
+Most important methods:
+
+driver.get()
+driver.find_element()
+driver.find_elements()
+driver.quit()
+
+element.click()
+element.send_keys()
+element.get_attribute()
+element.is_displayed()
+```
+
+---
+
+# ✅ Example
+
+driver.get("https://example.com")
+
+username = driver.find_element(By.ID, "username")
+username.send_keys("admin")
+
+login_btn = driver.find_element(By.ID, "login")
+login_btn.click()
+
+
+If you'd like, I can prepare a **single interview-ready cheat sheet of Selenium Python methods + properties** for quick revision.

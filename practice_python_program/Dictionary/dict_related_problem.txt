@@ -1,0 +1,417 @@
+For a **7-year experienced Python / Automation engineer**, interviewers usually ask **dictionary-based questions beyond basic syntax**.
+They expect:
+
+* strong Python understanding
+* performance awareness
+* real-world usage
+* nested data handling
+* problem solving with dicts
+
+Here are **good dictionary-related interview questions** for that level.
+
+---
+
+# ✅ Advanced Dictionary Interview Questions
+
+---
+
+## 1. Merge two dictionaries with same keys
+
+Input:
+
+```python id="n4v8ke"
+d1 = {'a': 10, 'b': 20}
+d2 = {'a': 5, 'c': 15}
+```
+
+Expected:
+
+```python id="x7m2pn"
+{'a': 15, 'b': 20, 'c': 15}
+```
+
+---
+
+## 2. Find duplicate values in dictionary
+
+Input:
+
+```python id="p6w3mr"
+{'a': 1, 'b': 2, 'c': 1, 'd': 3}
+```
+
+Output:
+
+```python id="r8q5kc"
+[1]
+```
+
+---
+
+## 3. Invert dictionary
+
+Input:
+
+```python id="t5v9qc"
+{'a': 1, 'b': 2}
+```
+
+Output:
+
+```python id="j2m7pn"
+{1: 'a', 2: 'b'}
+```
+
+---
+
+## 4. Group words by length using dict
+
+Input:
+
+```python id="g1w4mr"
+["cat", "dog", "python", "java"]
+```
+
+Output:
+
+```python id="u9m2zb"
+{
+ 3: ['cat', 'dog'],
+ 4: ['java'],
+ 6: ['python']
+}
+```
+
+---
+
+## 5. Count character frequency
+
+Input:
+
+```python id="z3q8ke"
+"automation"
+```
+
+Output:
+
+```python id="h7v1pn"
+{'a':2,'u':1,'t':2...}
+```
+
+---
+
+## 6. Sort dictionary by values descending
+
+Input:
+
+```python id="m8w4qc"
+{'a':5,'b':2,'c':8}
+```
+
+Output:
+
+```python id="k4m9mr"
+{'c':8,'a':5,'b':2}
+```
+
+---
+
+## 7. Nested dictionary lookup safely
+
+Input:
+
+```python id="y2v6pn"
+data = {
+  "user": {
+      "profile": {
+          "email": "abc@test.com"
+      }
+  }
+}
+```
+
+Get:
+
+```python id="f5m3qc"
+abc@test.com
+```
+
+without KeyError.
+
+---
+
+## 8. Flatten nested dictionary
+
+Input:
+
+```python id="q9w1ke"
+{
+ "a": {
+   "b": {
+      "c": 1
+   }
+ }
+}
+```
+
+Output:
+
+```python id="c6v8mr"
+{'a.b.c': 1}
+```
+
+---
+
+## 9. Remove duplicate dictionaries from list
+
+Input:
+
+```python id="d4m2pn"
+[
+ {'id':1},
+ {'id':2},
+ {'id':1}
+]
+```
+
+Output unique dicts.
+
+---
+
+## 10. Find key with maximum value
+
+Input:
+
+```python id="w7q4kc"
+{'a':10,'b':30,'c':20}
+```
+
+Output:
+
+```python id="s1v9mr"
+b
+```
+
+---
+
+# ✅ Real-world senior-level dictionary questions
+
+---
+
+## 11. Compare two API JSON responses using dict
+
+Find changed keys between:
+
+```python id="p8m5zx"
+old_response
+new_response
+```
+
+Useful in automation.
+
+---
+
+## 12. Deep merge nested dictionaries
+
+Merge recursively:
+
+```python id="n3w7pn"
+config1
+config2
+```
+
+---
+
+## 13. Build LRU cache using OrderedDict
+
+Using:
+
+```python id="g6v1qc"
+collections.OrderedDict
+```
+
+---
+
+## 14. Count log occurrences
+
+Input logs:
+
+```python id="t2m8mr"
+["ERROR", "INFO", "ERROR"]
+```
+
+Output:
+
+```python id="r5w4pn"
+{'ERROR':2,'INFO':1}
+```
+
+---
+
+## 15. Convert list of tuples into grouped dict
+
+Input:
+
+```python id="j9q2kc"
+[
+ ("HR","Neeraj"),
+ ("IT","Amit"),
+ ("HR","Ravi")
+]
+```
+
+Output:
+
+```python id="x4m7zb"
+{
+ 'HR':['Neeraj','Ravi'],
+ 'IT':['Amit']
+}
+```
+16: find key shearing same value
+---
+
+# ✅ Important dictionary methods asked
+
+They may ask:
+
+| Method         | Use            |
+| -------------- | -------------- |
+| `get()`        | safe retrieval |
+| `items()`      | key-value loop |
+| `keys()`       | get keys       |
+| `values()`     | get values     |
+| `update()`     | merge          |
+| `pop()`        | remove         |
+| `setdefault()` | initialize     |
+| `fromkeys()`   | create         |
+
+---
+
+# ✅ Common senior interview question
+
+## Difference between:
+
+```python id="m1v8ke"
+dict.get()
+vs
+dict[]
+```
+
+Answer:
+
+### `[]`
+
+Raises error:
+
+```python id="h8w2mr"
+KeyError
+```
+
+### `get()`
+
+Returns:
+
+```python id="k5m9pn"
+None
+```
+
+or default value.
+
+Example:
+
+```python id="u3q4qc"
+d.get("age", 0)
+```
+
+---
+
+# ✅ Coding Question Example (senior)
+
+### Group employees by department
+
+Input:
+
+```python id="y6w1kc"
+employees = [
+ {"name":"A", "dept":"IT"},
+ {"name":"B", "dept":"HR"},
+ {"name":"C", "dept":"IT"}
+]
+```
+
+Expected:
+
+```python id="p2m7mr"
+{
+ 'IT':['A','C'],
+ 'HR':['B']
+}
+```
+
+---
+
+# ✅ Expected interview discussion
+
+At 7 years they may ask:
+
+✔ time complexity of dict
+✔ hash collisions
+✔ ordered dict behavior
+✔ mutable keys
+✔ memory usage
+✔ JSON handling
+
+---
+
+# ✅ Important theory question
+
+## Why dict is fast?
+
+Because Python dict uses:
+
+```python id="v9q5pn"
+hash table
+```
+
+Average lookup:
+
+```python id="c4m2qc"
+O(1)
+```
+
+---
+
+# ✅ Tricky question
+
+### Can list be dict key?
+
+❌ No
+
+```python id="z7w3ke"
+d[[1,2]] = "test"
+```
+
+Error because list is mutable.
+
+Only immutable types:
+
+* string
+* int
+* tuple
+
+---
+
+# ✅ Best 5 for your level
+
+Most valuable:
+
+1. Flatten nested dict
+2. Deep compare two dicts
+3. Merge recursive dict
+4. Group data by key
+5. Max/min from dict
+
+---
+
+If you'd like, I can give you **dictionary coding questions specifically for automation testing interviews** (JSON/API response based).

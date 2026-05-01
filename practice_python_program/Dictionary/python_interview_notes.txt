@@ -1,0 +1,86 @@
+ Tell me about yourself
+- Explain your roles and responsibilities in your current/previous project
+- What is the purpose of "conftest.py" in Pytest?
+	In Pytest, conftest.py acts as a centralized configuration file for the test framework. In my automation projects, I use it to manage common fixtures, framework hooks, and environment-level setup that needs to be shared across multiple test modules. For example, browser initialization, login sessions, and custom command-line parameters are usually maintained in conftest.py so the framework remains modular and easy to maintain.
+	One of its key advantages is that Pytest automatically discovers fixtures from conftest.py, so test files can access shared resources without importing them explicitly. This reduces code duplication and keeps test scripts clean.
+	At an advanced level, I also use conftest.py for implementing hooks such as pytest_runtest_makereport() to capture screenshots on failures, attach logs to reports, and control execution flow. It becomes the backbone of a scalable automation framework because it separates reusable infrastructure code from actual test logic.”
+1. Centralized framework control
+conftest.py manages:
+browser setup
+teardown
+environment configuration
+reusable objects
+2. Fixture sharing without imports
+3. Framework scalability
+4. Hook implementation
+5. Command-line customization
+
+- What are fixtures? Why do we use them?
+	“Fixtures are reusable setup and teardown methods in Pytest used to prepare the test environment, improve code reuse, and manage resources efficiently across the automation framework.”
+
+- What are predefined fixtures? Why do we use them?
+	In Pytest fixtures, return is used when the fixture only needs to provide an object or data to the test, whereas yield is used when the fixture needs both setup and teardown logic.
+	Code written before yield executes as setup, the yielded object is passed to the test, and the code after yield executes as teardown once the test finishes. This makes yield more suitable for managing resources such as browsers, database connections, files, or API sessions because cleanup happens automatically after execution.
+
+- What types of locators are available in Playwright?
+	Playwright provides multiple locator strategies to identify web elements, and compared to traditional automation tools, it emphasizes more stable and user-facing locators. The main locator types include text-based locators, role-based locators, label-based locators, placeholder locators, test-id locators, CSS selectors, and XPath. In enterprise automation, Playwright recommends using semantic locators like getByRole() or getByText() because they are more resilient to DOM changes and improve test maintainability.”
+
+- Which locators are most preferred and why?
+	In Playwright, the most preferred locators are getByRole(), getByLabel(), and getByTestId() because they are more stable, readable, and less dependent on DOM structure. These locators interact with elements the same way a real user does, which makes tests more resilient to UI changes.
+	I usually avoid fragile XPath or deeply nested CSS selectors unless no better option is available, because those tend to break whenever the frontend structure changes. In enterprise automation frameworks, getByTestId() is often the most reliable because it gives the automation team a dedicated locator that remains independent of UI redesign.”
+
+- What is Playwright? How is it different from Selenium?
+	Playwright is a modern open-source browser automation framework developed by Microsoft for end-to-end testing of web applications. It supports multiple browsers such as Chromium, Firefox, and WebKit using a single API and provides built-in capabilities like auto-waiting, network interception, parallel execution, and cross-browser testing.
+	The main difference from Selenium is that Playwright is designed as a modern browser automation tool with native support for asynchronous web applications, while Selenium relies on the WebDriver protocol to communicate with browsers externally. Because of this, Playwright is generally faster, more stable, and requires less synchronization code compared to Selenium.
+
+- How do you handle multiple tabs in Playwright?
+	In Playwright, multiple tabs are handled through the browser context. Each new tab is represented as a separate Page object. When an action opens a new tab, I usually wait for the page event on the browser context and then switch control to the newly created page object. This approach is more reliable than Selenium because Playwright directly exposes tabs as page instances instead of using window handles.
+
+- What are workers in Playwright and why are they used?
+	In Playwright, workers are separate execution processes used to run tests in parallel. Each worker runs its own isolated browser instance and test environment, allowing multiple test files or test groups to execute simultaneously. Workers are mainly used to improve test execution speed, optimize CI/CD pipeline performance, and ensure better test isolation.”
+	“Because each worker runs independently, one failing test does not affect another worker’s execution context. This makes the framework more stable and scalable for large regression suites.
+
+- How do you run tests with multiple workers using CLI?
+	In Playwright, we can control parallel execution directly from the CLI by using the --workers option. This allows us to specify how many worker processes should run simultaneously. Each worker executes tests in an isolated process with its own browser context, which improves execution speed while maintaining test independence.
+	✅ CLI syntax
+	npx playwright test --workers=4
+
+- Write a script to launch a browser in Playwright
+✅ conftest.py – Browser launch fixture
+import pytest
+from playwright.sync_api import sync_playwright
+
+
+@pytest.fixture(scope="function")
+def page():
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=False)
+
+        context = browser.new_context()
+        page = context.new_page()
+
+        yield page
+
+        browser.close()
+
+✅ Test file example
+def test_google_title(page):
+    page.goto("https://www.google.com")
+
+    assert page.title() == "Google"
+
+
+- How many test cases have you automated so far?
+Across my projects, I have automated approximately 800 to 1200 test cases covering UI, API, and regression scenarios. The majority of these were for end-to-end business workflows such as user management, order processing, validations, reporting, and integration testing.
+Rather than focusing only on the number, my responsibility has also included framework design, script review, maintenance, and stabilizing flaky tests. Over time, I have also converted several manual regression suites into automated suites, which significantly reduced execution time and improved release confidence.
+
+- In a migration project, how many test cases can you migrate per day? What factors affect it?
+	In a migration project, the number of test cases that can be migrated per day depends on the complexity of the existing scripts and the target framework. On average, for straightforward test cases, I can migrate around 5 to 10 test cases per day. For medium-complexity scenarios involving reusable components or validations, it is usually 3 to 5 per day. For highly complex end-to-end workflows with dynamic elements, integrations, or extensive refactoring, the migration may be limited to 1 to 2 test cases per day.”
+	“The migration speed is influenced by multiple factors such as script complexity, framework differences, locator changes, reusable component availability, environment stability, and the amount of debugging required after migration
+
+- What challenges have you faced while executing test scripts?
+During test execution, I have faced several practical challenges, especially in large regression suites. The most common issues were synchronization failures, unstable environments, dynamic element handling, test data dependency, parallel execution conflicts, and intermittent browser or network-related failures. My approach has always been to identify whether the issue is application-related, environment-related, or framework-related before implementing a long-term fix
+
+- Do you have experience running Playwright tests using CLI?
+	Yes, I have experience running Playwright tests through the CLI in both local and CI/CD environments. I regularly use the command line to execute complete regression suites, specific test files, tagged test groups, cross-browser runs, and parallel execution using workers. The CLI is very useful because it gives flexibility to control execution without modifying the framework code.”
+	“In my projects, I have used CLI options for browser selection, headed/headless execution, worker configuration, debugging, tracing, and generating reports, especially while integrating Playwright into pipeline execution

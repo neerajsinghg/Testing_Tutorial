@@ -942,7 +942,8 @@ try {
 
 
 Methof of classes use in appium
-In Appium, the core classes include AppiumDriver for session handling, AndroidDriver or IOSDriver for platform-specific actions, AppiumBy for mobile locators, UiAutomator2Options for capabilities, and WebDriverWait for synchronization.
+In Appium, the core classes include AppiumDriver for session handling, AndroidDriver or IOSDriver for platform-specific actions, 
+AppiumBy for mobile locators, UiAutomator2Options for capabilities, and WebDriverWait for synchronization.
 1. AppiumDriver Class
 | Method            | Use                      |
 | ----------------- | ------------------------ |

@@ -1,0 +1,111 @@
+𝗤𝗔 𝗔𝘂𝘁𝗼𝗺𝗮𝘁𝗶𝗼𝗻 𝗜𝗻𝘁𝗲𝗿𝘃𝗶𝗲𝘄 𝗤𝘂𝗲𝘀𝘁𝗶𝗼𝗻𝘀 - 𝗟𝗧𝗜 𝗠𝗶𝗻𝗱𝘁𝗿𝗲𝗲
+
+1. Can you briefly introduce yourself?
+2. What are three OOP concepts used in your framework? Please explain in detail.
+3. What is the difference between ArrayList and LinkedList?
+4. How do POST and PUT methods differ in API testing?
+5. Write a program to count and print the number of 'A's in a given string.
+6. What is a Stale Element Exception? Why does it occur, and how do you handle it?
+7. Explain 401 and 500 error codes.
+8. What is an Element Not Found Exception? Why does it occur, and how do you handle it?
+9. Write a program to find the factorial of a number.
+10. Write a program to reverse a number.
+11. What is the difference between List and Set in Java?
+12. Write a program to count duplicate characters in a string.
+13. Which CI/CD pipeline tools have you used? Can you explain your experience with them?
+14. What domain experience do you have in your career so far?
+15. How many team members have you led in your projects?
+16. Can you explain Polymorphism, along with examples of Method Overloading and Method Overriding?
+17. Do you have any questions for us?
+
+
+
+Deloitte-USI Round-2 for QA Consultant:
+
+1. Day to Day activities?
+2. What do you do on production day?
+3. If you found a bug that is on lower environment also. What will you do?
+4. What is different types of wait? Explain it?
+5. Form an xpath for a link in Selenium?
+6. What is your framework? Explain?
+7. Write a code for printing same characters in a string.
+8. What is difference between 
+WebDriver driver = new ChromeDriver();
+ChromeDriver driver = new ChromeDriver();
+
+9. Have you worked on API?
+10. What are different types of error code.
+11. Difference between 200 and 201
+12. Explain OOPs with respect to your project?
+13. What is an interface?
+14. What will you do if you need to perform only backed testing without running queries?
+15. Of you don’t have enough acceptance criteria with third party . What will you do?
+16. How will you perform parallel execution in TestNG?
+17. What are different TestNG annotations?
+
+
+🚀 Interview Experience – Citi Bank (UI & API Automation – SDET Role)
+Recently appeared for an interview with Citi Bank for an SDET role focused on UI & API Testing. Sharing some of the questions that were asked — hope it helps others preparing 👇
+🔹 Tell me about yourself
+🔹 What challenges have you faced while working with CI/CD pipelines?
+🔹 How do you handle flaky tests in automation?
+🔹 What is retry mechanism and how have you implemented it?
+🔹 Design test scenarios for a "Get All Employees" API
+🔹 What are different HTTP status codes and their categories?
+🔹 Difference between Path Parameter and Query Parameter
+🔹 Where have you used Array, ArrayList, and HashMap in your framework?
+🔹 Write logic to iterate an ArrayList
+🔹 Explain a real-time use case of HashMap in API automation
+🔹 Write a program to capitalize first letter of each word in a sentence
+🔹 Why use Streams? When would you avoid them?
+🔹 What is the most challenging problem you have solved?
+💡 Key Focus Areas:
+API Testing (Rest Assured / Postman)
+UI Automation (Selenium / Playwright)
+CI/CD Integration (Jenkins)
+Core Java Concepts
+Problem Solving & Real-world Scenarios
+
+
+
+Common Interview Questions for QA
+
+ 1. Basic QA Knowledge
+ A. What is the difference between Verification and Validation?
+ B. What is the Software Development Life Cycle (SDLC)?
+ C. What is the Software Testing Life Cycle (STLC)?
+ D. What is Severity and Priority? Explain with examples.
+ E. What are Functional and Non-Functional Testing?
+
+ 2. Test Case & Bug Reporting
+ A. How do you write a good test case?
+ B. What is a test scenario?
+ C. Explain a bug life cycle with all states.
+ D. How do you report a bug in JIRA?
+ E. What is a test plan? What does it contain?
+
+ 3. Manual Testing Concepts
+ A. What types of testing have you performed?
+ B. What is regression testing?
+ C. What is smoke vs sanity testing?
+ D. What is boundary value analysis?
+ E. What is equivalence partitioning?
+
+ 4. Automation Testing (for beginners)
+ A. Which automation tools do you know?
+ B. What is a framework? Types?
+ C. What is XPath?
+ D. What are locators in Selenium?
+ E. Difference between findElement & findElements?
+
+ 5. Agile & Real-Time Work
+ A. What is Agile? What is Scrum?
+ B. What happens in a daily stand-up meeting?
+ C. What are sprint planning and sprint retrospective?
+ D. Have you worked in Agile? Explain your role.
+ 6. Real-World QA Questions
+ A. Tell me about a challenging bug you found.
+ B. Explain the most complex test scenario you tested.
+ C. How do you ensure quality under tight deadlines?
+ D. How do you handle conflicts with developers?
+ E. What would you do if a requirement is unclear?

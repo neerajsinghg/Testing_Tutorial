@@ -1,0 +1,40 @@
+🔹 1. Write a Python program to find the first non-repeating character in a string
+ 👉 Tests: Hashing, string traversal, edge cases
+
+🔹 2. Implement a decorator that measures execution time of a function
+ 👉 Tests: Decorators, closures, real-world usage
+
+🔹 3. Given a list of intervals, merge all overlapping intervals
+ 👉 Tests: Sorting + problem-solving (very common in interviews)
+
+🔹 4. Explain and implement deep copy vs shallow copy with example
+ 👉 Tests: Object references, memory concepts (copy module)
+
+🔹 5. Find all anagrams of a string in a given list of words
+ 👉 Tests: Dictionaries, sorting, optimized comparison
+
+Software testing
+1.Exercise severity for the following issues
+--> The website  performance is to slow
+--> The  login function of the website does  not work properly
+-->The gui of the website does not display correctly on multiple device.
+-->The website could not remamber the user login session
+-->some limits does work
+python interview prepartion
+1.what is type conversion and casting
+-->changing data types manually or automatically.
+ex:int("5") converts string to integer.
+2.what are if-else statements
+-->used for decision-making
+if x> 0:
+     print("Positive")
+else:
+     print("Non-positive")
+3.what is a loop in python
+-->used to replace code.
+-->for loop:iterates over sequences
+-->while loop:runs while condition is true
+4.what is the used of break,continue,pass?
+-->break:exits loop
+-->continue:skips to next iteration
+-->pass:placeholder.does nothong

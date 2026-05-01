@@ -18,3 +18,34 @@ failures as application bugs or script issues, and report them in Jira.
 before the UI is integrated.
 6. Code Review: Reviewing the automation code merged by junior team members to
 ensure coding standards are followed."
+
+
+
+
+In my current project, I work as an Automation Test Engineer as part of an Agile Scrum team, where I am involved in both functional 
+and automation testing activities throughout the sprint lifecycle. My key roles and responsibilities include:
+
+First, I participate in sprint planning, backlog refinement, and daily stand-up meetings to understand business requirements, analyze 
+user stories, and identify which test scenarios are suitable for automation and which need manual validation. This helps ensure test 
+coverage is aligned with sprint goals.
+
+Second, I am responsible for maintaining and enhancing our automation framework, which is built using Selenium, Java, TestNG, and Maven. 
+This includes updating page objects when application changes occur, improving reusable utility methods, and optimizing framework stability 
+for long-term maintainability.
+
+Third, I develop data-driven and reusable automation scripts for regression and smoke testing by using external test data sources such as 
+Excel or configuration files. My focus is on writing stable scripts that reduce maintenance effort and improve execution reliability.
+
+Fourth, I handle test execution and result analysis through our Jenkins CI/CD pipeline, where automated suites run on scheduled builds. 
+After execution, I review reports generated through Extent Reports/TestNG, investigate failed test cases, identify whether failures are 
+due to application defects or script issues, and log valid defects in Jira with proper evidence.
+
+Fifth, I also work on API validation using Rest Assured, where I verify response codes, response payloads, schema validation, and backend 
+business logic before the UI layer is fully available. This allows early defect detection in the development cycle.
+
+Finally, I contribute to code reviews and team collaboration by reviewing automation scripts created by team members, ensuring coding 
+standards, reusability, and best practices are followed across the project.
+
+Overall, my role involves ensuring product quality, improving automation coverage, and supporting faster release cycles through reliable test automation.”
+
+
