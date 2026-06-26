@@ -1,0 +1,31 @@
+I have successfully resolved the client certificate popup issue!
+
+The Issue
+Because predemo.efleetsystems.com has optional client certificate authentication enabled on the server side, 
+Chrome pops up a tab-modal dialog to ask the user to select a client certificate. Since this is an internal 
+browser dialog (rendered by the browser UI itself rather than the page's HTML), it does not have a separate 
+OS window handle and is completely invisible to standard Selenium web element or native OS window searches. 
+This dialog blocks Chrome's navigation pipeline, causing the webdriver to hang.
+
+The Solution
+Created safe_navigate(driver, url): We added a robust, self-healing navigation helper function in 
+
+test_cases/conftest.py
+.
+Foreground Focus and Escape-Key Monitor Thread:
+Right before navigating, safe_navigate launches a temporary background thread.
+If the driver gets stuck (meaning driver.get(url) has not returned within 4 seconds), the thread checks if the active foreground window is Chrome.
+If Chrome is active and blocked, the thread sends a native system-level Escape keyboard event to the window. This cancels the dialog, 
+allowing the page to load successfully.
+If the page loads successfully without getting stuck, the thread immediately exits without pressing any keys.
+Replaced All Navigations with safe_navigate: We updated all initial page loads and sub-form transitions in 
+
+conftest.py
+ to use safe_navigate.
+The test runs are now completely automated, successfully bypassing the certificate dialog and executing all test assertions. 
+I have restored your full form IDs list in 
+
+pro_global_runner.py
+ so you can run the entire test suite.
+
+
