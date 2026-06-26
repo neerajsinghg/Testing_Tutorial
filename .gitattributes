@@ -1,0 +1,21 @@
+# Set the default behavior to automatically normalize line endings
+* text=auto
+
+# Ensure source code files are always normalized to LF in the repository
+*.py text
+*.java text
+*.js text
+*.ts text
+*.html text
+*.css text
+*.txt text
+*.md text
+*.json text
+
+# Denote binary files to prevent Git from attempting to modify their line endings
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.jfif binary
