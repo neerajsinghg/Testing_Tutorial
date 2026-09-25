@@ -10,3 +10,19 @@ for i in range(2, range):
             break
     if (flag ==0):
         print(i)
+
+
+def prime_no_range(n):
+  ls=[]
+  for i in range(2,n):
+    flag=0
+    for j in range(2,i):
+      if i%j==0:
+        flag=1
+        break
+    if flag==0:
+      ls.append(i)
+  return ls
+
+n=100
+print(prime_no_range(n))

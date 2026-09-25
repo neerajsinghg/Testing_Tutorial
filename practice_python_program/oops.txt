@@ -117,7 +117,12 @@ cat = Cat()
 print(make_sound(cat))  # Output: Meow!
 2. Differentiate between instance variables and class variables in Python.
 
-In Python, instance variables belong to instances of a class, representing the state of individual objects, while class variables belong to the class itself, representing attributes shared by all instances of the class. Instance variables are defined within methods using the self keyword and are unique to each instance, whereas class variables are defined outside methods and are accessed using the class name. Instance variables are specific to each object, while class variables are common to all objects of the class.
+In Python, instance variables belong to instances of a class, representing the state of individual 
+objects, while class variables belong to the class itself, representing attributes shared by all 
+instances of the class. Instance variables are defined within methods using the self keyword and 
+are unique to each instance, whereas class variables are defined outside methods and are accessed 
+using the class name. Instance variables are specific to each object, while class variables are 
+common to all objects of the class.
 
 # Instance Variables Example
 class Car:
